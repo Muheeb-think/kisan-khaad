@@ -1666,25 +1666,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\THINK(N)1234\\.nuget\\packages\\": {},
+    "C:\\Users\\THINK COMPUTERS DELL\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\THINK(N)1234\\Desktop\\MANEESH SHUKLA\\16_Jan\\Jalaun\\Jalaun\\BAL\\BAL.csproj",
+      "projectUniqueName": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\BAL.csproj",
       "projectName": "BAL",
-      "projectPath": "C:\\Users\\THINK(N)1234\\Desktop\\MANEESH SHUKLA\\16_Jan\\Jalaun\\Jalaun\\BAL\\BAL.csproj",
-      "packagesPath": "C:\\Users\\THINK(N)1234\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\THINK(N)1234\\Desktop\\MANEESH SHUKLA\\16_Jan\\Jalaun\\Jalaun\\BAL\\obj\\",
+      "projectPath": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\BAL.csproj",
+      "packagesPath": "C:\\Users\\THINK COMPUTERS DELL\\.nuget\\packages\\",
+      "outputPath": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\THINK(N)1234\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\THINK COMPUTERS DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1693,14 +1693,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\THINK(N)1234\\Desktop\\MANEESH SHUKLA\\16_Jan\\Jalaun\\Jalaun\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\THINK(N)1234\\Desktop\\MANEESH SHUKLA\\16_Jan\\Jalaun\\Jalaun\\DAL\\DAL.csproj"
+            "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj"
             }
           }
         }
@@ -1709,13 +1710,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -1736,7 +1731,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

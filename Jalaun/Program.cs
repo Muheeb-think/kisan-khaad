@@ -1,6 +1,7 @@
 using BAL;
 using BAL.MasterData;
 using DAL.SqlHeplers;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,15 @@ builder.Services.AddScoped<IDataAccess, DataAccess>();
 builder.Services.AddScoped<IMastersData, MasterData>();
 builder.Services.AddScoped<IRegistration, Registration>();
 
+
+builder.Services.AddAuthentication(option =>
+{
+    option.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+}).AddCookie(option =>
+{
+    option.LoginPath = "/Auth/login";
+    option.AccessDeniedPath = "/Auth/AccesDenied";
+});
 
 builder.Services.AddDistributedMemoryCache();
 
