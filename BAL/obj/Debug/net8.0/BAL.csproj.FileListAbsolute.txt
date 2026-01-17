@@ -1,0 +1,37 @@
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\Jalaun\BAL\bin\Debug\net8.0\BAL.deps.json
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\Jalaun\BAL\bin\Debug\net8.0\BAL.dll
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\Jalaun\BAL\bin\Debug\net8.0\BAL.pdb
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\Jalaun\BAL\obj\Debug\net8.0\BAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\Jalaun\BAL\obj\Debug\net8.0\BAL.AssemblyInfoInputs.cache
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\Jalaun\BAL\obj\Debug\net8.0\BAL.AssemblyInfo.cs
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\Jalaun\BAL\obj\Debug\net8.0\BAL.csproj.CoreCompileInputs.cache
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\Jalaun\BAL\obj\Debug\net8.0\BAL.dll
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\Jalaun\BAL\obj\Debug\net8.0\refint\BAL.dll
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\Jalaun\BAL\obj\Debug\net8.0\BAL.pdb
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\Jalaun\BAL\obj\Debug\net8.0\ref\BAL.dll
+D:\Jalaun\Jalaun\BAL\bin\Debug\net8.0\BAL.deps.json
+D:\Jalaun\Jalaun\BAL\bin\Debug\net8.0\BAL.dll
+D:\Jalaun\Jalaun\BAL\bin\Debug\net8.0\BAL.pdb
+D:\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.AssemblyInfoInputs.cache
+D:\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.AssemblyInfo.cs
+D:\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.csproj.CoreCompileInputs.cache
+D:\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.dll
+D:\Jalaun\Jalaun\BAL\obj\Debug\net8.0\refint\BAL.dll
+D:\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.pdb
+D:\Jalaun\Jalaun\BAL\obj\Debug\net8.0\ref\BAL.dll
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\bin\Debug\net8.0\BAL.deps.json
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\bin\Debug\net8.0\BAL.dll
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\bin\Debug\net8.0\BAL.pdb
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\bin\Debug\net8.0\DAL.dll
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\bin\Debug\net8.0\DAL.pdb
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.csproj.AssemblyReference.cache
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.AssemblyInfoInputs.cache
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.AssemblyInfo.cs
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.csproj.CoreCompileInputs.cache
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.csproj.Up2Date
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.dll
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\obj\Debug\net8.0\refint\BAL.dll
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.pdb
+C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\obj\Debug\net8.0\ref\BAL.dll

@@ -1,0 +1,678 @@
+﻿@model DAL.ViewModel.RegisterViewModel
+@{
+    Layout = null;
+}
+
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="~/css/icons.min.css" rel="stylesheet" type="text/css" />
+<link href="~/css/app.min.css" rel="stylesheet" type="text/css" />
+<script src="~/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/app.js"></script>
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/jquery-ui.min.js"></script>
+@if (TempData["Message"] != null)
+{
+    <script>
+        alert('@TempData["Message"]');
+    </script>
+}
+
+<script>
+    $(document).ready(function () {
+        $("#TahsilDropdown").change(function () {
+            var tahsilId = $(this).val();
+            var areaDropdown = $("#AreaTypeDropdown");
+            console.log("Selected Tehsil ID: " + tahsilId);
+            // Clear previous items
+            areaDropdown.empty();
+            areaDropdown.append('<option value="">-- चयन करें --</option>');
+
+            if (tahsilId) {
+                $.getJSON('/Farmer/GetAreaTypesByTehsil', { tahsilId: tahsilId }, function (data) {
+                    console.log(data);
+                        $.each(data, function (index, item) {
+                        areaDropdown.append($('<option/>', {
+                        value: item.blockId,
+                        text: item.blockName
+                      }));
+                    });
+                });
+            }
+        });
+
+        $("#AreaTypeDropdown").change(function () {
+        var areaTypeId = $(this).val();
+        var villageDropdown = $("#VillageTypeDropdown");
+
+        console.log("Selected AreaType ID: " + areaTypeId);
+
+        // Clear previous items
+        villageDropdown.empty();
+        villageDropdown.append('<option value="">-- चयन करें --</option>');
+
+        if (areaTypeId) {   // check correct variable
+            $.getJSON('/Farmer/GetVillageByBlock', { BlockId: areaTypeId }, function (data) {
+                console.log(data);  // check AJAX response
+                $.each(data, function (index, item) {
+                    villageDropdown.append($('<option/>', {   //  append to correct dropdown
+                        value: item.villageId,
+                        text: item.villageName
+                    }));
+                });
+            });
+        }
+    });
+
+    //Land Details
+     $("#LandTahsilDropdown").change(function () {
+            var tahsilId = $(this).val();
+            var areaDropdown = $("#LandAreaTypeDropdown");
+            console.log("Selected Tehsil ID: " + tahsilId);
+            // Clear previous items
+            areaDropdown.empty();
+            areaDropdown.append('<option value="">-- चयन करें --</option>');
+
+            if (tahsilId) {
+                $.getJSON('/Farmer/GetAreaTypesByTehsil', { tahsilId: tahsilId }, function (data) {
+                    console.log(data);
+                        $.each(data, function (index, item) {
+                        areaDropdown.append($('<option/>', {
+                        value: item.blockId,
+                        text: item.blockName
+                      }));
+                    });
+                });
+            }
+        });
+
+        $("#LandAreaTypeDropdown").change(function () {
+        var areaTypeId = $(this).val();
+        var villageDropdown = $("#LandVillageTypeDropdown");
+
+        console.log("Selected AreaType ID: " + areaTypeId);
+
+        // Clear previous items
+        villageDropdown.empty();
+        villageDropdown.append('<option value="">-- चयन करें --</option>');
+
+        if (areaTypeId) {   // check correct variable
+            $.getJSON('/Farmer/GetVillageByBlock', { BlockId: areaTypeId }, function (data) {
+                console.log(data);  // check AJAX response
+                $.each(data, function (index, item) {
+                    villageDropdown.append($('<option/>', {   //  append to correct dropdown
+                        value: item.villageId,
+                        text: item.villageName
+                    }));
+                });
+            });
+        }
+    });
+    });
+</script>
+
+
+
+<style>
+    body {
+        background: #f4f7f6;
+    }
+
+    .form-wrapper {
+        background: #fff;
+        padding: 35px;
+        border-radius: 10px;
+        max-width: 1200px;
+        margin: auto;
+        box-shadow: 0 0 20px rgba(0,0,0,0.08);
+    }
+
+    .section {
+        border-left: 5px solid #2e7d32;
+        padding-left: 20px;
+        margin-bottom: 35px;
+    }
+
+    .section-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #2e7d32;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+        .section-title span {
+            background: #2e7d32;
+            color: #fff;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+        }
+
+    .form-label {
+        font-weight: 600;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .form-control,
+    .form-select {
+        border-radius: 6px;
+        height: 44px;
+    }
+
+    textarea.form-control {
+        height: auto;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #2e7d32;
+        box-shadow: none;
+    }
+
+    .submit-area {
+        background: #f1f8f4;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+    }
+
+    .submit-btn {
+        background: #2e7d32;
+        border: none;
+        padding: 12px 50px;
+        font-size: 17px;
+        border-radius: 6px;
+    }
+</style>
+
+<div class="container">
+    <div class="form-wrapper">
+        <form asp-action="Registration" asp-antiforgery="true" method="post" asp-controller="Former">
+            <div class="section">
+                <div class="section-title">
+                    <span>1</span> किसान पंजीकरण विवरण
+                </div>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+                        <label class="form-label">किसान का नाम</label>
+                        <input asp-for="FullName" class="form-control">
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">ईमेल</label>
+                        <input asp-for="Email" type="email" class="form-control">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">पासवर्ड</label>
+                        <input asp-for="Password" type="password" class="form-control">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">पासवर्ड पुष्टि</label>
+                        <input asp-for="ConfirmPassword" type="password" class="form-control">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">किसान की श्रेणी</label>
+                        <select asp-for="FormerCategory"
+                                asp-items="@(new SelectList(Model.FarmerCategoryList, "CategoryId", "CategoryNameHindi"))"
+                                class="form-select">
+                            <option value="">-- चयन करें --</option>
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">मोबाइल नंबर</label>
+                        <input asp-for="MobileNumber" type="tel" class="form-control">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">लिंग</label>
+                        <select asp-for="Gender" class="form-select">
+                            <option value="">-- चयन करें --</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">जन्मतिथि</label>
+                        <input asp-for="DOB" type="date" class="form-control" placeholder="DD-MM-YYYY">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">पिता / पति का नाम</label>
+                        <input asp-for="FatherHusbandName" class="form-control">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span>2</span> किसान का स्थायी पता
+                </div>
+
+                <div class="row g-4">
+
+                    <div class="col-md-3">
+                        <label class="form-label">राज्य</label>
+                        <input asp-for="State" value="उत्तर प्रदेश" readonly class="form-control">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">ज़िला</label>
+                        <input asp-for="District" value="जालौन" readonly class="form-control">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">तहसील</label>
+                        <select asp-for="tahsil"
+                                asp-items="@(new SelectList(Model.TehsilList, "Id", "TehsilName"))"
+                                class="form-select" id="TahsilDropdown">
+                            <option value="">-- चयन करें --</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">क्षेत्र का प्रकार</label>
+                        <select asp-for="AreaType" class="form-select" id="AreaTypeDropdown"></select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">गांव</label>
+                        <select asp-for="village" class="form-select" id="VillageTypeDropdown"></select>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <label class="form-label">पिनकोड</label>
+                        <input type="text" asp-for="pincode" class="form-control" />
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="form-label">पूरा पता</label>
+                        <input asp-for="address" class="form-control">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section mt-4">
+                <div class="section-title mb-3">
+                    <span>3</span> किसान की भूमि का विवरण
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label class="form-label mb-1">राज्य</label>
+                        <input asp-for="State" value="उत्तर प्रदेश" readonly class="form-control">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label mb-1">ज़िला</label>
+                        <input asp-for="District" value="जालौन" readonly class="form-control">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label mb-1">तहसील</label>
+                        <select asp-for="tahsil"
+                                asp-items="@(new SelectList(Model.TehsilList, "Id", "TehsilName"))"
+                                class="form-select" id="LandTahsilDropdown">
+                            <option value="">-- चयन करें --</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label mb-1">क्षेत्र का प्रकार</label>
+                        <select asp-for="AreaType" class="form-select" id="LandAreaTypeDropdown"></select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label mb-1">गांव</label>
+                        <select asp-for="village" class="form-select" id="LandVillageTypeDropdown"></select>
+                    </div>
+                </div>
+
+                <div class="row g-3 mt-3">
+                    <div class="col-md-3">
+                        <label class="form-label mb-1">खसरा संख्या</label>
+                        <input asp-for="LandRecordNumber" class="form-control">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label mb-1">एग्रीस्टैक से प्राप्त कुल रकबा</label>
+                        <input asp-for="TotalAreaAgristack" class="form-control">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label mb-1">कुल रकबा (हे.)</label>
+                        <input asp-for="TotalArea" class="form-control">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label mb-1">धान बोया गया रकबा</label>
+                        <input asp-for="AreaofPaddySown" class="form-control">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label mb-1">किसान की हिस्सेदारी</label>
+                        <input asp-for="FarmerShare" class="form-control">
+                    </div>
+
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-success" id="AddLandBtn" style="margin-top:27px;">
+                            ➕ Add
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <table class="table table-bordered table-striped" id="LandTable">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>क्रमांक</th>
+                                    <th>राज्य</th>
+                                    <th>ज़िला</th>
+                                    <th>तहसील</th>
+                                    <th>गांव</th>
+                                    <th>खसरा संख्या</th>
+                                    <th>एग्रीस्टैक कुल रकबा</th>
+                                    <th>कुल रकबा</th>
+                                    <th>धान रकबा</th>
+                                    <th>हिस्सेदारी</th>
+                                    <th>कार्यवाही</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data here -->
+                                <tr id="NoDataRow">
+                                    <td colspan="11" class="text-center text-muted">
+                                        No data added
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="submit-area mt-4">
+                @* <button type="button" class="btn btn-secondary me-2" id="previewBtn">
+                    पूर्वावलोकन करें
+                </button> *@
+                <button type="submit" class="btn btn-success text-white" onclick="return confirm('फॉर्म फाइनल सबमिट करने से पहले ध्यान से जांच लें, क्योंकि एक बार सेव या सबमिट हो जाने के बाद, उसमें बदलाव करना मुश्किल या असंभव हो सकता है')">
+                    किसान पंजीकरण
+                </button>
+            </div>
+
+        </form>
+
+
+        <!-- Preview Modal -->
+        <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="previewModalLabel">किसान पंजीकरण पूर्वावलोकन</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th>किसान का नाम</th>
+                                    <td id="previewFullName"></td>
+                                </tr>
+                                <tr>
+                                    <th>ईमेल</th>
+                                    <td id="previewEmail"></td>
+                                </tr>
+                                <tr>
+                                    <th>मोबाइल नंबर</th>
+                                    <td id="previewMobileNumber"></td>
+                                </tr>
+                                <tr>
+                                    <th>लिंग</th>
+                                    <td id="previewGender"></td>
+                                </tr>
+                                <tr>
+                                    <th>जन्मतिथि</th>
+                                    <td id="previewDOB"></td>
+                                </tr>
+                                <tr>
+                                    <th>पिता / पति का नाम</th>
+                                    <td id="previewFatherHusbandName"></td>
+                                </tr>
+                                <tr>
+                                    <th>राज्य</th>
+                                    <td id="previewState"></td>
+                                </tr>
+                                <tr>
+                                    <th>ज़िला</th>
+                                    <td id="previewDistrict"></td>
+                                </tr>
+                                <tr>
+                                    <th>तहसील</th>
+                                    <td id="previewTahsil"></td>
+                                </tr>
+                                <tr>
+                                    <th>क्षेत्र का प्रकार</th>
+                                    <td id="previewAreaType"></td>
+                                </tr>
+                                <tr>
+                                    <th>गांव</th>
+                                    <td id="previewVillage"></td>
+                                </tr>
+                                <tr>
+                                    <th>पिनकोड</th>
+                                    <td id="previewPincode"></td>
+                                </tr>
+                                <tr>
+                                    <th>पूरा पता</th>
+                                    <td id="previewAddress"></td>
+                                </tr>
+                                <tr>
+                                    <th>खसरा संख्या</th>
+                                    <td id="previewLandRecordNumber"></td>
+                                </tr>
+                                <tr>
+                                    <th>कुल रकबा (एग्रीस्टैक)</th>
+                                    <td id="previewTotalAreaAgristack"></td>
+                                </tr>
+                                <tr>
+                                    <th>कुल रकबा (हे.)</th>
+                                    <td id="previewTotalArea"></td>
+                                </tr>
+                                <tr>
+                                    <th>धान बोया गया रकबा</th>
+                                    <td id="previewAreaofPaddySown"></td>
+                                </tr>
+                                <tr>
+                                    <th>किसान की हिस्सेदारी</th>
+                                    <td id="previewFarmerShare"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">बंद करें</button>
+                        <button type="button" class="btn btn-primary" id="saveFromPreview">सुरक्षित करें</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    let editRow = null;
+
+    $(document).ready(function () {
+
+        $("#AddLandBtn").click(function () {
+
+            var state = $("input[name='State']").val();
+            var district = $("input[name='District']").val();
+            var tehsilId = $("#LandTahsilDropdown").val();
+            var tehsilText = $("#LandTahsilDropdown option:selected").text();
+            var villageId = $("#LandVillageTypeDropdown").val();
+            var villageText = $("#LandVillageTypeDropdown option:selected").text();
+            var khasra = $("input[name='LandRecordNumber']").val();
+            var TotalAreaAgristack = $("input[name='TotalAreaAgristack']").val();
+            var totalArea = $("input[name='TotalArea']").val();
+            var paddyArea = $("input[name='AreaofPaddySown']").val();
+            var share = $("input[name='FarmerShare']").val();
+
+            if (tehsilId === "" || villageId === "" || khasra === "") {
+                alert("कृपया सभी आवश्यक विवरण भरें");
+                return;
+            }
+
+            // EDIT MODE
+            if (editRow != null) {
+
+                $(editRow).find("td:eq(3)").text(tehsilText).attr("data-id", tehsilId);
+                $(editRow).find("td:eq(4)").text(villageText).attr("data-id", villageId);
+                $(editRow).find("td:eq(5)").text(khasra);
+                $(editRow).find("td:eq(6)").text(TotalAreaAgristack);  // Fixed
+                $(editRow).find("td:eq(7)").text(totalArea);
+                $(editRow).find("td:eq(8)").text(paddyArea);
+                $(editRow).find("td:eq(9)").text(share);
+
+                editRow = null;
+                $("#AddLandBtn").text("➕ Add");
+
+            } else {
+                //  ADD MODE
+                $("#NoDataRow").remove();
+
+                let srNo = $("#LandTable tbody tr").length + 1;
+
+                $("#LandTable tbody").append(`
+                    <tr>
+                        <td class="srNo">${srNo}</td>
+                        <td>${state}</td>
+                        <td>${district}</td>
+                        <td data-id="${tehsilId}">${tehsilText}</td>
+                        <td data-id="${villageId}">${villageText}</td>
+                        <td>${khasra}</td>
+                        <td>${TotalAreaAgristack}</td>  <!-- Fixed -->
+                        <td>${totalArea}</td>
+                        <td>${paddyArea}</td>
+                        <td>${share}</td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-primary editBtn">Edit</button>
+                            <button type="button" class="btn btn-sm btn-danger deleteBtn">Delete</button>
+                        </td>
+                    </tr>
+                `);
+            }
+
+            clearForm();
+        });
+
+        //  EDIT
+        $("#LandTable").on("click", ".editBtn", function () {
+            editRow = $(this).closest("tr");
+
+            $("#LandTahsilDropdown").val($(editRow).find("td:eq(3)").data("id"));
+            $("#LandVillageTypeDropdown").val($(editRow).find("td:eq(4)").data("id"));
+            $("input[name='LandRecordNumber']").val($(editRow).find("td:eq(5)").text());
+            $("input[name='TotalAreaAgristack']").val($(editRow).find("td:eq(6)").text());  // Fixed
+            $("input[name='TotalArea']").val($(editRow).find("td:eq(7)").text());
+            $("input[name='AreaofPaddySown']").val($(editRow).find("td:eq(8)").text());
+            $("input[name='FarmerShare']").val($(editRow).find("td:eq(9)").text());
+
+            $("#AddLandBtn").text("✏️ Update");
+        });
+
+        //  DELETE
+        $("#LandTable").on("click", ".deleteBtn", function () {
+            if (confirm("क्या आप यह रिकॉर्ड हटाना चाहते हैं?")) {
+                $(this).closest("tr").remove();
+                resetSerialNo();
+            }
+
+            if ($("#LandTable tbody tr").length === 0) {
+                $("#LandTable tbody").append(`
+                    <tr id="NoDataRow">
+                        <td colspan="10" class="text-center text-muted">No data added</td>
+                    </tr>
+                `);
+            }
+        });
+
+        // Reset Serial Numbers
+        function resetSerialNo() {
+            $("#LandTable tbody tr").each(function (index) {
+                $(this).find(".srNo").text(index + 1);
+            });
+        }
+
+        function clearForm() {
+            $("#LandTahsilDropdown").val('');
+            $("#LandVillageTypeDropdown").val('');
+            $("input[name='LandRecordNumber']").val('');
+            $("input[name='TotalArea']").val('');
+            $("input[name='TotalAreaAgristack']").val('');
+            $("input[name='AreaofPaddySown']").val('');
+            $("input[name='FarmerShare']").val('');
+        }
+
+    });
+</script>
+
+
+<script>
+    document.getElementById('previewBtn').addEventListener('click', function() {
+        // Populate preview fields
+        document.getElementById('previewFullName').innerText = document.querySelector('[asp-for="FullName"]').value;
+        document.getElementById('previewEmail').innerText = document.querySelector('[asp-for="Email"]').value;
+        document.getElementById('previewMobileNumber').innerText = document.querySelector('[asp-for="MobileNumber"]').value;
+        document.getElementById('previewGender').innerText = document.querySelector('[asp-for="Gender"]').value;
+        document.getElementById('previewDOB').innerText = document.querySelector('[asp-for="DOB"]').value;
+        document.getElementById('previewFatherHusbandName').innerText = document.querySelector('[asp-for="FatherHusbandName"]').value;
+        document.getElementById('previewState').innerText = document.querySelector('[asp-for="State"]').value;
+        document.getElementById('previewDistrict').innerText = document.querySelector('[asp-for="District"]').value;
+        document.getElementById('previewTahsil').innerText = document.querySelector('[asp-for="tahsil"]').value;
+        document.getElementById('previewAreaType').innerText = document.querySelector('[asp-for="AreaType"]').value;
+        document.getElementById('previewVillage').innerText = document.querySelector('[asp-for="village"]').value;
+        document.getElementById('previewPincode').innerText = document.querySelector('[asp-for="pincode"]').value;
+        document.getElementById('previewAddress').innerText = document.querySelector('[asp-for="address"]').value;
+        document.getElementById('previewLandRecordNumber').innerText = document.querySelector('[asp-for="LandRecordNumber"]').value;
+        document.getElementById('previewTotalAreaAgristack').innerText = document.querySelector('[asp-for="TotalAreaAgristack"]').value;
+        document.getElementById('previewTotalArea').innerText = document.querySelector('[asp-for="TotalArea"]').value;
+        document.getElementById('previewAreaofPaddySown').innerText = document.querySelector('[asp-for="AreaofPaddySown"]').value;
+        document.getElementById('previewFarmerShare').innerText = document.querySelector('[asp-for="FarmerShare"]').value;
+
+        // Show modal
+        var previewModal = new bootstrap.Modal(document.getElementById('previewModal'));
+        previewModal.show();
+    });
+
+    // Save from preview
+    document.getElementById('saveFromPreview').addEventListener('click', function() {
+        document.querySelector('form').submit();
+    });
+</script>

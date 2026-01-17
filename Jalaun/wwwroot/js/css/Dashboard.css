@@ -1,0 +1,30 @@
+﻿.card-body {
+    padding-top: 1.25rem;
+}
+
+#ENGFont {
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+}
+
+#HindiFont {
+    font-size: 12px;
+    margin-bottom: 0rem;
+}
+
+a:hover .card {
+    opacity: 0.9;
+}
+
+a:hover div {
+    opacity: 0.9;
+}
+
+a:hover {
+    opacity: 0.9;
+}
+
+.card-title {
+    float: initial;
+    text-decoration-color: white;
+}
