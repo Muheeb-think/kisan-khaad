@@ -1,0 +1,43 @@
+﻿@model List<TehsilViewModel>
+
+<table class="table table-responsive">
+    <thead class="table-dark">
+        <tr>
+            <th>क्रमांक.</th>
+            <th>जिले का नाम</th>
+            <th>तहसील</th>
+            <th>कार्रवाई</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            int i = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>@item.DistrictName</td>
+                    <td>@item.TehsilNameHi</td>
+                   
+                    <td>
+                        <button class="btn btn-sm btn-primary"
+                                onclick="editTehsil('@item.TehsilNameEng','@item.TehsilNameHi', @item.Id)">
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+                i++;
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center text-danger">
+                    No record found
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

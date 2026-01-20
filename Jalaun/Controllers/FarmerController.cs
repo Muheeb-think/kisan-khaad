@@ -1,5 +1,6 @@
-﻿using BAL;
-using BAL.MasterData;
+﻿
+using BAL.Services;
+using DAL.Repo;
 using DAL.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,48 +10,17 @@ namespace Jalaun.Controllers
 {
     public class FarmerController : Controller
     {
-        private readonly IMastersData _data;
-        private readonly IRegistration _bal;
-        public FarmerController(IMastersData data,IRegistration bal)
+        private readonly IMasterDataBAL _bal;
+        private readonly IRegistration _repo;
+     
+        public FarmerController(IMasterDataBAL bal, IRegistration repo)
         {
-            this._data = data;
-            this._bal  = bal;
+            this._repo = repo;
+            this._bal = bal;
         }
         public IActionResult Registration()
         {
-            DataSet ds = _data.SelectTehsil();
-
-            var tehsilList = new List<TehsilModel>();
-            var farmerCategoryList = new List<FarmerCategoryModel>();
-
-            // Tehsil List
-            foreach (DataRow row in ds.Tables[0].Rows)
-            {
-                tehsilList.Add(new TehsilModel
-                {
-                    Id = Convert.ToInt32(row["Id"]),
-                    TehsilName = row["TehsilName"].ToString()
-                });
-            }
-
-            // Farmer Category List
-            foreach (DataRow row in ds.Tables[1].Rows)
-            {
-                farmerCategoryList.Add(new FarmerCategoryModel
-                {
-                    CategoryId = Convert.ToInt32(row["CategoryId"]),
-                    CategoryNameHindi = row["CategoryNameHindi"].ToString()
-                });
-            }
-
-            //  Single Model Creation
-            RegisterViewModel model = new RegisterViewModel
-            {
-                TehsilList = tehsilList,
-                FarmerCategoryList = farmerCategoryList,
-                DOB = null
-            };
-
+            RegisterViewModel model = _bal.SelectTehsilandFarmerCateogryList();
             return View(model);
         }
 
@@ -58,8 +28,8 @@ namespace Jalaun.Controllers
         [HttpPost]
         public IActionResult Registration(RegisterViewModel model)
         {
-            DataTable dt=_bal.FarmerRegistration(model);
-            if(dt.Rows.Count > 0)
+            DataTable dt = _repo.FarmerRegistration(model);
+            if (dt.Rows.Count > 0)
             {
                 if (dt.Rows[0]["Message"].ToString() == "1")
                 {
@@ -73,44 +43,76 @@ namespace Jalaun.Controllers
             }
             return View();
         }
-        public IActionResult TempForm()
-        {
-            return View();
-        }
+
 
         [HttpGet]
         public IActionResult GetAreaTypesByTehsil(int tahsilId)
         {
-            DataTable dt = _data.SelectBlock(tahsilId);
-            var blockList = new List<BlockModel>();
-
-            foreach (DataRow row in dt.Rows)
-            {
-                blockList.Add(new BlockModel
-                {
-                    BlockId = Convert.ToInt32(row["BlockId"]),
-                    BlockName = row["BlockName"].ToString() 
-                });
-            }
+            List<BlockModel> blockList = _bal.SelectBlockList(tahsilId);
             return Json(blockList);
         }
 
         [HttpGet]
         public IActionResult GetVillageByBlock(int BlockId)
         {
-            DataTable dt = _data.SelectVillageMaster(BlockId);
-            var blockList = new List<VillageModel>();
-
-            foreach (DataRow row in dt.Rows)
-            {
-                blockList.Add(new VillageModel
-                {
-                    VillageId = Convert.ToInt32(row["VillageId"]),
-                    VillageName = row["VillageName"].ToString()
-                });
-            }
-            return Json(blockList);
+            List<Village> villageList = _bal.GetVillageList(BlockId);
+            return Json(villageList);
+        }
+        #region Mukeem
+        [HttpGet]
+        public IActionResult FertilizerDemand()
+        {
+            return View();
         }
 
+        [HttpPost]
+        public IActionResult SearchFarmerById([FromBody] FarmerSearchRequest request)
+        {
+            try
+            {
+                request.Action = "FarmerDetailById";
+                var data = _repo.FarmerDetailsbyId(request);
+
+                var farmer = data.AsEnumerable().Select(dr => new
+                {
+                    FarmerName = dr["FarmerName"]?.ToString(),
+                    VillageNameHi = dr["VillageNameHi"]?.ToString(),
+                    CropArea = dr["CropArea"]?.ToString()
+                }).FirstOrDefault();
+
+                return Ok(new { status = true, data = farmer });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { status = false, message = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        public IActionResult FertilizerDetailsById([FromBody] FertilizerDetails obj)
+        {
+            try
+            {
+                obj.Action = "FertilizerListByCrop";
+                var data = _repo.FertilizerDetailsById(obj);
+
+                var fertilizerList = data.AsEnumerable().Select(dr => new
+                {
+                    FertilizerNameHindi = dr["FertilizerNameHindi"]?.ToString(),
+                    FertilizerCode = dr["FertilizerCode"]?.ToString(),
+                    DoseQty = Convert.ToDecimal(dr["Dose_per_hectare_kg"]),
+                    Rate = Convert.ToDecimal(dr["FertilizerRatePerKg"])
+                }).ToList();
+
+                return Ok(new { status = true, data = fertilizerList });
+
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { status = false, message = ex.Message });
+            }
+        }
+        #endregion
     }
 }

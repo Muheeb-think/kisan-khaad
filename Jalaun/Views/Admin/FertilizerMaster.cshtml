@@ -1,0 +1,207 @@
+﻿@{
+    ViewData["Title"] = "FertilizerMaster";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model DAL.ViewModel.FertilizerViewModel
+
+@if (TempData["InsertFertilizer"] != null)
+{
+    <script>
+        var villageName = @Html.Raw(Json.Serialize(TempData["InsertFertilizer"]))
+        alert(villageName);
+    </script>
+}
+
+<script>
+    $(document).ready(function () {
+        $('#tblVillage').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            lengthChange: true,
+            info: true
+        });
+    });
+</script>
+
+
+<div class="card">
+    <div class="card-header">
+        <div class="row align-items-center">
+            <div class="col">
+                <h4 class="card-title">उर्वरक मास्टर</h4>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="card-body pt-0">
+
+        <form asp-action="FertilizerMaster" asp-controller="Admin" asp-antiforgery="true" method="post">
+            <input type="hidden" asp-for="FertilizerId" id="FertilizerId" />
+
+
+            <div class="row mb-3 align-items-end">
+
+                @* <div class="col-md-4">
+                    <label class="form-label">फसल<span style="color:red;">*</span></label>
+                    <select asp-for="CropId"
+                            asp-items="@(new SelectList(Model.CropModels, "CropId", "CropNameHindi"))"
+                            class="form-select">
+                        <option value="">-- फसल चुनें --</option>
+                    </select>
+
+                    <div class="text-danger" style="min-height:1.5em;">
+                        <span asp-validation-for="CropId"></span>
+                    </div>
+                </div> *@
+
+                <div class="col-md-4">
+                    <label class="form-label">उर्वरक का नाम हिंदी</label>
+                    <input asp-for="FertilizerNameHindi" class="form-control" />
+
+                    <div class="text-danger" style="min-height:1.5em;">
+                        <span asp-validation-for="FertilizerNameHindi"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label"> उर्वरक का अंग्रेज़ी </label>
+                    <input asp-for="FertilizerNameEnglish" class="form-control" />
+
+                    <div class="text-danger" style="min-height:1.5em;">
+                        <span asp-validation-for="FertilizerNameEnglish"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">उर्वरक का दर </label>
+                    <input asp-for="FertilizerRate" type="number" class="form-control" />
+
+                    <div class="text-danger" style="min-height:1.5em;">
+                        <span asp-validation-for="FertilizerRate"></span>
+                    </div>
+                </div>
+
+               
+                <!-- Submit button -->
+                <div class="col-md-4 d-flex align-items-end">
+
+                    <input type="submit" id="btnAdd" value="उर्वरक जोड़ें" class="btn btn-success w-100" style="margin-bottom:20px;" />
+                </div>
+            </div>
+        </form>
+
+
+        <!-- Village List Table -->
+        <div class="row mt-4">
+            <table class="table table-bordered table-striped" id="tblVillage">
+                <thead>
+                    <tr>
+                        <th>क्रमांक</th>
+                        <th>उर्वरक</th>
+                        <th>उर्वरक </th>
+                        <th>उर्वरक दर</th>
+                        <th>कार्यवाही</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int i = 1;
+                    }
+                    @if (Model.Fertilizers != null && Model.Fertilizers.Any())
+                    {
+                        foreach (var fertilizer in Model.Fertilizers)
+                        {
+                            <tr>
+                                <td>@i</td>
+                                <td>@fertilizer.FertilizerNameHindi</td>
+                                <td>@fertilizer.FertilizerNameEnglish</td>
+                                <td>@fertilizer.FertilizerRate</td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm"
+                                       href="javascript:void(0);"
+                                       onclick="editfertilizer('@fertilizer.FertilizerId','@fertilizer.FertilizerNameHindi','@fertilizer.FertilizerId',@fertilizer.FertilizerRate,'@fertilizer.FertilizerNameEnglish')">
+                                        Edit
+                                    </a>
+
+                                    <a class="btn btn-danger btn-sm delete-fertilizer" href="javascript:void(0);" data-id="@fertilizer.FertilizerId">
+                                        Delete
+                                    </a>
+
+
+                                </td>
+                            </tr>
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="3" class="text-center">कोई डेटा उपलब्ध नहीं है</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+        $(document).ready(function () {
+            // Delete Crop
+            $(document).on('click', '.delete-fertilizer', function () {
+
+                    if (!confirm("क्या आप वाकई इस उर्वरक को हटाना चाहते हैं?"))
+                    return;
+
+                var FertilizerId = $(this).data('id');
+                var token = $('input[name="__RequestVerificationToken"]').val();
+                var row = $(this).closest('tr');
+
+
+                $.ajax({
+                    url: '@Url.Action("DeleteFertilizer", "Admin")',
+                    type: 'POST',
+                    data: {
+                        FertilizerId: FertilizerId,               // MUST match controller parameter
+                        __RequestVerificationToken: token
+                    },
+                    success: function (res) {
+                        if (res.success) {
+                            alert(res.message);
+                            row.remove();  // Remove row from table
+                        } else {
+                            alert(res.message);
+                        }
+                    },
+                    error: function () {
+                        alert("कुछ त्रुटि हुई, पुनः प्रयास करें");
+                    }
+                });
+
+            });
+
+        });
+
+
+        // Edit function
+    function editfertilizer(FertilizerId, FertilizerNameHindi, cropId,FertilizerRate,FertilizerNameEnglish) {
+
+            $('#FertilizerId').val(FertilizerId);
+            $('#FertilizerNameHindi').val(FertilizerNameHindi);
+            $('#FertilizerNameEnglish').val(FertilizerNameEnglish);
+            $('#FertilizerRate').val(FertilizerRate);
+            $('#CropId').val(cropId);
+
+            $('#btnAdd').val("अपडेट करें");
+        }
+</script>
+
+
+
+
+
+

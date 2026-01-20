@@ -1,0 +1,339 @@
+﻿@{
+    ViewData["Title"] = "FertilizerDemand";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <div class="row align-items-center">
+            <div class="col">
+                <h4 class="card-title">उर्वरक मांग प्रबंधन</h4>
+            </div>
+        </div>
+    </div>
+    <div class="card-body pt-0">
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="example-text-input" class="col-sm-12 col-form-label">किसान ID / आधार नंबर<i class="text-danger">*</i></label>
+                <div class="col-sm-12">
+                    <input class="form-control" type="text" id="FarmerId">
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <div class="col-sm-12">
+                   <button class="btn btn-info mt-4" onclick="SearchFarmerById()">Search</button>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <label for="example-text-input" class="col-sm-12 col-form-label">किसान नाम<i class="text-danger">*</i></label>
+                <div class="col-sm-12">
+                    <input class="form-control" type="text" id="FarmerName" readonly>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <label for="example-text-input" class="col-sm-12 col-form-label">गाँव<i class="text-danger">*</i></label>
+                <div class="col-sm-12">
+                    <input class="form-control" type="text" id="Village" readonly>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <label for="example-text-input" class="col-sm-12 col-form-label">कुल भूमि क्षेत्र (हेक्टेयर)<i class="text-danger">*</i></label>
+                <div class="col-sm-12">
+                    <input class="form-control" type="text" id="Area" readonly>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <label for="example-text-input" class="col-sm-12 col-form-label">फसल का बुवाई क्षेत्र (हेक्टेयर में)<i class="text-danger">*</i></label>
+                <div class="col-sm-12">
+                    <input class="form-control" type="text" id="CropArea" onkeyup="CalculateData()">
+                    <span id="CropAreaError" class="text-danger" style="display:none;">
+                        फसल का बुवाई क्षेत्र कुल भूमि क्षेत्र से अधिक नहीं हो सकता
+                    </span>
+                    <span id="CropAreaError1" class="text-danger" style="display:none;">
+                        पहले फसल का बुवाई क्षेत्र डालें
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <label for="example-text-input" class="col-sm-12 col-form-label">समिति चयन<i class="text-danger">*</i></label>
+                <div class="col-sm-12">
+                    <select class="form-control" id="SamitiId">
+                        <option>Choose Option</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <label for="example-text-input" class="col-sm-12 col-form-label">सत्र<i class="text-danger">*</i></label>
+                <div class="col-sm-12">
+                    <select class="form-control" id="SeasonId">
+                        <option>Choose Option</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <label for="example-text-input" class="col-sm-12 col-form-label">फसल चयन<i class="text-danger">*</i></label>
+                <div class="col-sm-12">
+                    <select class="form-control" id="CropId">
+                        <option>Choose Option</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <label for="example-text-input" class="col-sm-12 col-form-label">आवश्यकता समय<i class="text-danger">*</i></label>
+                <div class="col-sm-12">
+                    <select class="form-control" id="NeedTimeId">
+                        <option>Choose Option</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card mt-3">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">💰 उर्वरक बिल सारांश (Billing Summary)</h5>
+                </div>
+
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped mb-0 text-center align-middle">
+                            <thead class="table-secondary">
+                                <tr>
+                                    <th>उर्वरक</th>
+                                    <th>मात्रा (किलो)</th>
+                                    <th>दर (₹ / किलो)</th>
+                                    <th>राशि (₹)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="fertilizerBody">
+                                @* <tr>
+                                    <td>यूरिया</td>
+                                    <td><input type="number" class="form-control" id="UreaQty" value="0" readonly></td>
+                                    <td><input type="number" class="form-control" id="UreaRate" value="0" readonly></td>
+                                    <td><input type="text" class="form-control" id="UreaAmount" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>डीएपी</td>
+                                    <td><input type="number" class="form-control" id="DAPQty" value="0" readonly></td>
+                                    <td><input type="number" class="form-control" id="DAPRate" value="0" readonly></td>
+                                    <td><input type="text" class="form-control" id="DAPAmount" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>एमओपी</td>
+                                    <td><input type="number" class="form-control" id="MOPQty" value="0"  readonly></td>
+                                    <td><input type="number" class="form-control" id="MOPRate" value="0" readonly></td>
+                                    <td><input type="text" class="form-control" id="MOPAmount" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>एनपीके कॉम्प्लेक्स</td>
+                                    <td><input type="number" class="form-control" id="NPKQty" value="0" readonly></td>
+                                    <td><input type="number" class="form-control" id="NPKRate" value="0" readonly></td>
+                                    <td><input type="text" class="form-control" id="NPKAmount" readonly></td>
+                                </tr> *@
+                            </tbody>
+                            <tfoot class="table-light">
+                                <tr>
+                                    <th colspan="3" class="text-end">कुल राशि (Total)</th>
+                                    <th>
+                                        <input type="text" class="form-control fw-bold text-end" id="GrandTotal" readonly>
+                                    </th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          @*   <div class="col-sm-4">
+                <label for="example-text-input" class="col-sm-12 col-form-label">यूरिया (किलो)<i class="text-danger">*</i></label>
+                <div class="col-sm-12">
+                    <input class="form-control" type="text" id="example-text-input">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <label for="example-text-input" class="col-sm-12 col-form-label">डीएपी (किलो)<i class="text-danger">*</i></label>
+                <div class="col-sm-12">
+                    <input class="form-control" type="text" id="example-text-input">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <label for="example-text-input" class="col-sm-12 col-form-label">एमओपी (किलो)<i class="text-danger">*</i></label>
+                <div class="col-sm-12">
+                    <input class="form-control" type="text" id="example-text-input">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <label for="example-text-input" class="col-sm-12 col-form-label">एनपीके कॉम्प्लेक्स (किलो)<i class="text-danger">*</i></label>
+                <div class="col-sm-12">
+                    <input class="form-control" type="text" id="example-text-input">
+                </div>
+            </div> *@
+            <div class="col-sm-12">
+                <label for="example-text-input" class="col-sm-12 col-form-label">विशेष निर्देश (यदि कोई)<i class="text-danger">*</i></label>
+                <div class="col-sm-12">
+                    <textarea class="form-control" type="text" id="example-text-input"></textarea>
+                </div>
+            </div>
+            
+
+            <div class="text-end mt-3">
+                <button type="button" class="btn btn-success px-4">
+                    ✅ Submit Demand
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $(function () {
+        bindDropDown('SamitiId', 'GetSamiti', 0, -1);
+        bindDropDown('NeedTimeId', 'GetNeedTime', 0, -1);
+        bindDropDown('SeasonId', 'GetSeason', 0, -1);
+        $('#SeasonId').change(function(){
+            var SeasonId = $(this).val();
+            bindDropDown('CropId', 'GetCrops', SeasonId, -1);
+        });
+        $('#CropId').change(function(){
+            var CropId = $(this).val();
+            let CropMxArea  = parseFloat($('#CropArea').val()) || 0;
+            if(CropMxArea!=0){
+                FertilizerDetailsById(CropId);
+            }
+            else{
+                $('#CropAreaError1').show();
+                $('#CropArea').addClass('is-invalid');
+                $('#CropId').val(-1);
+            }
+        });
+    });
+
+        function SearchFarmerById() {
+        var FarmerId = $('#FarmerId').val();
+
+        $.ajax({
+            type: 'POST',
+            url: '/Farmer/SearchFarmerById',
+            contentType: 'application/json',
+            data: JSON.stringify({ FarmerId }),
+            success: function (response) {
+
+                console.log(response.data);
+
+                if (response.status && response.data) {
+                    $('#FarmerName').val(response.data.farmerName ?? '');
+                    $('#Village').val(response.data.villageNameHi ?? '');
+                    $('#Area').val(response.data.cropArea ?? '');
+                }
+            }
+        });
+    }
+
+        function FertilizerDetailsById(CropId) {
+
+        $.ajax({
+            type: 'POST',
+            url: '/Farmer/FertilizerDetailsById',
+            contentType: 'application/json',
+            data: JSON.stringify({ CropId }),
+               success: function (response) {
+
+        let tbody = $('#fertilizerBody');
+        if (!response.status || response.data.length === 0) { tbody.empty();};
+
+        tbody.empty();
+
+        let CropArea = parseFloat($('#CropArea').val()) || 0;
+        let Total = 0;   
+
+        $.each(response.data, function (i, item) {
+
+            let doseQty = parseFloat(item.doseQty) || 0;
+            let rate    = parseFloat(item.rate) || 0;
+
+            let qty    = doseQty * CropArea;
+            let amount = qty * rate;
+
+            let row = `
+    <tr>
+        <td>${item.fertilizerNameHindi}</td>
+
+        <td>
+            <input class="form-control text-end"
+                   id="${item.fertilizerCode}_Qty"
+                   value="${qty.toFixed(2)}" onkeyup="ValidateQuantity('${item.fertilizerCode}')">
+            <input type="hidden"
+                   id="${item.fertilizerCode}_Qtyhdn"
+                   value="${qty}">
+        </td>
+
+        <td>
+            <input class="form-control text-end"
+                   id="${item.fertilizerCode}_Rate"
+                   value="${rate.toFixed(2)}" readonly>
+        </td>
+
+        <td>
+            <input class="form-control text-end"
+                   id="${item.fertilizerCode}_Amount"
+                   value="${amount.toFixed(2)}"
+                   readonly>
+        </td>
+    </tr>`;
+
+            Total += amount;  
+            tbody.append(row);
+        });
+
+        $('#GrandTotal').val(Total.toFixed(2));
+    },
+
+        });
+    }
+
+
+      function CalculateData() {
+
+        let TotalArea = parseFloat($('#Area').val()) || 0;
+        let CropArea  = parseFloat($('#CropArea').val()) || 0;
+
+        if (CropArea > TotalArea) {
+
+            $('#CropAreaError').show();
+            $('#CropArea').addClass('is-invalid');
+            $('#CropArea').val('')
+            return false;
+
+        } else {
+
+            $('#CropAreaError').hide();
+            $('#CropAreaError1').hide();
+            $('#CropArea').removeClass('is-invalid');
+        }
+    }
+
+        function ValidateQuantity(fertilizerCode) {
+            debugger;
+        let MaxQty   = parseFloat($('#' + fertilizerCode + '_Qtyhdn').val()) || 0;
+        let InputQty = parseFloat($('#' + fertilizerCode + '_Qty').val()) || 0;
+
+        if (InputQty > MaxQty) {
+
+            $('#' + fertilizerCode + '_Qty')
+                .addClass('is-invalid');
+
+            alert('मात्रा निर्धारित सीमा से अधिक नहीं हो सकती');
+
+        } else {
+
+            $('#' + fertilizerCode + '_Qty')
+                .removeClass('is-invalid');
+        }
+    }
+
+
+
+
+</script>
+
+

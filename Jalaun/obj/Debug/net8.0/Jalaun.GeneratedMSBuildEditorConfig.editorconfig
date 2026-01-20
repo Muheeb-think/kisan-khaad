@@ -26,8 +26,36 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/CreateSociety.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlU29jaWV0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/CropMaster.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JvcE1hc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/FertilizerMaster.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRmVydGlsaXplck1hc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/TehsilMaster.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVGVoc2lsTWFzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/VillageMaster.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlsbGFnZU1hc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Auth/AccesDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxBY2Nlc0RlbmllZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Farmer/FertilizerDemand.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWVyXEZlcnRpbGl6ZXJEZW1hbmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Farmer/Registration.cshtml]
@@ -48,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_partialTehsilMaster.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9wYXJ0aWFsVGVoc2lsTWFzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_ValidationScriptsPartial.cshtml]

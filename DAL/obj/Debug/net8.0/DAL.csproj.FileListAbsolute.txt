@@ -34,3 +34,16 @@ C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\DAL\obj\Debug\
 C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\DAL\obj\Debug\net8.0\refint\DAL.dll
 C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\DAL\obj\Debug\net8.0\DAL.pdb
 C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\DAL\obj\Debug\net8.0\ref\DAL.dll
+C:\Muheeb.Proect\Git\kisaan-khaad\DAL\bin\Debug\net8.0\DAL.deps.json
+C:\Muheeb.Proect\Git\kisaan-khaad\DAL\bin\Debug\net8.0\DAL.dll
+C:\Muheeb.Proect\Git\kisaan-khaad\DAL\bin\Debug\net8.0\DAL.pdb
+C:\Muheeb.Proect\Git\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+C:\Muheeb.Proect\Git\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Muheeb.Proect\Git\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+C:\Muheeb.Proect\Git\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+C:\Muheeb.Proect\Git\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+C:\Muheeb.Proect\Git\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.sourcelink.json
+C:\Muheeb.Proect\Git\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.dll
+C:\Muheeb.Proect\Git\kisaan-khaad\DAL\obj\Debug\net8.0\refint\DAL.dll
+C:\Muheeb.Proect\Git\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.pdb
+C:\Muheeb.Proect\Git\kisaan-khaad\DAL\obj\Debug\net8.0\ref\DAL.dll

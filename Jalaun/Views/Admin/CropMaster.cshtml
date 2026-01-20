@@ -1,0 +1,182 @@
+﻿@model DAL.ViewModel.CropViewModel
+@{
+    ViewData["Title"] = "CropMaster";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (TempData["InsertVillage"] != null)
+{
+    <script>
+        var villageName = @Html.Raw(Json.Serialize(TempData["InsertCrop"]))
+        alert(villageName);
+    </script>
+}
+
+<script>
+    $(document).ready(function () {
+        $('#tblVillage').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            lengthChange: true,
+            info: true
+        });
+    });
+</script>
+
+
+<div class="card">
+    <div class="card-header">
+        <div class="row align-items-center">
+            <div class="col">
+                <h4 class="card-title">फसल मास्टर</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body pt-0">
+
+        <form asp-action="CropMaster" asp-controller="Admin" asp-antiforgery="true" method="post">
+            <input type="hidden" asp-for="CropId" id="CropId" />
+
+            <div class="row mb-3 align-items-end">
+
+                <div class="col-md-4">
+                    <label class="form-label">मौसम<span style="color:red;">*</span></label>
+                    <select asp-for="SeasonId"
+                            asp-items="@(new SelectList(Model.seasonModels, "SeasonId", "SeasonNameHindi"))"
+                            class="form-select">
+                        <option value="">-- मौसम चुनें --</option>
+                    </select>
+
+                    <div class="text-danger" style="min-height:1.5em;">
+                        <span asp-validation-for="SeasonId"></span>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <label class="form-label">फसल का नाम हिंदी</label>
+                    <input asp-for="CropNameHindi" class="form-control" />
+
+                    <div class="text-danger" style="min-height:1.5em;">
+                        <span asp-validation-for="CropNameHindi"></span>
+                    </div>
+                </div>
+
+                <!-- Submit button -->
+                <div class="col-md-4 d-flex align-items-end">
+
+                    <input type="submit" id="btnAdd" value="फसल जोड़ें" class="btn btn-success w-100" style="margin-bottom:20px;" />
+                </div>
+            </div>
+        </form>
+
+
+        <!-- Village List Table -->
+        <div class="row mt-4">
+            <table class="table table-bordered table-striped" id="tblVillage">
+                <thead>
+                    <tr>
+                        <th>क्रमांक</th>
+                        <th>मौसम</th>
+                        <th>फसल</th>
+                        <th>कार्यवाही</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int i = 1;
+                    }
+                    @if (Model.CropModels != null && Model.CropModels.Any())
+                    {
+                        foreach (var crop in Model.CropModels)
+                        {
+                            <tr>
+                                <td>@i</td>
+                                <td>@crop.SeasonNameHindi</td>
+                                <td>@crop.CropNameHindi</td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm"
+                                       href="javascript:void(0);"
+                                       onclick="editCrop('@crop.CropId','@crop.CropNameHindi','@crop.SeasonId')">
+                                        Edit
+                                    </a>
+
+                                    <a class="btn btn-danger btn-sm delete-crop" href="javascript:void(0);" data-id="@crop.CropId">
+                                        Delete
+                                    </a>
+
+
+                                </td>
+                            </tr>
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="3" class="text-center">कोई डेटा उपलब्ध नहीं है</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        // Delete Crop
+        $(document).on('click', '.delete-crop', function () {
+
+            if (!confirm("क्या आप वाकई इस फसल को हटाना चाहते हैं?"))
+                return;
+
+            var cropId = $(this).data('id');  
+            var token = $('input[name="__RequestVerificationToken"]').val(); // AntiForgeryToken
+            var row = $(this).closest('tr');  
+
+            alert(cropId);
+
+            $.ajax({
+                url: '@Url.Action("DeleteCrop", "Admin")',
+                type: 'POST',
+                data: {
+                    cropId: cropId,                   
+                    __RequestVerificationToken: token
+                },
+                success: function (res) {
+                    if (res.success) {
+                        alert(res.message);
+                        row.remove();  // Remove row from table
+                    } else {
+                        alert(res.message);
+                    }
+                },
+                error: function () {
+                    alert("कुछ त्रुटि हुई, पुनः प्रयास करें");
+                }
+            });
+
+        });
+
+    });
+
+
+    // Edit function
+      function editCrop(cropId, cropNameHindi, seasonId) {
+
+        $('#CropId').val(cropId);
+        $('#CropNameHindi').val(cropNameHindi);
+        $('#SeasonId').val(seasonId);
+
+        $('#btnAdd').val("अपडेट करें");
+    }
+</script>
+
+
+
+
+

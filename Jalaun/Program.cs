@@ -1,7 +1,8 @@
 using BAL;
-using BAL.MasterData;
+using BAL.Services;
+using DAL.MasterData;
+using DAL.Repo;
 using DAL.SqlHeplers;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,16 +13,9 @@ builder.Services.AddScoped<IDBHelpers, DBHelper>();
 builder.Services.AddScoped<IDataAccess, DataAccess>();
 builder.Services.AddScoped<IMastersData, MasterData>();
 builder.Services.AddScoped<IRegistration, Registration>();
+builder.Services.AddScoped<IMasterDataBAL, MasterDataBAL>();
+builder.Services.AddScoped<ICommonLogics, CommonLogics>();
 
-
-builder.Services.AddAuthentication(option =>
-{
-    option.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-}).AddCookie(option =>
-{
-    option.LoginPath = "/Auth/login";
-    option.AccessDeniedPath = "/Auth/AccesDenied";
-});
 
 builder.Services.AddDistributedMemoryCache();
 
@@ -52,6 +46,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Farmer}/{action=Registration}/{id?}");
+    pattern: "{controller=Admin}/{action=VillageMaster}/{id?}");
 
 app.Run();

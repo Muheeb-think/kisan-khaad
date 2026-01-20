@@ -421,17 +421,21 @@
           }
         }
       },
-      "System.Text.Json/8.0.5": {},
+      "System.Text.Json/8.0.5": {
+        "runtime": {
+          "lib/net8.0/System.Text.Json.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
       "DAL/1.0.0": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "6.1.3",
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0"
         },
         "runtime": {
-          "DAL.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "DAL.dll": {}
         }
       }
     }

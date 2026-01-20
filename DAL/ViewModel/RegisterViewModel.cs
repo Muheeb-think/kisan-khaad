@@ -49,7 +49,7 @@ namespace DAL.ViewModel
         public List<TehsilModel> TehsilList { get; set; }
         public List<FarmerCategoryModel> FarmerCategoryList { get; set; }
         public List<BlockModel> BlockList { get; set; }
-        public List<VillageModel> VillageList { get; set; }
+        public List<Village> VillageList { get; set; }
     }
     public class TehsilModel
     {
@@ -74,5 +74,14 @@ namespace DAL.ViewModel
         public int VillageId { get; set; }
         public string? VillageName { get; set; }
     }
-
+    public class FarmerSearchRequest
+    {
+        public string Action { get; set; }
+        public string FarmerId { get; set; }
+    }
+    public class FertilizerDetails
+    {
+        public string Action { get; set; }
+        public string CropId { get; set; }
+    }
 }

@@ -14,8 +14,11 @@ namespace DAL.SqlHeplers
     {
         public DataTable ExecuteDataTable(string CommandName, SqlParameter[] parameters);
         public DataSet ExecuteDataSet(string CommandName, SqlParameter[] parameters);
+        public int ExecuteNonQuery(string commandText, CommandType commandType = CommandType.Text, params SqlParameter[] parameters);
+        public int ExecuteInsert(string CommandName, SqlParameter[] parameters);
+       
     }
-    public class DBHelper:IDBHelpers
+    public class DBHelper : IDBHelpers
     {
         private readonly string? _ConStr;
 
@@ -103,5 +106,51 @@ namespace DAL.SqlHeplers
                 }
             }
         }
+
+        public int ExecuteNonQuery(string commandText, CommandType commandType = CommandType.Text, params SqlParameter[] parameters)
+        {
+            
+            using (SqlConnection connection = new SqlConnection(_ConStr))
+            {
+                using (SqlCommand command = new SqlCommand(commandText, connection))
+                {
+                    command.CommandType = commandType;
+
+                    if (parameters != null)
+                    {
+                        command.Parameters.AddRange(parameters);
+                    }
+
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected;
+                }
+            }
+        }
+        public int ExecuteInsert(string commandName, SqlParameter[] param)
+        {
+            if (string.IsNullOrWhiteSpace(commandName))
+                throw new ArgumentException("Cannot be empty", nameof(commandName));
+
+            using (SqlConnection conn = new SqlConnection(_ConStr))
+            using (SqlCommand cmd = new SqlCommand(commandName, conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                if (param != null)
+                    cmd.Parameters.AddRange(param);
+
+                conn.Open();
+                return cmd.ExecuteNonQuery();
+            }
+        }
+
+       
+
+
+
+
+
+
     }
 }

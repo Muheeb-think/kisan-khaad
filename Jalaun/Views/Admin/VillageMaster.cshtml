@@ -1,0 +1,174 @@
+﻿@model DAL.ViewModel.VillageViewMaster
+@{
+    ViewData["Title"] = "VillageMaster";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (TempData["InsertVillage"] != null)
+{
+    <script>
+        var villageName = @Html.Raw(Json.Serialize(TempData["InsertVillage"]));
+        alert(villageName);
+    </script>
+}
+
+<script>
+    $(document).ready(function () {
+        $('#tblVillage').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            lengthChange: true,
+            info: true
+        });
+    });
+</script>
+
+
+<div class="card">
+    <div class="card-header">
+        <div class="row align-items-center">
+            <div class="col">
+                <h4 class="card-title">ग्राम मास्टर</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body pt-0">
+
+        <form asp-action="VillageMaster" asp-controller="Admin" asp-antiforgery="true" method="post">
+            <input type="hidden" asp-for="Id" id="VillageId" />
+
+            <div class="row mb-3 align-items-end">
+
+                <div class="col-md-4">
+                    <label class="form-label">ब्लॉक<span style="color:red;">*</span></label>
+                    <select asp-for="BlockId"
+                            asp-items="@(new SelectList(Model.BlockList, "BlockId", "BlockName"))"
+                            class="form-select">
+                        <option value="">-- ब्लॉक चुनें --</option>
+                    </select>
+
+                    <div class="text-danger" style="min-height:1.5em;">
+                        <span asp-validation-for="BlockId"></span>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <label class="form-label">गांव का नाम हिंदी</label>
+                    <input asp-for="VillageNameHindi" class="form-control" />
+
+                    <div class="text-danger" style="min-height:1.5em;">
+                        <span asp-validation-for="VillageNameHindi"></span>
+                    </div>
+                </div>
+
+                <!-- Submit button -->
+                <div class="col-md-4 d-flex align-items-end">
+
+                    <input type="submit" id="btnAdd" value="गांव जोड़ें" class="btn btn-success w-100" style="margin-bottom:20px;" />
+                </div>
+            </div>
+        </form>
+
+
+        <!-- Village List Table -->
+        <div class="row mt-4">
+            <table class="table table-bordered table-striped" id="tblVillage">
+                <thead>
+                    <tr>
+                        <th>क्रमांक</th>
+                        <th>ब्लॉक</th>
+                        <th>ग्राम</th>
+                        <th>कार्यवाही</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int i = 1;
+                    }
+                    @if (Model.Villages != null && Model.Villages.Any())
+                    {
+                        foreach (var village in Model.Villages)
+                        {
+                            <tr>
+                                <td>@i</td>
+                                <td>@village.BlockName</td>
+                                <td>@village.VillageNameHi</td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm"
+                                       href="javascript:void(0);"
+                                       onclick="editVillage('@village.Id','@village.VillageNameHi','@village.BlockId')">
+                                        Edit
+                                    </a>
+
+                                    <a class="btn btn-danger btn-sm delete-village" href="javascript:void(0);"
+                                       data-id="@village.Id">
+                                        Delete
+                                    </a>
+
+                                </td>
+                            </tr>
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="3" class="text-center">कोई डेटा उपलब्ध नहीं है</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        // For dynamically added rows, use on()
+        $(document).on('click', '.delete-village', function () {
+            if (!confirm("क्या आप वाकई इस गांव को हटाना चाहते हैं?")) return;
+
+            var btn = $(this);
+            var id = btn.data('id');
+
+            // Get AntiForgeryToken
+            var token = $('input[name="__RequestVerificationToken"]').val();
+
+            $.ajax({
+                url: '@Url.Action("DeleteVillage", "Admin")',
+                type: 'POST',
+                data: {
+                    id: id,
+                    __RequestVerificationToken: token
+                },
+                success: function (response) {
+                    if (response.success) {
+                        alert(response.message);
+                        btn.closest('tr').remove(); // Remove row
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function () {
+                    alert("कुछ गलती हुई, फिर से प्रयास करें");
+                }
+            });
+        });
+    });
+
+    // Edit function
+    function editVillage(villageId, villageName, blockId) {
+        $('#VillageId').val(villageId);
+        $('#VillageNameHindi').val(villageName);
+        $('#BlockId').val(blockId);
+        $('#btnAdd').val("अपडेट करें");
+    }
+</script>
+
+
+

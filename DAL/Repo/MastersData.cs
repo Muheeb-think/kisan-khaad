@@ -1,0 +1,348 @@
+﻿using DAL.SqlHeplers;
+using DAL.ViewModel;
+using Jalaun.Models;
+using Microsoft.Data.SqlClient;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Net.Http.Headers;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Transactions;
+
+
+namespace DAL.MasterData
+{
+    public interface IMastersData
+    {
+
+        public DataSet SelectTehsil();
+        public DataTable SelectBlock(int? Tehsil);
+        public DataTable SelectVillageMaster(int? blockId);
+        public int SaveTehsil(TehsilViewModel model);
+        public int SaveSociety(SocietyViewModel model);
+    
+
+        public DataTable SelectCropMaster();
+        public DataTable SelectSeasonMaster();
+        public DataTable SelectFertilizerMaster();
+
+        public DataTable SelectCropFertilizerMapping();
+
+        public int InsertVillage(VillageViewMaster obj);
+        public int VillageUpdate(VillageViewMaster obj);
+        public int VillageDelete(VillageViewMaster obj);
+        public int InsertUpdateCropMaster(CropViewModel obj);
+        public int CropDelete(CropViewModel obj);
+        public int FertilizerDelete(FertilizerViewModel obj);
+        public int FertilizerInsertUpdate(FertilizerViewModel obj);
+
+        public int InsertUpdateCropFertilizerMapping(FertilizerCropMappingViewModel obj);
+        public int DeleteFertilizerMapping(FertilizerCropMappingViewModel obj);
+    }
+    public class MasterData : IMastersData
+    {
+        private readonly IDBHelpers _dataAccess;
+        public MasterData(IDBHelpers dataAccess)
+        {
+            this._dataAccess = dataAccess;
+        }
+        public int InsertVillage(VillageViewMaster obj)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@BlockId",obj.BlockId),
+                new SqlParameter("@VillageNameHindi",obj.VillageNameHindi),
+                new SqlParameter("@UserId","1")
+            };
+            int result = _dataAccess.ExecuteInsert("InsertVillage", parameters);
+            return result;
+        }
+        public DataTable SelectBlock(int? Tehsil)
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                new SqlParameter("@Tehsil",Tehsil)
+                };
+                DataTable dt = _dataAccess.ExecuteDataTable("SelectBlock", parameters);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+        public DataSet SelectTehsil()
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                { };
+                DataSet ds = _dataAccess.ExecuteDataSet("SelectTehsilMaster", parameters);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+        public DataTable SelectVillageMaster(int? blockId)
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                new SqlParameter("@BlockId",blockId ?? 0)
+                };
+                DataTable dt = _dataAccess.ExecuteDataTable("SelectVillageMaster", parameters);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+        public DataTable SelectCropMaster()
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                };
+                DataTable dt = _dataAccess.ExecuteDataTable("SelectCrop", parameters);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+        public DataTable SelectSeasonMaster()
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                };
+                DataTable dt = _dataAccess.ExecuteDataTable("SeasonMaster", parameters);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from dal:" + ex.Message);
+            }
+        }
+        public DataTable SelectCropFertilizerMapping()
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                };
+                DataTable dt = _dataAccess.ExecuteDataTable("SP_SelectCropFertilizerMapping", parameters);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from dal:" + ex.Message);
+            }
+        }
+
+        public DataTable SelectFertilizerMaster()
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                };
+                DataTable dt = _dataAccess.ExecuteDataTable("SP_SelectFertilizerMaster", parameters);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from dal:" + ex.Message);
+            }
+        }
+        public int InsertUpdateCropMaster(CropViewModel obj)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@CropNameHindi",obj.CropNameHindi),
+                new SqlParameter("@SeasonId",obj.SeasonId),
+                new SqlParameter("@CropId",obj.CropId > 0 ? obj.CropId : 0),
+                new SqlParameter("@UserId","1")
+            };
+            int result = _dataAccess.ExecuteInsert("SP_InsertUpdateCropDetails", parameters);
+            return result;
+        }
+        public int VillageUpdate(VillageViewMaster village)
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                    new SqlParameter("@VillageId",village.Id),
+                    new SqlParameter("@VillageName",village.VillageNameHindi),
+                    new SqlParameter("@UserId",1),//User perform action 
+                    new SqlParameter("@action",1)
+                };
+                int result = _dataAccess.ExecuteInsert("VillageEditDelete", parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+        public int VillageDelete(VillageViewMaster village)
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                    new SqlParameter("@VillageId",village.Id),
+                    new SqlParameter("@VillageName",village.VillageNameHindi),
+                    new SqlParameter("@UserId",1), //User perform action 
+                    new SqlParameter("@action",2)
+                };
+                int result = _dataAccess.ExecuteInsert("VillageEditDelete", parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+        public int CropDelete(CropViewModel obj)
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                {        
+                    new SqlParameter("@CropId",obj.CropId),
+                    new SqlParameter("@UserId","1"),
+                };
+                int result = _dataAccess.ExecuteInsert("SP_DeleteDropDetails", parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+        public int FertilizerDelete(FertilizerViewModel obj)
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                    new SqlParameter("@FertilizerId",obj.FertilizerId),
+                    new SqlParameter("@UserId","1"),
+                };
+                int result = _dataAccess.ExecuteInsert("SP_DeleteFertilizerMaster", parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+
+        public int FertilizerInsertUpdate(FertilizerViewModel obj)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@FertilizerId",obj.FertilizerId > 0 ? obj.FertilizerId : 0),
+                new SqlParameter("@FertilizerNameHindi",obj.FertilizerNameHindi),
+                new SqlParameter("@FertilizerNameEnglish",obj.FertilizerNameEnglish),
+                new SqlParameter("@FertilizerRate",obj.FertilizerRate),
+                new SqlParameter("@UserId","1")
+            };
+            int result = _dataAccess.ExecuteInsert("SP_InsertUpdateFertilizerMaster", parameters);
+            return result;
+        }
+
+        public int DeleteFertilizerMapping(FertilizerCropMappingViewModel obj)
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                    new SqlParameter("@MappingId",obj.MappingId),
+                    new SqlParameter("@UserId","1"),
+                };
+                int result = _dataAccess.ExecuteInsert("SP_DeleteCropFertilizerMapping", parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+
+        public int InsertUpdateCropFertilizerMapping(FertilizerCropMappingViewModel obj)
+        { 
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@MappingId",obj.MappingId > 0 ? obj.MappingId : 0),
+                new SqlParameter("@FertilizerId",obj.FertilizerId > 0 ? obj.FertilizerId : 0),
+                new SqlParameter("@CropId",obj.CropId),
+                new SqlParameter("@DosePerHectareKg",obj.Dose_per_hectare_kg),
+                new SqlParameter("@UserId","1"),
+            };
+            int result = _dataAccess.ExecuteInsert("SP_InsertUpdateCropFertilizerMapping", parameters);
+            return result;
+        }
+
+        #region Muheeb
+        public int SaveTehsil(TehsilViewModel model)
+        {
+            try
+            {
+
+                SqlParameter[] parameters =
+            {
+                     new SqlParameter("@Id", model.Id>0 ? model.Id: (object)DBNull.Value),
+                    new SqlParameter("@TehsilNameEng", model.TehsilNameEng),
+                    new SqlParameter("@TehsilNameHin", model.TehsilNameHi),
+                    new SqlParameter("@BlockId", model.BlockId),
+                    new SqlParameter("@CreatedBy", 1)
+                };
+                var result = _dataAccess.ExecuteNonQuery("InsertUpdateTehsil", commandType: CommandType.StoredProcedure, parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+        public int SaveSociety(SocietyViewModel model)
+        {
+            try
+            {
+
+                SqlParameter[] parameters =
+            {
+                     new SqlParameter("@Id", model.Id>0 ? model.Id: (object)DBNull.Value),
+                    new SqlParameter("@SocietyNameEng", model.SocietyNameEng),
+                    new SqlParameter("@SocietyNameHi", model.SocietyNameHi),
+                    new SqlParameter("@TehsilId", model.TehsilId),
+                     new SqlParameter("@VillageId", model.VillageId),
+                    new SqlParameter("@CreatedBy", 1)
+                };
+                var result = _dataAccess.ExecuteNonQuery("sp_InsertUpdateSociety", commandType: CommandType.StoredProcedure, parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+
+        #endregion
+    }
+}

@@ -1,4 +1,5 @@
 ﻿using DAL.ModelDTO;
+using DAL.SqlHeplers;
 using DAL.ViewModel;
 using Microsoft.Data.SqlClient;
 using System;
@@ -9,13 +10,15 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.SqlHeplers
+namespace DAL.Repo
 {
     public interface IDataAccess
     {
         public DataTable UserAuthenticate(LoginDTO obj);
-
+        public DataTable DropDownBind(dropdownBinderModel ddlbind);
         public DataTable Registration(RegisterViewModel viewModel);
+        public DataTable FarmerDetailsById(FarmerSearchRequest request);
+        public DataTable FertilizerDetailsById(FertilizerDetails obj);
     }
     public class DataAccess : IDataAccess
     {
@@ -71,5 +74,39 @@ namespace DAL.SqlHeplers
             DataTable ds = _dbHelper.ExecuteDataTable("UserAuthenticate", parm);
             return ds;
         }
+        #region Mukeem
+        public DataTable DropDownBind(dropdownBinderModel ddlbind)
+        {
+            SqlParameter[] parms =
+            {
+           new SqlParameter("@Action", ddlbind.Action ?? ""),
+           new SqlParameter("@GetById", ddlbind.GetById)
+       };
+
+            return _dbHelper.ExecuteDataTable("Sp_BindDDL", parms);
+        }
+        public DataTable FarmerDetailsById(FarmerSearchRequest request)
+        {
+            SqlParameter[] parms =
+            {
+           new SqlParameter("@Action", request.Action ?? ""),
+           new SqlParameter("@farmerId", request.FarmerId)
+       };
+
+            return _dbHelper.ExecuteDataTable("SP_FarmerDetailsById", parms);
+        }
+
+        public DataTable FertilizerDetailsById(FertilizerDetails obj)
+        {
+            SqlParameter[] parms =
+            {
+           new SqlParameter("@Action", obj.Action ?? ""),
+           new SqlParameter("@CropId", obj.CropId)
+       };
+
+            return _dbHelper.ExecuteDataTable("SP_FertilizerDetailsById", parms);
+        }
+        #endregion
+
     }
 }

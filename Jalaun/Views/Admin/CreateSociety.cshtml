@@ -1,0 +1,94 @@
+﻿@model SocietyViewModel;
+@{
+    ViewData["Title"] = "CreateSociety";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>संस्था मास्टर</title>
+</head>
+<body>
+
+    <div class="card p-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="mb-0">
+                <i class="fa fa-map-marker-alt"></i> संस्था जोड़ें
+            </h4>
+
+            <a href="@Url.Action("Index", "Admin")" class="btn btn-outline-dark">
+                <i class="fa fa-arrow-left"></i> वापस जाएँ
+            </a>
+        </div>
+        <hr />
+
+        @if (TempData["msg"] != null)
+        {
+            <div class="alert alert-success">@TempData["msg"]</div>
+        }
+
+        @using (Html.BeginForm("CreateSociety", "Admin", FormMethod.Post))
+        {
+            @Html.HiddenFor(x => x.Id, new { @class = "form-control", @id = "hdnsocityId" })
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>तहसील</label>
+                        <select asp-for="TehsilId"
+                                asp-items="@(new SelectList(Model.ddltehsil, "Id", "TehsilNameHi"))"
+                                class="form-select">
+                            <option value="-1">--विकल्प चुनें--</option>
+                        </select>
+
+                    </div>
+                </div>
+                </div>
+           
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label>संस्था का नाम (अंग्रेजी में)</label>
+                    @Html.TextBoxFor(m => m.SocietyNameEng,
+                             new { @class = "form-control" })
+                </div>
+
+                <div class="col-md-4">
+                    <label>संस्था का नाम (हिंदी में)</label>
+                    @Html.TextBoxFor(m => m.SocietyNameHi,
+                             new { @class = "form-control" })
+                </div>
+
+                <div class="col-md-4 mt-4">
+                    <button type="submit" class="btn btn-primary">
+                        Save
+                    </button>
+                </div>
+
+            </div>
+        }
+        <div id="partialSocietlist">
+        </div>
+    </div>
+</body>
+
+
+</html>
+<script>
+    $(document).ready(function () {
+        var url = '@Url.Action("bindblock", "Admin")';
+    });
+   
+    function editTehsil(englishName, HindiName, id) {
+        //alert(HindiName);
+        $('#TehsilNameEng').val(englishName);
+        $('#TehsilNameHi').val(HindiName);
+        $('#hdnTehsilId').val(id);
+        //window.location.href = '/Admin/EditTehsil?id=' + id;
+    }
+
+</script>
+

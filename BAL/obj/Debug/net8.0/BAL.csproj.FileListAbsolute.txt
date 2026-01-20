@@ -35,3 +35,19 @@ C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\obj\Debug\
 C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\obj\Debug\net8.0\refint\BAL.dll
 C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\obj\Debug\net8.0\BAL.pdb
 C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\BAL\obj\Debug\net8.0\ref\BAL.dll
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\bin\Debug\net8.0\BAL.deps.json
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\bin\Debug\net8.0\BAL.dll
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\bin\Debug\net8.0\BAL.pdb
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\bin\Debug\net8.0\DAL.dll
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\bin\Debug\net8.0\DAL.pdb
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\obj\Debug\net8.0\BAL.csproj.AssemblyReference.cache
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\obj\Debug\net8.0\BAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\obj\Debug\net8.0\BAL.AssemblyInfoInputs.cache
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\obj\Debug\net8.0\BAL.AssemblyInfo.cs
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\obj\Debug\net8.0\BAL.csproj.CoreCompileInputs.cache
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\obj\Debug\net8.0\BAL.sourcelink.json
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\obj\Debug\net8.0\BAL.csproj.CopyComplete
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\obj\Debug\net8.0\BAL.dll
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\obj\Debug\net8.0\refint\BAL.dll
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\obj\Debug\net8.0\BAL.pdb
+C:\Muheeb.Proect\Git\kisaan-khaad\BAL\obj\Debug\net8.0\ref\BAL.dll
