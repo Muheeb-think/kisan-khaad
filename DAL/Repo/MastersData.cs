@@ -23,7 +23,8 @@ namespace DAL.MasterData
         public DataTable SelectVillageMaster(int? blockId);
         public int SaveTehsil(TehsilViewModel model);
         public int SaveSociety(SocietyViewModel model);
-    
+        public DataTable GetSociety(int? id);
+
 
         public DataTable SelectCropMaster();
         public DataTable SelectSeasonMaster();
@@ -222,7 +223,7 @@ namespace DAL.MasterData
             try
             {
                 SqlParameter[] parameters = new SqlParameter[]
-                {        
+                {
                     new SqlParameter("@CropId",obj.CropId),
                     new SqlParameter("@UserId","1"),
                 };
@@ -285,7 +286,7 @@ namespace DAL.MasterData
         }
 
         public int InsertUpdateCropFertilizerMapping(FertilizerCropMappingViewModel obj)
-        { 
+        {
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("@MappingId",obj.MappingId > 0 ? obj.MappingId : 0),
@@ -331,6 +332,7 @@ namespace DAL.MasterData
                     new SqlParameter("@SocietyNameEng", model.SocietyNameEng),
                     new SqlParameter("@SocietyNameHi", model.SocietyNameHi),
                     new SqlParameter("@TehsilId", model.TehsilId),
+                       new SqlParameter("@BlockId", model.BlockId),
                      new SqlParameter("@VillageId", model.VillageId),
                     new SqlParameter("@CreatedBy", 1)
                 };
@@ -342,7 +344,24 @@ namespace DAL.MasterData
                 throw new Exception("Execption from bal:" + ex.Message);
             }
         }
+        public DataTable GetSociety(int? id)
+        {
+            try
+            {
 
+                SqlParameter[] parameters =
+            {
+                     new SqlParameter("@Id", id>0 ? id: (object)DBNull.Value),
+
+                };
+                var result = _dataAccess.ExecuteDataTable("sp_GetSociety", parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
         #endregion
     }
 }

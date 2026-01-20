@@ -284,8 +284,13 @@ namespace Jalaun.Controllers
                 try
                 {
                     var res = _data.SelectTehsil();
+                    var saveresult = _data.SaveSociety(model);
                     model.ddltehsil = BAL.Common.DataTableExtensions.ToList<TehsilViewModel>(res.Tables[0]);
-                    TempData["msg"] = "Society added successfully";
+                    if (saveresult > 0)
+                        TempData["msg"] = "Society added successfully";
+                    else
+                        TempData["msg"] = "Error in saving Society";
+
                 }
                 catch (Exception ex)
                 {
@@ -296,26 +301,14 @@ namespace Jalaun.Controllers
 
             return View(model);
         }
-        //[HttpGet]
-        //public ActionResult GetSociety(int? id)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            var res = _data.SelectTehsil();
-        //            model.ddltehsil = BAL.Common.DataTableExtensions.ToList<TehsilViewModel>(res.Tables[0]);
-        //            TempData["msg"] = "Society added successfully";
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            throw ex;
-        //        }
-        //        return RedirectToAction("CreateSociety");
-        //    }
-
-        //    return View(model);
-        //}
+        [HttpGet]
+        public ActionResult GetSociety()
+        {
+            List<SocietyViewModel> vm = new();
+            var res = _data.GetSociety(null);
+            vm = BAL.Common.DataTableExtensions.ToList<SocietyViewModel>(res);
+            return PartialView("/Views/Shared/_partialSocietyMasterList.cshtml", vm);
+        }
         #endregion
 
     }

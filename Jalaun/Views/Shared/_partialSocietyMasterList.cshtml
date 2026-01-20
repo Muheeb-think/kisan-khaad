@@ -1,0 +1,91 @@
+﻿@model List<SocietyViewModel>
+
+<table class="table table-responsive example">
+    <thead>
+        <tr>
+            <th>क्रमांक.</th>
+            <th>तहसील</th>
+            <th>ब्लॉक</th>
+            <th>गांव</th>
+            <th>संस्था</th>
+            <th>कार्रवाई</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            int i = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>@item.Tehsil</td>
+                    <td>@item.Block</td>
+                    <td>@item.Village</td>
+                    <td>@item.SocietyNameHi</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary"
+                                onclick="editSociety('@item.SocietyNameHi','@item.SocietyNameEng', @item.Id,@item.TehsilId,@item.BlockId,@item.VillageId)">
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+                i++;
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center text-danger">
+                    No record found
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+    const cultureName = 'hi';
+
+    new DataTable('.example', {
+        responsive: true,
+        processing: true,
+        paging: true,
+        searching: true,
+        ordering: true,
+
+        language: {
+            url: cultureName === "en"
+                ? "//cdn.datatables.net/plug-ins/1.13.7/i18n/en-GB.json"
+                : "//cdn.datatables.net/plug-ins/1.13.7/i18n/hi.json"
+        },
+        layout: {
+            topStart: {
+                buttons: [
+                    {
+                        extend: 'print',
+                        text: cultureName === "en" ? 'Print' : 'प्रिंट'
+                    },
+                    {
+                        extend: 'excel',
+                        text: cultureName === "en" ? 'Excel' : 'एक्सेल',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        extend: 'colvis',
+                        text: cultureName === "en" ? 'Column visibility' : 'कॉलम दिखाएँ'
+                    }
+                ]
+            }
+        }
+    });
+    function editSociety(SocietyNameHi,SocietyNameEng,Id,TehsilId,BlockId,VillageId){
+        $('#ddlblock').val(BlockId),
+        $('#TehsilId').val(TehsilId),
+        $('#ddlvillage').val(VillageId),
+        $('#SocietyNameEng').val(SocietyNameEng),
+       $('#SocietyNameHi').val(SocietyNameHi)
+    }
+</script>

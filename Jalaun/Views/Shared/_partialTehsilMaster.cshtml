@@ -1,7 +1,7 @@
 ﻿@model List<TehsilViewModel>
 
-<table class="table table-responsive">
-    <thead class="table-dark">
+<table class="table table-responsive example">
+    <thead >
         <tr>
             <th>क्रमांक.</th>
             <th>जिले का नाम</th>
@@ -41,3 +41,41 @@
         }
     </tbody>
 </table>
+<script>
+    const cultureName = 'hi';
+
+    new DataTable('.example', {
+        responsive: true,
+        processing: true,
+        paging: true,
+        searching: true,
+        ordering: true,
+
+        language: {
+            url: cultureName === "en"
+                ? "//cdn.datatables.net/plug-ins/1.13.7/i18n/en-GB.json"
+                : "//cdn.datatables.net/plug-ins/1.13.7/i18n/hi.json"
+        },
+        layout: {
+            topStart: {
+                buttons: [
+                    {
+                        extend: 'print',
+                        text: cultureName === "en" ? 'Print' : 'प्रिंट'
+                    },
+                    {
+                        extend: 'excel',
+                        text: cultureName === "en" ? 'Excel' : 'एक्सेल',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        extend: 'colvis',
+                        text: cultureName === "en" ? 'Column visibility' : 'कॉलम दिखाएँ'
+                    }
+                ]
+            }
+        }
+    });
+</script>

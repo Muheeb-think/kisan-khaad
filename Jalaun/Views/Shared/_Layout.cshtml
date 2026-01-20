@@ -23,6 +23,11 @@
     <script src="~/js/datatables.min.js"></script>
     <link href="~/css/datatables.min.css" rel="stylesheet" />
 
+    
+    <link href="~/js/advance-datatable/css/plugins.min.css" rel="stylesheet" />
+    <link href="~/js/advance-datatable/css/buttons.dataTables.css" rel="stylesheet" />
+    <link href="~/js/advance-datatable/css/buttons.dataTables.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -644,8 +649,18 @@
     <script src="~/js/pages/index.init.js"></script>
     <script src="~/js/app.js"></script>
 
+@*     <script src="~/js/advance-datatable/js/jquery-3.7.1.js"></script> *@
+    <script src="~/js/advance-datatable/js/buttons.print.min.js"></script>
+    <script src="~/js/advance-datatable/js/dataTables.js"></script>
+    <script src="~/js/advance-datatable/js/dataTables.buttons.js"></script>
+    <script src="~/js/advance-datatable/js/buttons.dataTables.js"></script>
+    <script src="~/js/advance-datatable/js/jszip.min.js"></script>
+    <script src="~/js/advance-datatable/js/vfs_fonts.js"></script>
+    <script src="~/js/advance-datatable/js/buttons.html5.min.js"></script>
+    <script src="~/js/advance-datatable/js/buttons.print.min.js"></script>
+    <script src="~/js/advance-datatable/js/buttons.colVis.min.js"></script>
     @section Scripts {
-        @*     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> *@
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="~/js/jquery.min.js"></script>
         <script src="~/js/core.js"></script>
     }
@@ -662,7 +677,7 @@
                     var ddl = $('#' + id);
                     ddl.empty();
 
-                    ddl.append('<option value="-1">Choose option</option>');
+                    ddl.append('<option value="-1">विकल्प चुनें</option>');
 
                     if (response.status === true) {
                         $.each(response.data, function (_, item) {
@@ -676,6 +691,7 @@
         }
 
     </script>
+   
     @RenderSection("Scripts", required: false)
 </body>
 <!--end body-->

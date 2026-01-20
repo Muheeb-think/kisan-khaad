@@ -33,6 +33,9 @@
         @using (Html.BeginForm("CreateSociety", "Admin", FormMethod.Post))
         {
             @Html.HiddenFor(x => x.Id, new { @class = "form-control", @id = "hdnsocityId" })
+            @Html.HiddenFor(x => x.TehsilId, new { @class = "form-control", @id = "hdnTahsil" })
+            @Html.HiddenFor(x => x.BlockId, new { @class = "form-control", @id = "hdnBlock" })
+            @Html.HiddenFor(x => x.VillageId, new { @class = "form-control", @id = "hdnVillage" })
 
             <div class="row">
                 <div class="col-md-4">
@@ -42,6 +45,24 @@
                                 asp-items="@(new SelectList(Model.ddltehsil, "Id", "TehsilNameHi"))"
                                 class="form-select">
                             <option value="-1">--विकल्प चुनें--</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Block</label>
+                        <select class="form-control" id="ddlblock">
+                            <option>Choose Option</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Village</label>
+                        <select class="form-control" id="ddlvillage">
+                            <option>Choose Option</option>
                         </select>
 
                     </div>
@@ -70,6 +91,10 @@
 
             </div>
         }
+        
+       
+    </div>
+    <div class="col-md-12">
         <div id="partialSocietlist">
         </div>
     </div>
@@ -79,16 +104,28 @@
 </html>
 <script>
     $(document).ready(function () {
-        var url = '@Url.Action("bindblock", "Admin")';
+
+
+        var url = '@Url.Action("GetSociety", "Admin")';
+        $("#partialSocietlist").load(url + "?t=" + new Date().getTime());
+        bindDropDown('ddlblock', 'GetBlock', 0, -1);
+        bindDropDown('ddlvillage', 'GetVillage', 0, -1);
+       
     });
+    $('#TehsilId').change(function () {
+
+        bindDropDown('ddlblock', 'GetBlock', $('#TehsilId').val(), -1);
+        $('#hdnTahsil').val($('#TehsilId').val());
+    })
+    $('#ddlblock').change(function () {
+        $('#hdnBlock').val($('#ddlblock').val());
+        bindDropDown('ddlvillage', 'GetBlock', $('#ddlblock').val(), -1);
+    })
+    $('#ddlvillage').change(function () {
+        $('#hdnVillage').val($('#ddlvillage').val());
+       
+    })
    
-    function editTehsil(englishName, HindiName, id) {
-        //alert(HindiName);
-        $('#TehsilNameEng').val(englishName);
-        $('#TehsilNameHi').val(HindiName);
-        $('#hdnTehsilId').val(id);
-        //window.location.href = '/Admin/EditTehsil?id=' + id;
-    }
 
 </script>
 

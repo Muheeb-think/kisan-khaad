@@ -449,6 +449,58 @@
       "PackagePath": "staticwebassets\\images\\users\\avatar-9.jpg"
     },
     {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\js\\Advance-datatable\\css\\buttons.dataTables.css",
+      "PackagePath": "staticwebassets\\js\\Advance-datatable\\css\\buttons.dataTables.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\js\\Advance-datatable\\css\\dataTables.dataTables.css",
+      "PackagePath": "staticwebassets\\js\\Advance-datatable\\css\\dataTables.dataTables.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\js\\Advance-datatable\\css\\plugins.min.css",
+      "PackagePath": "staticwebassets\\js\\Advance-datatable\\css\\plugins.min.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\js\\Advance-datatable\\js\\buttons.colVis.min.js",
+      "PackagePath": "staticwebassets\\js\\Advance-datatable\\js\\buttons.colVis.min.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\js\\Advance-datatable\\js\\buttons.dataTables.js",
+      "PackagePath": "staticwebassets\\js\\Advance-datatable\\js\\buttons.dataTables.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\js\\Advance-datatable\\js\\buttons.html5.min.js",
+      "PackagePath": "staticwebassets\\js\\Advance-datatable\\js\\buttons.html5.min.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\js\\Advance-datatable\\js\\buttons.print.min.js",
+      "PackagePath": "staticwebassets\\js\\Advance-datatable\\js\\buttons.print.min.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\js\\Advance-datatable\\js\\dataTables.buttons.js",
+      "PackagePath": "staticwebassets\\js\\Advance-datatable\\js\\dataTables.buttons.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\js\\Advance-datatable\\js\\dataTables.js",
+      "PackagePath": "staticwebassets\\js\\Advance-datatable\\js\\dataTables.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\js\\Advance-datatable\\js\\jquery-3.7.1.js",
+      "PackagePath": "staticwebassets\\js\\Advance-datatable\\js\\jquery-3.7.1.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\js\\Advance-datatable\\js\\jszip.min.js",
+      "PackagePath": "staticwebassets\\js\\Advance-datatable\\js\\jszip.min.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\js\\Advance-datatable\\js\\pdfmake.min.js",
+      "PackagePath": "staticwebassets\\js\\Advance-datatable\\js\\pdfmake.min.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\js\\Advance-datatable\\js\\vfs_fonts.js",
+      "PackagePath": "staticwebassets\\js\\Advance-datatable\\js\\vfs_fonts.js"
+    },
+    {
       "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\js\\app.js",
       "PackagePath": "staticwebassets\\js\\app.js"
     },
