@@ -259,6 +259,7 @@ namespace Jalaun.Controllers
                     else
                     {
                         TempData["msg"] = "Error in saving Tehsil";
+                        TempData["flag"] = false;
                     }
                 }
                 catch (Exception ex)
@@ -266,6 +267,14 @@ namespace Jalaun.Controllers
                     throw ex;
                 }
             }
+            else
+            {
+                TempData["msg"] = "Please provide Details";
+                TempData["flag"] = false;
+                return RedirectToAction("CreateTehsil");
+
+            }
+
             return RedirectToAction("TehsilMaster");
         }
         [HttpGet]
@@ -289,8 +298,10 @@ namespace Jalaun.Controllers
                     if (saveresult > 0)
                         TempData["msg"] = "Society added successfully";
                     else
+                    {
                         TempData["msg"] = "Error in saving Society";
-
+                        TempData["flag"] = false;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -298,16 +309,85 @@ namespace Jalaun.Controllers
                 }
                 return RedirectToAction("CreateSociety");
             }
+            else
+            {
+                TempData["msg"] = "Please provide Details";
+                TempData["flag"] = false;
+                return RedirectToAction("CreateSociety");
+
+            }
 
             return View(model);
         }
         [HttpGet]
         public ActionResult GetSociety()
         {
-            List<SocietyViewModel> vm = new(); ;
+            List<SocietyViewModel> vm = new();
             var res = _data.GetSociety(null);
             vm = BAL.Common.DataTableExtensions.ToList<SocietyViewModel>(res);
             return PartialView("/Views/Shared/_partialSocietyMasterList.cshtml", vm);
+        }
+
+        [HttpGet]
+        public IActionResult CreateRole(int? id)
+        {
+            RoleViewModel model = new();
+            var response = _data.RoleList(null);
+            model.roles = BAL.Common.DataTableExtensions.ToList<RoleViewModel>(response);
+
+            return View(model);
+        }
+
+        [HttpPost]
+
+        public IActionResult CreateRole(RoleViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                TempData["msg"] = "Please provide Details";
+                TempData["flag"] = false;
+                return RedirectToAction("CreateRole");
+            }
+            var res = _data.CreateUserRole(model);
+            if (res > 0)
+                TempData["msg"] = "success";
+            else
+            {
+                TempData["msg"] = "Error in saving Record";
+                TempData["flag"] = false;
+            }
+            return RedirectToAction("CreateRole");
+        }
+
+        [HttpGet]
+        public IActionResult CreateUser()
+        {
+            UserViewModel model = new();
+            var response = _data.RoleList(null);
+            model.roles = BAL.Common.DataTableExtensions.ToList<RoleViewModel>(response);
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult CreateUser(UserViewModel model)
+        {
+            var response = _data.RoleList(null);
+            model.roles = BAL.Common.DataTableExtensions.ToList<RoleViewModel>(response);
+            if (!ModelState.IsValid)
+            {
+                TempData["msg"] = "Please provide Details";
+                TempData["flag"] = false;
+                return RedirectToAction("CreateUser");
+            }
+            var res = _data.CreateUser(model);
+            if (res > 0)
+                TempData["msg"] = "success";
+            else
+            {
+                TempData["msg"] = "Error in saving Record";
+                TempData["flag"] = false;
+            }
+
+            return View(model);
         }
         #endregion
 

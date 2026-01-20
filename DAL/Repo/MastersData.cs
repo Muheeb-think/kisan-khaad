@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,9 @@ namespace DAL.MasterData
 
         public int InsertUpdateCropFertilizerMapping(FertilizerCropMappingViewModel obj);
         public int DeleteFertilizerMapping(FertilizerCropMappingViewModel obj);
+        public int CreateUserRole(RoleViewModel model);
+        public DataTable RoleList(int? RoleId);
+        public int CreateUser(UserViewModel model);
     }
     public class MasterData : IMastersData
     {
@@ -355,6 +359,69 @@ namespace DAL.MasterData
 
                 };
                 var result = _dataAccess.ExecuteDataTable("sp_GetSociety", parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+        public int CreateUserRole(RoleViewModel model)
+        {
+            try
+            {
+
+                SqlParameter[] parameters =
+            {
+                     new SqlParameter("@RoleTypeId", model.RoleTypeId),
+                     new SqlParameter("@RoleName", model.RoleName),
+                     new SqlParameter("@RoleNameHi", model.RoleNameHi),
+                     new SqlParameter("@IsActive", model.IsActive)
+
+
+                };
+                var result = _dataAccess.ExecuteNonQuery("sp_RoleSaveUpdate", commandType: CommandType.StoredProcedure, parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+        public DataTable RoleList(int? RoleId)
+        {
+            try
+            {
+
+                SqlParameter[] parameters =
+                {
+                     new SqlParameter("@RoleId",RoleId),
+
+
+                };
+                var result = _dataAccess.ExecuteDataTable("sp_RoleList", parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+        public int CreateUser(UserViewModel model)
+        {
+            try
+            {
+                SqlParameter[] parameters =
+                {
+                    new SqlParameter("@RoleTypeId", model.RoleTypeId),
+                new SqlParameter("@Email", model.Email),
+                new SqlParameter("@Mobile", model.mobile),
+                 new SqlParameter("@Password", model.Password),
+                new SqlParameter("@ConfirmPassword", model.ConfirmPassword),
+                new SqlParameter("@IsActive", model.IsActive),
+                new SqlParameter("@UserNumber", model.UserNumber ?? (object)DBNull.Value)
+                };
+                var result = _dataAccess.ExecuteNonQuery("sp_SaveUpdateUserlogin", commandType: CommandType.StoredProcedure, parameters);
                 return result;
             }
             catch (Exception ex)

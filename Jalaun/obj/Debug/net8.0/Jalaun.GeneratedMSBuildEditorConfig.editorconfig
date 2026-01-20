@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/CreateRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUm9sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/CreateSociety.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlU29jaWV0eS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -836,6 +836,15 @@ C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\Jalaun\obj\Deb
 C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\Jalaun\obj\Debug\net8.0\Jalaun.pdb
 C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\Jalaun\obj\Debug\net8.0\Jalaun.genruntimeconfig.cache
 C:\Users\THINK(N)1234\Desktop\MANEESH SHUKLA\16_Jan\Jalaun\Jalaun\Jalaun\obj\Debug\net8.0\ref\Jalaun.dll
+C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.csproj.AssemblyReference.cache
+C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.GeneratedMSBuildEditorConfig.editorconfig
+C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.AssemblyInfoInputs.cache
+C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.AssemblyInfo.cs
+C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.csproj.CoreCompileInputs.cache
+C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.MvcApplicationPartsAssemblyInfo.cache
+C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.RazorAssemblyInfo.cache
+C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.RazorAssemblyInfo.cs
+C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.sourcelink.json
 C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\appsettings.Development.json
 C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\appsettings.json
 C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\Jalaun.staticwebassets.runtime.json
@@ -1102,15 +1111,6 @@ C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\Utility.dll
 C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\BAL.pdb
 C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\DAL.pdb
 C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\Utility.pdb
-C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.csproj.AssemblyReference.cache
-C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.GeneratedMSBuildEditorConfig.editorconfig
-C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.AssemblyInfoInputs.cache
-C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.AssemblyInfo.cs
-C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.csproj.CoreCompileInputs.cache
-C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.MvcApplicationPartsAssemblyInfo.cache
-C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.RazorAssemblyInfo.cache
-C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.RazorAssemblyInfo.cs
-C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.sourcelink.json
 C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\staticwebassets.build.json
 C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\staticwebassets.development.json
 C:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\staticwebassets\msbuild.Jalaun.Microsoft.AspNetCore.StaticWebAssets.props

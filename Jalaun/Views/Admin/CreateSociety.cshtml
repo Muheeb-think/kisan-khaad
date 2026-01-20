@@ -25,9 +25,13 @@
         </div>
         <hr />
 
-        @if (TempData["msg"] != null)
+        @if (TempData["msg"] != null && TempData["msg"].ToString() == "success")
         {
             <div class="alert alert-success">@TempData["msg"]</div>
+        }
+        @if (TempData["flag"] != null && @TempData["msg"] != null)
+        {
+            <div class="alert alert-danger">@TempData["msg"]</div>
         }
 
         @using (Html.BeginForm("CreateSociety", "Admin", FormMethod.Post))
