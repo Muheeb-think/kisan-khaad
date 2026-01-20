@@ -376,7 +376,7 @@ namespace Jalaun.Controllers
             {
                 TempData["msg"] = "Please provide Details";
                 TempData["flag"] = false;
-                return RedirectToAction("CreateUser");
+                return RedirectToAction("CreateUser");///
             }
             var res = _data.CreateUser(model);
             if (res > 0)
