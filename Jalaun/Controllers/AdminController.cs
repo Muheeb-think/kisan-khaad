@@ -304,7 +304,7 @@ namespace Jalaun.Controllers
         [HttpGet]
         public ActionResult GetSociety()
         {
-            List<SocietyViewModel> vm = new();
+            List<SocietyViewModel> vm = new(); ;
             var res = _data.GetSociety(null);
             vm = BAL.Common.DataTableExtensions.ToList<SocietyViewModel>(res);
             return PartialView("/Views/Shared/_partialSocietyMasterList.cshtml", vm);
