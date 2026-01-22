@@ -1,0 +1,52 @@
+﻿.modelpanelmessage {
+    background: #fff none repeat scroll 0 0;
+    border: 2px solid #10cfbd;
+    border-radius: 5px;
+    color: #151515;
+    font-size: 12pt;
+    padding-bottom: 25px;
+    text-align: center;
+    width: 30%;
+}
+
+    .modelpanelmessage > div > div {
+        color: #464646 !important;
+        height: 40px !important;
+        padding-left: 12px !important;
+    }
+
+        .modelpanelmessage > div > div span {
+            font-size: 18px !important;
+        }
+
+    .modelpanelmessage > div {
+        background-color: #10cfbd;
+        background-repeat: repeat-x;
+        color: #fff;
+        height: 34px !important;
+    }
+
+.modelTitle {
+    color: #fff !important;
+}
+
+.modelpanelmessage .btn {
+    margin-left: -135px !important;
+    margin-right: 135px !important;
+    margin-top: 15px !important;
+    background-color: #10cfbd !important;
+    color: #fff !important;
+    border: 0 none;
+    padding: 5px 15px;
+}
+
+#msgBox_Panel_message div {
+    text-align: center !important;
+}
+
+#msgBox_btn_ok_message {
+    width: 50px;
+    margin: auto;
+    background: #F00;
+    color: #FFF;
+}

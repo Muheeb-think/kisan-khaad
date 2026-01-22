@@ -1,0 +1,220 @@
+.dropdown:hover > .dropdown-menu, .dropdown:focus > .dropdown-menu, .dropdown:active > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li:hover .dropdown-menu, .dropdown-menu li:focus .dropdown-menu, .dropdown-menu li:active .dropdown-menu {
+    display: block;
+    left: 100%;
+    top: 0%;
+    z-index: 99;
+}
+
+.dropdown-menu > li > a {
+    padding: 6px 15px;
+}
+
+.nav, .nav ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+    .nav li {
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    .nav a {
+        display: block; /* 4px 30px 7px */
+    }
+
+    .nav ul {
+        left: 0;
+        position: absolute;
+        z-index: 1000;
+    }
+
+        .nav ul a {
+            display: block;
+        }
+
+        .nav ul ul {
+            left: 100%;
+            top: 0.5em; /* 6px / 12px */
+        }
+
+    .nav ul, .nav :hover ul ul, .nav .hover ul ul {
+        margin-left: -9999px;
+    }
+
+        .nav li:hover > ul, .nav li.hover > ul, .nav a:focus + ul, .nav ul ul, .nav .hover a:focus {
+            margin-left: 0;
+        }
+/*.nav ul a:focus {
+	margin-left: 9999px;
+}*/
+.brand-item {
+    display: inline-block;
+    width: 15.4%;
+}
+
+.sliderborder {
+    display: none;
+}
+
+.carousel-control {
+    display: none;
+}
+
+.item {
+    padding: 5px;
+}
+
+.dropdown > a:after {
+    content: "\f0d7";
+    font-family: "FontAwesome";
+    margin-left: 6px;
+}
+
+.home > a::after {
+    content: "\f015";
+    font-family: "FontAwesome";
+    font-size: 15px;
+    color: #000;
+}
+
+.dropdown-menu .has-submenu:after {
+    font-family: "FontAwesome";
+    content: "\f0da";
+    position: absolute;
+    right: 8px;
+}
+
+.nav {
+    padding-left: 15px !important;
+}
+
+    .nav a:focus {
+        outline: 1px dotted;
+        outline-offset: -2px;
+    }
+
+.navbar {
+    border-radius: 0px !important;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.navbar-inverse {
+    background-color: #005aa5;
+    border-color: #feb005;
+    margin: 0 -15px;
+}
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 13px;
+        padding: 15px;
+    }
+    /*.navbar-nav > li {
+	border-right: solid 1px RGBA(0, 0, 0, 0.21);
+}*/
+    .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+        background-color: #E29214 !important;
+    }
+
+    .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+        color: #000 !important;
+        background-color: #feb005 !important;
+    }
+
+.navbar .open > a {
+    color: #000 !important;
+    background-color: #feb005 !important;
+}
+
+.navbar-nav > li > a {
+    padding: 15px 17px;
+}
+
+.dropdown-menu {
+    width: 230px !important;
+    border-radius: 0px !important;
+}
+
+    .dropdown-menu li {
+        border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+
+    .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+        background-color: #6D610D ;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+.dropdown ul {
+    width: 230px !important;
+    border-radius: 0px !important;
+    background-color: #fff;
+}
+
+    .dropdown ul > li > a:focus, .dropdown ul > li > a {
+        padding: 7px 10px;
+    }
+
+        .dropdown ul > li > a:focus, .dropdown ul > li > a:hover {
+            background-color: #005aa5 !important;
+            color: #ffffff !important;
+            text-decoration: none;
+        }
+
+.dropdown li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bxslider {
+    padding-left: 0;
+    list-style: none;
+}
+
+    .bxslider li:first-child {
+        display: block;
+    }
+
+    .bxslider li {
+        display: none;
+    }
+
+        .bxslider li img {
+            width: 100%;
+        }
+
+.logo-section {
+   /* padding-top: 30px;*/
+}
+
+#carouse .item {
+    margin: 3px 10px !important;
+}
+.displaynoscript{background: #9c3939 none repeat scroll 0 0;
+    color: #fff;
+    left: 0;
+    margin: 0 auto;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 1000000;}
+	
+	#k-slider{ margin:0px; padding:0px; list-style:none;} 
+#k-slider .item{ display:none;}	
+#k-slider .item:first-child{display:block;}
+ #demo2 .item {
+    display: none;
+}
+ #demo2 .item:first-child {
+    display: block;
+}

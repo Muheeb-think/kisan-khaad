@@ -1,0 +1,140 @@
+﻿@model Jalaun.Models.UserViewModel
+
+@{
+    ViewData["Title"] = "CreateUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card p-3">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="mb-0">
+            <i class="fa fa-map-marker-alt"></i> यूजर जोड़े
+        </h4>
+
+        <a href="@Url.Action("TehsilMaster", "Admin")" class="btn btn-outline-dark">
+            <i class="fa fa-arrow-left"></i> वापस
+        </a>
+    </div>
+    <hr />
+
+    @if (TempData["msg"] != null && TempData["msg"].ToString() == "success")
+    {
+        <div class="alert alert-success">@TempData["msg"]</div>
+    }
+    @if (TempData["flag"] != null && @TempData["msg"] != null)
+    {
+        <div class="alert alert-danger">@TempData["msg"]</div>
+    }
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="CreateUser" asp-controller="Admin" method="post">
+
+                @Html.HiddenFor(m=>m.UserNumber)
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row">
+                <div class="form-group col-md-4">
+                    <label>रोल</label>
+                    <select asp-for="RoleTypeId"
+                            asp-items="@(new SelectList(Model.roles, "RoleTypeId", "RoleNameHi"))"
+                            class="form-select">
+                        <option value="-1">--विकल्प चुनें--</option>
+                    </select>
+                    <span asp-validation-for="RoleTypeId" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label">ईमेल(Email) </label>
+                    <input asp-for="Email" type="email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+             
+                <div class="form-group col-md-4">
+                    <label class="control-label">मोबाइल </label>
+                    <input asp-for="mobile" type="number" class="form-control" />
+                    <span asp-validation-for="mobile" class="text-danger"></span>
+                </div>
+               
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label class="control-label">पासवर्ड </label>
+                        <input asp-for="Password" class="form-control" />
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label">कन्फर्म  पासवर्ड </label>
+                    <input asp-for="ConfirmPassword" class="form-control" />
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                </div>
+
+                <div class="form-group col-md-4">
+                    <div class="form-check form-switch">
+                        @Html.CheckBoxFor(m => m.IsActive, new
+                            {
+                                @class = "form-check-input",
+                                role = "switch"
+                            })
+                        <label class="form-check-label">
+                            @(Model.IsActive ? "सक्रिय" : "निष्क्रिय")
+                        </label>
+                    </div>
+                    <span asp-validation-for="IsActive" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  
+
+</div>
+
+    <table class="table table-responsive example">
+        <thead>
+            <tr>
+                <th>क्रमांक</th>
+                <th>Role</th>
+                <th>ईमेल(Email)</th>
+                <th>मोबाइल(Mobile)</th>
+               
+                <th>स्टेटस</th>
+                <th>एक्शन</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int i = 1;
+            }
+            @foreach (var item in Model.userList)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>@item.RoleName</td>
+                    <td>@item.Email</td>
+                    <td>@item.mobile</td>
+                    <td>
+                        @(item.IsActive ? "Active" : "Inactive")
+                    </td>
+                    <td>
+                        <a href="#" onclick="edit(@item.UserNumber,'@item.RoleTypeId','@item.Email','@item.mobile')"
+                       class="btn btn-sm btn-primary">
+                            Edit
+                        </a>
+                    </td>
+                </tr>
+                i++;
+            }
+        </tbody>
+    </table>
+<script>
+    function edit(UserNumber, RoleTypeId, Email, mobile) {
+        $('#RoleTypeId').val(RoleTypeId);
+        $('#UserNumber').val(UserNumber);
+        $('#Email').val(Email);
+        $('#mobile').val(mobile);
+    }
+
+</script>

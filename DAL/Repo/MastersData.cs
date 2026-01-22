@@ -46,6 +46,10 @@ namespace DAL.MasterData
         public int CreateUserRole(RoleViewModel model);
         public DataTable RoleList(int? RoleId);
         public int CreateUser(UserViewModel model);
+        public DataTable GetUser(int? Id);
+        public DataTable GetUserRolesAndPerMissionModule(int? RoleId);
+        public int SaveUserRolesAndPermissionModule(List<UserModulesDetails> permission);
+        public DataTable GetVillageByTehsil(int? tehsilid);
     }
     public class MasterData : IMastersData
     {
@@ -302,6 +306,17 @@ namespace DAL.MasterData
             int result = _dataAccess.ExecuteInsert("SP_InsertUpdateCropFertilizerMapping", parameters);
             return result;
         }
+        public DataTable GetVillageByTehsil(int? tehsilid)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+         {
+
+         new SqlParameter("@Action","GetVillegeByTehsil"),
+         new SqlParameter("@GetById",tehsilid > 0 ? tehsilid : 0),
+         };
+            DataTable dt = _dataAccess.ExecuteDataTable("Sp_BindDDL", parameters);
+            return dt;
+        }
 
         #region Muheeb
         public int SaveTehsil(TehsilViewModel model)
@@ -428,6 +443,66 @@ namespace DAL.MasterData
             {
                 throw new Exception("Execption from bal:" + ex.Message);
             }
+        }
+        public DataTable GetUser(int? Id)
+        {
+            try
+            {
+                SqlParameter[] parameters =
+                {
+                    new SqlParameter("@UserNumber", Id),
+
+                };
+                var result = _dataAccess.ExecuteDataTable("sp_getUsers", parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+        public DataTable GetUserRolesAndPerMissionModule(int? RoleId)
+        {
+            try
+            {
+
+                SqlParameter[] parameters =
+                {
+                     new SqlParameter("@RoleId",RoleId),
+                };
+                var result = _dataAccess.ExecuteDataTable("sp_getModuleWithPermission", parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+
+        public int SaveUserRolesAndPermissionModule(List<UserModulesDetails> permission)
+        {
+            int result = 0;
+            try
+            {
+                foreach (var item in permission)
+                {
+                    SqlParameter[] parameters =
+                {
+                    new SqlParameter("@RoleId",item.RoleTypeId),
+                    new SqlParameter("@MainMenuId",item.MainMenuId),
+                     new SqlParameter("@SubMenuId",item.SubMenuId),
+                    new SqlParameter("@CanAccess",item.CanAccess),
+                };
+                    result = _dataAccess.ExecuteNonQuery("sp_SaveUpdateRolePermission", commandType: CommandType.StoredProcedure, parameters);
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+            return result;
         }
         #endregion
     }

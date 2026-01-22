@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media (max-width:767px){
+	
+	.navbar-nav {
+    margin: 7.5px 0px;
+}
+header .container{ padding:0px;}
+.leaderbox{margin-top:147px;}
+.leaderbox .photo{ width:150px; }
+.other-links .col-md-3{ width:50%;}
+.ol-link{ margin-bottom:84px; min-height:150px;}
+.news{ padding-left:15px;}
+.sewage{ padding-left:15px; text-align:center;  background: rgba(0, 0, 0, 0) url("../images/sewage2.png") no-repeat scroll right top / 100% auto ; min-height: auto;}
+.sewage h1{ margin-top:5%;}
+.foot-bootom, .foot-address{ text-align:center !important;}
+.dropdown-menu {
+    background: #fff none repeat scroll 0 0 !important;
+    border-radius: 0 !important;
+    width:100% !important;
+}
+	
+}
+@media (max-width:360px){
+	.other-links{ background-size:cover;}
+.other-links .col-md-3{ width:98%;}	 
+.gallery-link{background-size:auto 100% ;}
+.gallery-link:hover{background-size:auto 100% ;}
+.sewage{ background-size:cover;}
+.sewage h1{ font-size:27px;}
+.foot-address{ border-left:0px;}
+.foot-link{ padding-left:15px; text-align:center;}
+}
+

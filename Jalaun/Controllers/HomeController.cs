@@ -57,6 +57,17 @@ namespace Jalaun.Controllers
                 return BadRequest(new { status = false, message = ex.Message });
             }
         }
+        public ActionResult About_Us()
+        {
+
+            return View();
+        }
+
+        public ActionResult Contact_Us()
+        {
+
+            return View();
+        }
 
     }
 }

@@ -1,0 +1,186 @@
+﻿@model DAL.ViewModel.FertilizerCropMappingViewModel
+@{
+    ViewData["Title"] = "FertilizerCropMapping";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (TempData["InsertFertilizerMapping"] != null)
+{
+    <script>
+        var insertFertilizerMapping = @Html.Raw(Json.Serialize(TempData["InsertFertilizerMapping"]))
+        alert(insertFertilizerMapping);
+    </script>
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <div class="row align-items-center">
+            <div class="col">
+                <h4 class="card-title">फसल-वार उर्वरक मैपिंग</h4>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="card-body pt-0">
+
+        <form asp-action="FertilizerCropMapping" asp-controller="Admin" asp-antiforgery="true" method="post">
+            <input type="hidden" asp-for="MappingId" id="MappingId" />
+
+
+            <div class="row mb-3 align-items-end">
+
+                <div class="col-md-4">
+                    <label class="form-label">फसल<span style="color:red;">*</span></label>
+                    <select asp-for="CropId"
+                            asp-items="@(new SelectList(Model.CropModels, "CropId", "CropNameHindi"))"
+                            class="form-select">
+                        <option value="">-- फसल चुनें --</option>
+                    </select>
+
+                    <div class="text-danger" style="min-height:1.5em;">
+                        <span asp-validation-for="CropId"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">उर्वरक का नाम हिंदी</label>
+                    <select asp-for="FertilizerId"
+                            asp-items="@(new SelectList(Model.Fertilizers, "FertilizerId", "FertilizerNameHindi"))"
+                            class="form-select">
+                        <option value="">-- उर्वरक चुनें --</option>
+                    </select>
+
+                    <div class="text-danger" style="min-height:1.5em;">
+                        <span asp-validation-for="FertilizerId"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">प्रति हेक्टेयर मात्रा (किलोग्राम)</label>
+                    <input asp-for="Dose_per_hectare_kg" class="form-control" />
+
+                    <div class="text-danger" style="min-height:1.5em;">
+                        <span asp-validation-for="Dose_per_hectare_kg"></span>
+                    </div>
+                </div>
+
+
+                <!-- Submit button -->
+                <div class="col-md-4 d-flex align-items-end">
+                    <input type="submit" id="btnAdd" value=" मैपिंग " class="btn btn-success w-100" style="margin-bottom:20px;" />
+                </div>
+            </div>
+        </form>
+
+
+        <!-- Village List Table -->
+        <div class="row mt-4">
+            <table class="table table-bordered table-striped example" id="tblVillage">
+                <thead>
+                    <tr>
+                        <th>क्रमांक</th>
+                        <th>उर्वरक</th>
+                        <th>प्रति हेक्टेयर अनुशंसित मात्रा</th>
+                        <th>फसल का नाम </th>
+                        <th>कार्यवाही</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int i = 1;
+                    }
+                    @if (Model.FertilizerCropMappings != null && Model.FertilizerCropMappings.Any())
+                    {
+                        foreach (var fertilizer in Model.FertilizerCropMappings)
+                        {
+                            <tr>
+                                <td>@i</td>
+                                <td>@fertilizer.FertilizerNameHindi</td>
+                                <td>@fertilizer.Dose_per_hectare_kg</td>
+                                <td>@fertilizer.CropNameHindi</td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm"
+                                       href="javascript:void(0);"
+                                       onclick="editfertilizerMapping('@fertilizer.FertilizerId','@fertilizer.MappingId','@fertilizer.CropId',
+        '@fertilizer.Dose_per_hectare_kg')">
+                                        Edit
+                                    </a>
+
+                                    <a class="btn btn-danger btn-sm delete-fertilizerMapping" href="javascript:void(0);" data-id="@fertilizer.MappingId">
+                                        Delete
+                                    </a>
+                                </td>
+                            </tr>
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="3" class="text-center">कोई डेटा उपलब्ध नहीं है</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+      $(document).ready(function () {
+          // Delete Crop
+          $(document).on('click', '.delete-fertilizerMapping', function () {
+
+                  if (!confirm("क्या आप वाकई इस उर्वरक को हटाना चाहते हैं?"))
+                  return;
+
+              var mappingId = $(this).data('id');
+              var token = $('input[name="__RequestVerificationToken"]').val();
+              var row = $(this).closest('tr');
+
+
+              $.ajax({
+                  url: '@Url.Action("DeleteFertilizerCropMapping", "Admin")',
+                  type: 'POST',
+                  data: {
+                      MappingId: mappingId,
+                      __RequestVerificationToken: token
+                  },
+                  success: function (res) {
+                      if (res.success) {
+                          alert(res.message);
+                          row.remove();  // Remove row from table
+                      } else {
+                          alert(res.message);
+                      }
+                  },
+                  error: function () {
+                      alert("कुछ त्रुटि हुई, पुनः प्रयास करें");
+                  }
+              });
+
+          });
+
+      });
+
+
+      // Edit function
+    function editfertilizerMapping(FertilizerId,MappingId, cropId,Dose_per_hectare_kg) {
+        debugger;
+          $('#FertilizerId').val(FertilizerId);
+          $('#Dose_per_hectare_kg').val(Dose_per_hectare_kg);
+          $('#CropId').val(cropId);
+          $('#MappingId').val(MappingId);
+
+          $('#btnAdd').val("अपडेट करें");
+      }
+</script>
+
+
+
+
+
+

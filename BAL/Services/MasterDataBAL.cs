@@ -19,6 +19,7 @@ namespace BAL.Services
         public List<FertilizerModel> SelectFertilizerList();
         public List<FertilizerCropMappingModel> fertilizerCropMappingModelsList();
         public List<TehsilModel> SelectTehsilList();
+        public List<VillageModel> GetVillageByTehsil(int? tehsil);
     }
 
     public class MasterDataBAL : IMasterDataBAL
@@ -80,7 +81,7 @@ namespace BAL.Services
                     model.TehsilList.Add(new TehsilModel
                     {
                         Id = Convert.ToInt32(row["Id"]),
-                        TehsilName = row["TehsilName"]?.ToString()
+                        TehsilName = row["TehsilNameHi"]?.ToString()
                     });
                 }
 
@@ -181,6 +182,20 @@ namespace BAL.Services
                 });
             }
             return tehsilModels;
+        }
+        public List<VillageModel> GetVillageByTehsil(int? tehsilId)
+        {
+            DataTable dt = _mastersData.GetVillageByTehsil(tehsilId);
+            List<VillageModel> villagemodel = new List<VillageModel>();
+            foreach (DataRow row in dt.Rows)
+            {
+                villagemodel.Add(new VillageModel
+                {
+                    VillageId = Convert.ToInt32(row["id"]),
+                    VillageName = row["value"]?.ToString()
+                });
+            }
+            return villagemodel;
         }
 
     }

@@ -1,11 +1,117 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
-
-<h1>Welcome to Former Dashboard</h1>
-
-
+<style>
+    @@media only screen and (min-width: 320px) and (max-width: 900px) {
 
 
+        .leader .photo {
+            width: 100%;
+        }
+        .leader li div {
+            display: block;
+        }
+    }
+
+</style>
+
+<section class="slider">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 padding0">
+                <div id="wowslider-container1">
+                    <div class="ws_images">
+                        <ul>
+                            <li class='item'><img src='~/Jalaun_Web/images/Slider_1.jpg' alt='डिजिटल उर्वरक मांग एवं वितरण प्रबंधन प्रणाली जिला जालौन' title='डिजिटल उर्वरक मांग एवं वितरण प्रबंधन प्रणाली जिला जालौन' /></li>
+                            <li class='item'><img src='~/Jalaun_Web/images/Slider_2.jpg' alt='डिजिटल उर्वरक मांग एवं वितरण प्रबंधन प्रणाली जिला जालौन' title='डिजिटल उर्वरक मांग एवं वितरण प्रबंधन प्रणाली जिला जालौन' /></li>
+                            <li class='item'><img src='~/Jalaun_Web/images/Slider_3.jpg' alt='डिजिटल उर्वरक मांग एवं वितरण प्रबंधन प्रणाली जिला जालौन' title='डिजिटल उर्वरक मांग एवं वितरण प्रबंधन प्रणाली जिला जालौन' /></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="col-md-12 padding0">
+    <ul class="leader">
+        <li>
+            <div class="photo"><img src="~/Jalaun_Web/images/adityayogi.jpg" alt="माननीय मुख्यमंत्री " title="माननीय मुख्यमंत्री " /></div>
+            <div class="content">
+                <h4 style="font-size:22px;">योगी आदित्यनाथ</h4>
+                <p style="font-size:18px;">माननीय मुख्यमंत्री <br /> उत्तर प्रदेश सरकार</p>
+            </div>
+        </li>
+        <li>
+            <div class="photo"><img src="~/Jalaun_Web/images/ShriJPSRathore.jpg" alt="मा० राज्य मंत्री (स्वतंत्र प्रभार)" title="मा० राज्य मंत्री (स्वतंत्र प्रभार)" caption="false" /></div>
+            <div class="content">
+                <h4 style="font-size:22px;">श्री जे. पी. एस. राठौर</h4>
+                <p style="font-size:18px;">मा० राज्य मंत्री (स्वतंत्र प्रभार),<br /> सहकारिता, उत्तर प्रदेश</p>
+            </div>
+        </li>
+        <li>
+            <div class="photo"><img src="~/Jalaun_Web/images/Rajesh_Kumar_Pandey.jpg" alt="जिला मजिस्ट्रेट" title="जिला मजिस्ट्रेट" caption="false" /></div>
+            <div class="content">
+                <h4 style="font-size:22px;">श्री राजेश कुमार पांडे</h4>
+                <p style="font-size:18px;">जिला मजिस्ट्रेट<br />जालौन उत्तर प्रदेश</p>
+            </div>
+        </li>
+        
+    </ul>
+</div>
+
+<div class="clearfix"></div>
+<section class="about" id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                <h1 class="main-heading"><span>हमारे बारे में</span></h1>
+                <p><b>डिजिटल उर्वरक प्रबंधन प्रणाली, जालौन किसान सशक्तिकरण, समान वितरण और शासन में क्रांति</b></p>
+                <p class="text-justify">
+                    जिलाधिकारी जालौन, श्री [नाम] की दूरदर्शी पहल एवं मार्गदर्शन में, डिजिटल उर्वरक प्रबंधन प्रणाली (DFMS) को जिले में कृषि आदान वितरण के क्षेत्र में एक परिवर्तनकारी पहल के रूप में विकसित किया गया है। यह एक अत्याधुनिक डिजिटल पारिस्थितिकी तंत्र है, जिसका उद्देश्य पारंपरिक, भीड़-आधारित वितरण व्यवस्था को डेटा-चालित, पूर्वानुमानयोग्य और किसान-केंद्रित मॉडल में बदलना है।
+                    <br />
+                    हमारा लक्ष्य केवल फॉर्मों का डिजिटलीकरण करना नहीं, बल्कि जिला स्तर की कृषि योजना के लिए एक केंद्रीय तंत्रिका तंत्र विकसित करना है, जो उर्वरक वितरण में पारदर्शिता, दक्षता और समानता सुनिश्चित करे।
+                </p>
+                <h3>हमारा दृष्टिकोण</h3>
+                <p class="text-justify">
+                    इस प्रणाली का मूल दर्शन "मांग-आधारित, डेटा-संचालित और किसान-सशक्त" वितरण मॉडल स्थापित करना है। हम मानते हैं कि प्रत्येक किसान की आवश्यकता सम्मान के योग्य है और उसकी पूर्ति समय पर, न्यायसंगत तरीके से होनी चाहिए।
+                </p>
+                <a href="/Home/About_Us" class="btn btn-warning ">और पढ़ें</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="socialbg">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4 class="send-feedback"><strong style="
+    color:white;">हमारे साथ जुड़ें:</strong></h4>
+                                <ul class="social-network social-circle">
+                                    <li><a href="https://www.facebook.com/profile.php?id=100083336058494" class="icoFacebook" title="Facebook twitter" rel="noopener"><img src="~/Jalaun_Web/site/writereaddata/siteContent/202406241622347615fb-icon.jpg" /></a></li>
+                                    <li><a href="https://twitter.com/JalUttar" class="icoTwitter" title="x" rel="noopener"><img src="~/Jalaun_Web/site/writereaddata/siteContent/202406241615144276xicon.jpg" /></a></li>
+                                    <!--<li><a href="" class="icoGoogle" title="Youtube" rel="noopener"><i class="fa fa-youtube"></i></a></li>
+                                    <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#" class="icoRss" title="RSS"><i class="fa fa-rss"></i></a></li>-->
+                                </ul>
+                            </div>
+                            <div class="col-md-9">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 

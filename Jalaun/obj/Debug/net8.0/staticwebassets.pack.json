@@ -5,6 +5,642 @@
       "PackagePath": "staticwebassets\\Jalaun.bundle.scp.css"
     },
     {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Firefox\\index.html",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Firefox\\index.html"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Opera\\index.html",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Opera\\index.html"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\commonhindiUnicode.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\commonhindiUnicode.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\grid-layout\\gridstack.min.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\grid-layout\\gridstack.min.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\grid-layout\\gridstack.min.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\grid-layout\\gridstack.min.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\grid-layout\\knockout-3.3.0.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\grid-layout\\knockout-3.3.0.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\grid-layout\\lodash.min-3.6.0.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\grid-layout\\lodash.min-3.6.0.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-bg_flat_0_aaaaaa_40x100.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-bg_flat_0_aaaaaa_40x100.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-bg_flat_75_ffffff_40x100.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-bg_flat_75_ffffff_40x100.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-bg_glass_55_fbf9ee_1x400.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-bg_glass_55_fbf9ee_1x400.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-bg_glass_65_ffffff_1x400.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-bg_glass_65_ffffff_1x400.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-bg_glass_75_dadada_1x400.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-bg_glass_75_dadada_1x400.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-bg_glass_75_e6e6e6_1x400.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-bg_glass_75_e6e6e6_1x400.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-bg_glass_95_fef1ec_1x400.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-bg_glass_95_fef1ec_1x400.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-bg_highlight-soft_75_cccccc_1x100.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-bg_highlight-soft_75_cccccc_1x100.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-icons_222222_256x240.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-icons_222222_256x240.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-icons_2e83ff_256x240.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-icons_2e83ff_256x240.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-icons_444444_256x240.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-icons_444444_256x240.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-icons_454545_256x240.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-icons_454545_256x240.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-icons_555555_256x240.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-icons_555555_256x240.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-icons_777620_256x240.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-icons_777620_256x240.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-icons_777777_256x240.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-icons_777777_256x240.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-icons_888888_256x240.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-icons_888888_256x240.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-icons_cc0000_256x240.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-icons_cc0000_256x240.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-icons_cd0a0a_256x240.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-icons_cd0a0a_256x240.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\images\\ui-icons_ffffff_256x240.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\images\\ui-icons_ffffff_256x240.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\jquery-1.4.3.min.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\jquery-1.4.3.min.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\jquery-1.7.1.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\jquery-1.7.1.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\jquery-1.9.1.min.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\jquery-1.9.1.min.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\jquery-ui-1.9.1.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\jquery-ui-1.9.1.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\jquery-ui.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\jquery-ui.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\jquery-ui.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\jquery-ui.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\jquery-ui.min-1.9.1.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\jquery-ui.min-1.9.1.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\jquery.min.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\source\\blank.gif",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\source\\blank.gif"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\source\\fancybox_loading.gif",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\source\\fancybox_loading.gif"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\source\\fancybox_loading@2x.gif",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\source\\fancybox_loading@2x.gif"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\source\\fancybox_overlay.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\source\\fancybox_overlay.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\source\\fancybox_sprite.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\source\\fancybox_sprite.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\source\\fancybox_sprite@2x.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\source\\fancybox_sprite@2x.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\source\\jquery.fancybox8cbb.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\source\\jquery.fancybox8cbb.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\Scripts\\source\\jquery.fancybox8cbb.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\Scripts\\source\\jquery.fancybox8cbb.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\css\\AjaxLoader.html",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\css\\AjaxLoader.html"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\css\\dataTables.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\css\\dataTables.bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\css\\grabbing.html",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\css\\grabbing.html"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\css\\menu-css.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\css\\menu-css.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\css\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\css\\owl.carousel.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\css\\responsive.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\en.html",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\en.html"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\en_Themes\\contrast.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\en_Themes\\contrast.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\en_Themes\\news-scroll.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\en_Themes\\news-scroll.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\en_Themes\\search-code.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\en_Themes\\search-code.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\en_Themes\\style.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\en_Themes\\style.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\en_Themes\\style_admin.html",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\en_Themes\\style_admin.html"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\en_Themes\\test.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\en_Themes\\test.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\engine1\\arrows.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\engine1\\arrows.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\engine1\\bullet.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\engine1\\bullet.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\engine1\\pause.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\engine1\\pause.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\engine1\\play.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\engine1\\play.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\engine1\\playvideo.html",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\engine1\\playvideo.html"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\engine1\\script.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\engine1\\script.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\engine1\\style.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\engine1\\style.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\engine1\\triangle.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\engine1\\triangle.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\engine1\\wowslider.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\engine1\\wowslider.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\favicon.ico",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\et-line.eot",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\et-line.eot"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\et-line.svg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\et-line.svg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\et-line.ttf",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\et-line.ttf"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\et-line.woff",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\et-line.woff"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\et-lined41d.eot",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\et-lined41d.eot"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\fontawesome-webfont93e3.eot",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\fontawesome-webfont93e3.eot"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\fontawesome-webfont93e3.svg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\fontawesome-webfont93e3.svg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\fontawesome-webfont93e3.ttf",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\fontawesome-webfont93e3.ttf"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\fontawesome-webfont93e3.woff",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\fontawesome-webfont93e3.woff"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\fontawesome-webfont93e3.woff2",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\fontawesome-webfont93e3.woff2"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\fontawesome-webfontd41d.eot",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\fontawesome-webfontd41d.eot"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\glyphicons-halflings-regular.eot",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\glyphicons-halflings-regular.eot"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\glyphicons-halflings-regular.svg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\glyphicons-halflings-regular.svg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\glyphicons-halflings-regular.ttf",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\glyphicons-halflings-regular.ttf"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\glyphicons-halflings-regular.woff",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\glyphicons-halflings-regular.woff"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\glyphicons-halflings-regular.woff2",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\glyphicons-halflings-regular.woff2"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\fonts\\glyphicons-halflings-regulard41d.eot",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\fonts\\glyphicons-halflings-regulard41d.eot"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\generateCapcha6c2a.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\generateCapcha6c2a.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\generateCapchae16e.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\generateCapchae16e.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\hi.html",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\hi.html"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\hi_Themes\\contrast.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\hi_Themes\\contrast.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\hi_Themes\\news-scroll.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\hi_Themes\\news-scroll.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\hi_Themes\\search-code.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\hi_Themes\\search-code.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\hi_Themes\\style.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\hi_Themes\\style.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\hi_Themes\\style_admin.html",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\hi_Themes\\style_admin.html"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\hi_Themes\\test.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\hi_Themes\\test.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\FilledStar.gif",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\FilledStar.gif"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\Food_and_Civil_Supplies_Department_Jalaun.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\Food_and_Civil_Supplies_Department_Jalaun.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\Rajesh_Kumar_Pandey.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\Rajesh_Kumar_Pandey.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\ShriJPSRathore.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\ShriJPSRathore.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\Slider_1.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\Slider_1.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\Slider_2.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\Slider_2.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\Slider_3.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\Slider_3.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\Star.gif",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\Star.gif"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\WaitingStar.gif",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\WaitingStar.gif"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\adityayogi.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\adityayogi.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\border.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\border.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\bullet_arrow.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\bullet_arrow.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\contactbox-border.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\contactbox-border.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\contactimg.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\contactimg.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\dialog_warning.html",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\dialog_warning.html"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\feedback.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\feedback.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\fevicon.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\fevicon.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\gallerybg.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\gallerybg.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\headerbg.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\headerbg.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\helpline-bg.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\helpline-bg.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\imp-1.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\imp-1.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\imp-2.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\imp-2.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\imp-3.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\imp-3.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\innder-bg.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\innder-bg.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\section-2-bg.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\section-2-bg.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\sewage2.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\sewage2.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\shanadesh.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\shanadesh.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\site_map_list.gif",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\site_map_list.gif"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\site_map_ul.gif",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\site_map_ul.gif"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\top-border.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\top-border.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\up-logo.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\up-logo.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\images\\urban.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\images\\urban.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\js\\jquery.cookie.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\js\\jquery.cookie.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\js\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\js\\jquery.textresizer.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\js\\jquery.textresizer.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\js\\jquery.uitablefilter.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\js\\jquery.uitablefilter.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\Images\\adobe_acrobat.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\Images\\adobe_acrobat.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\Images\\new_red-2.gif",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\Images\\new_red-2.gif"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\Images\\new_red.gif",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\Images\\new_red.gif"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\Images\\right1.gif",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\Images\\right1.gif"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\Images\\view_refresh.png",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\Images\\view_refresh.png"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\pagestemplate\\css\\outerpage.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\pagestemplate\\css\\outerpage.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\HomePage\\Header\\H_201706271122144066.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\HomePage\\Header\\H_201706271122144066.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\HomePage\\Header\\H_201706271142163224.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\HomePage\\Header\\H_201706271142163224.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\HomePage\\Header\\H_201706271142421448.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\HomePage\\Header\\H_201706271142421448.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\HomePage\\Header\\H_201706271143076323.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\HomePage\\Header\\H_201706271143076323.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\HomePage\\Header\\H_201706271143325727.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\HomePage\\Header\\H_201706271143325727.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\config\\sitecss.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\config\\sitecss.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\config\\sitejs.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\config\\sitejs.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\siteContent\\202301282025283538RTI_280123.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\siteContent\\202301282025283538RTI_280123.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\siteContent\\202405021414223596im22.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\siteContent\\202405021414223596im22.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\siteContent\\202406241615144276xicon.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\siteContent\\202406241615144276xicon.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\siteContent\\202406241622347615fb-icon.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\siteContent\\202406241622347615fb-icon.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\siteContent\\202409021705023137kakori-logo_020924.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\siteContent\\202409021705023137kakori-logo_020924.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\siteContent\\202409121755015453chairman_120924.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\siteContent\\202409121755015453chairman_120924.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\siteContent\\202411102236181722Kumbh-2025.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\siteContent\\202411102236181722Kumbh-2025.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\siteContent\\202506071444288213md_070625.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\siteContent\\202506071444288213md_070625.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\siteContent\\202506091430100135Mahendra_090625.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\siteContent\\202506091430100135Mahendra_090625.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\siteContent\\202506091430100135Praveen_090625.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\siteContent\\202506091430100135Praveen_090625.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\site\\writereaddata\\siteContent\\userpic.jpg",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\site\\writereaddata\\siteContent\\userpic.jpg"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\src\\jquery.smartmenus.bootstrap.css",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\src\\jquery.smartmenus.bootstrap.css"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\src\\jquery.smartmenus.bootstrap.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\src\\jquery.smartmenus.bootstrap.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Jalaun_Web\\src\\jquery.smartmenus.js",
+      "PackagePath": "staticwebassets\\Jalaun_Web\\src\\jquery.smartmenus.js"
+    },
+    {
+      "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\Page_Js\\FarmerRegistration.js",
+      "PackagePath": "staticwebassets\\Page_Js\\FarmerRegistration.js"
+    },
+    {
       "Id": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\wwwroot\\css\\GoogleFonts.css",
       "PackagePath": "staticwebassets\\css\\GoogleFonts.css"
     },

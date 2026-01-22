@@ -11,9 +11,10 @@ namespace BAL.Services
 {
     public interface IRegistration
     {
-        public DataTable FarmerRegistration(RegisterViewModel registerView);
+        public int FarmerRegistration(RegisterViewModel registerView);
         public DataTable FarmerDetailsbyId(FarmerSearchRequest request);
         public DataTable FertilizerDetailsById(FertilizerDetails obj);
+        
     }
     public class Registration: IRegistration
     {
@@ -33,10 +34,41 @@ namespace BAL.Services
             DataTable dt = _dataaccess.FertilizerDetailsById(obj);
             return dt;
         }
-        public DataTable FarmerRegistration(RegisterViewModel registerView)
+        public int FarmerRegistration(RegisterViewModel registerView)
         {
-            throw new NotImplementedException();
+            DataTable landDt = ToDataTable(registerView.LandList);
+            int result = _dataaccess.FarmerRegistration(registerView, landDt);
+            return result;
         }
 
+
+        public static DataTable ToDataTable(List<LandViewModel> landList)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("DistrictId", typeof(int));
+            dt.Columns.Add("TehsilId", typeof(int));
+            dt.Columns.Add("VillageId", typeof(int));
+            dt.Columns.Add("KhasraNo", typeof(string));
+            dt.Columns.Add("TotalArea", typeof(decimal));
+            dt.Columns.Add("FarmerShareArea", typeof(decimal));
+
+            if (landList == null || landList.Count == 0)
+                return dt;
+
+            foreach (var land in landList)
+            {
+                dt.Rows.Add(
+                    1,
+                    land.TahsilId,
+                    land.VillageId,
+                    land.LandRecordNumber ?? string.Empty,
+                    land.LandTotalArea,
+                    land.FarmerShare
+                );
+            }
+
+            return dt;
+        }
     }
 }

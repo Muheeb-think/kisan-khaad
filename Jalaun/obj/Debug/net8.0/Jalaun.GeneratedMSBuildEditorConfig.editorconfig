@@ -34,16 +34,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlU29jaWV0eS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/CreateUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/CropMaster.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JvcE1hc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/FertilizerCropMapping.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRmVydGlsaXplckNyb3BNYXBwaW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/FertilizerMaster.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRmVydGlsaXplck1hc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/TehsilMaster.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVGVoc2lsTWFzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/UserRolesPermission.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlclJvbGVzUGVybWlzc2lvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/VillageMaster.cshtml]
@@ -70,6 +86,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWVyXFRlbXBGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Home/About_Us.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dF9Vcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Home/Contact_Us.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0X1VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -80,6 +104,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_LayoutHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_partialModuleAndPermissionlist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9wYXJ0aWFsTW9kdWxlQW5kUGVybWlzc2lvbmxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_partialSocietyMasterList.cshtml]

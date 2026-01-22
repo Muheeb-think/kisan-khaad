@@ -1,9 +1,13 @@
 ﻿@model RoleViewModel
 
+@{
+    ViewData["Title"] = "Create Role";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
     <div class="card p-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h4>
-            <i class="fa fa-map-marker-alt"></i>@(Model.RoleTypeId == 0 ? "Add Role" : "Edit Role")
+            <i class="fa fa-map-marker-alt"></i>भूमिका प्रबंधन/Manage Roles
             </h4>
 
             <a href="@Url.Action("TehsilMaster", "Admin")" class="btn btn-outline-dark">
@@ -97,6 +101,7 @@
 
     </div>
 </div>
+
 <script>
     function edit(englishName, HindiName, id) {
         //alert(HindiName);

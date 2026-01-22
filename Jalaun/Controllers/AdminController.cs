@@ -17,6 +17,12 @@ namespace Jalaun.Controllers
             this._bal = bal;
             this._data = data;
         }
+        public IActionResult Index()
+        {
+
+            return View();
+        }
+
         public IActionResult VillageMaster()
         {
             VillageViewMaster villageView = new VillageViewMaster();
@@ -365,6 +371,7 @@ namespace Jalaun.Controllers
             UserViewModel model = new();
             var response = _data.RoleList(null);
             model.roles = BAL.Common.DataTableExtensions.ToList<RoleViewModel>(response);
+            model.userList = BAL.Common.DataTableExtensions.ToList<UserViewModel>(_data.GetUser(null));
             return View(model);
         }
         [HttpPost]
@@ -372,23 +379,57 @@ namespace Jalaun.Controllers
         {
             var response = _data.RoleList(null);
             model.roles = BAL.Common.DataTableExtensions.ToList<RoleViewModel>(response);
-            if (!ModelState.IsValid)
+            model.userList = BAL.Common.DataTableExtensions.ToList<UserViewModel>(_data.GetUser(null));
+            if (ModelState.IsValid)
             {
-                TempData["msg"] = "Please provide Details";
-                TempData["flag"] = false;
-                return RedirectToAction("CreateUser");///
-            }
-            var res = _data.CreateUser(model);
-            if (res > 0)
-                TempData["msg"] = "success";
-            else
-            {
-                TempData["msg"] = "Error in saving Record";
-                TempData["flag"] = false;
+                var res = _data.CreateUser(model);
+                if (res > 0)
+                    TempData["msg"] = "success";
+                else
+                {
+                    TempData["msg"] = "Error in saving Record";
+                    TempData["flag"] = false;
+                }
             }
 
             return View(model);
         }
+
+        [HttpGet]
+        public IActionResult UserRolesPermission(int? RoleId)
+        {
+            UserRolePermission model = new();
+            model.roles = BAL.Common.DataTableExtensions.ToList<RoleViewModel>(_data.RoleList(null));
+            return View(model);
+        }
+        [HttpGet]
+        public IActionResult GetUserRolesPermission(int? RoleId=null)
+        {
+            List<UserModulesDetails> model = new();
+            model = BAL.Common.DataTableExtensions.ToList<UserModulesDetails>(_data.GetUserRolesAndPerMissionModule(RoleId));
+            return PartialView("Views/Shared/_partialModuleAndPermissionlist.cshtml", model);
+        }
+        [HttpPost]
+        public IActionResult SaveRolesPermissions([FromBody] List<UserModulesDetails> permissions)
+        {
+            bool status = false;
+            try
+            {
+                var result = _data.SaveUserRolesAndPermissionModule(permissions);
+                if (result > 0)
+                {
+                    status = true;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return Json(status);
+        }
+
         #endregion
 
     }

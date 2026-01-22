@@ -110,8 +110,15 @@
         }
     </style>
 </head>
-<body>
 
+<body>
+    @if (TempData["Message"] != null)
+    {
+        <script>
+            var Message = @Html.Raw(Json.Serialize(TempData["Message"]))
+                alert(Message);
+        </script>
+    }
     <div class="login-wrapper">
 
         <!-- Header -->
@@ -167,11 +174,13 @@
                 <button type="submit" class="btn btn-login mt-3">
                     <i class="fa-solid fa-right-to-bracket"></i> Login
                 </button>
+               
 
             </form>
 
             <div class="footer-text">
                 © Jalaun Administration 
+                <a href="/Farmer/Registration">Please Register Here</a>
             </div>
         </div>
     </div>

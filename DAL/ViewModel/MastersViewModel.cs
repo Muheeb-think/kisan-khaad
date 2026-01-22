@@ -90,9 +90,14 @@ namespace DAL.ViewModel
         public List<FertilizerCropMappingModel>? FertilizerCropMappings { get; set; }
     }
 
+   
+   
+
     public class FertilizerCropMappingModel
     {
-       
+
+        public int MappingId { get; set; }
+        public int? CropId { get; set; }
         public string? CropNameHindi { get; set; }
         public int FertilizerId { get; set; }
         public string? FertilizerNameHindi { get; set; }

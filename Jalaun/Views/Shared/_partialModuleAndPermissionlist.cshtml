@@ -1,0 +1,39 @@
+﻿@model List<Jalaun.Models.UserModulesDetails>
+
+<!-- Permission Table -->
+<ul class="list-group permission-tree">
+
+    @foreach (var mainGroup in Model
+    .GroupBy(x => x.MainMenuName))
+    {
+        <li class="list-group-item">
+
+            <!-- MAIN MENU -->
+            <strong>@mainGroup.Key</strong>
+
+            <ul class="list-group mt-2">
+
+                @foreach (var item in mainGroup)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+
+                        <!-- SUB MENU -->
+                        <span>@item.SubMenuName</span>
+
+                        <!-- ACCESS SWITCH -->
+                        <div class="form-check form-switch">
+                            <input type="checkbox"
+                                   class="form-check-input permission-toggle"
+                                   data-main="@item.MainMenuId"
+                                   data-sub="@item.SubMenuId"
+                            @(item.CanAccess ? "checked" : "") />
+                        </div>
+
+                    </li>
+                }
+
+            </ul>
+        </li>
+    }
+
+</ul>

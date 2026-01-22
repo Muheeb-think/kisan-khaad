@@ -1,0 +1,83 @@
+﻿@model Jalaun.Models.UserRolePermission
+@{
+    ViewData["Title"] = "UserRolesPermission";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h5>अनुमति प्रबंधन/Manage Permission</h5>
+    </div>
+
+    <div class="card-body">
+
+        <!-- Role Dropdown -->
+        <div class="row mb-3">
+            <div class="col-md-4">
+
+                <div class="form-group">
+                    <label>रोल</label>
+                    <select asp-for="RoleTypeId"
+                            asp-items="@(new SelectList(Model.roles, "RoleTypeId", "RoleNameHi"))"
+                            class="form-select">
+                        <option value="-1">--विकल्प चुनें--</option>
+                    </select>
+                    <span asp-validation-for="RoleTypeId" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="partialsModeulPermissionlist">
+        </div>
+
+
+        <button class="btn btn-success" id="btnSavePermission">अनुमति दर्ज करें/Save Permissions</button>
+    </div>
+</div>
+
+<script>
+    let roleId = null;
+
+    $(function () {
+        $('#partialsModeulPermissionlist')
+            .load('/Admin/GetUserRolesPermission?RoleId=' + roleId);
+        $('#RoleTypeId selected:option').val(1);
+    })
+
+
+    $('#btnSavePermission').click(function () {
+
+        let roleId = $('#RoleTypeId').val(); // dropdown role
+        let permissions = [];
+        $('.permission-toggle').each(function () {
+            permissions.push({
+                RoleTypeId: roleId,
+                MainMenuId: $(this).data('main'),
+                SubMenuId: $(this).data('sub'),
+                CanAccess: $(this).is(':checked')
+            });
+        });
+        const obj = permissions.filter(x => x.CanAccess === true);
+        console.log(obj);
+        console.log(JSON.stringify(obj));
+        $.ajax({
+            url: '/Admin/SaveRolesPermissions',
+            type: 'POST',
+            data: JSON.stringify(obj),
+            contentType: 'application/json',
+            success: function () {
+                alert('Permissions saved successfully');
+                window.location.reload();
+            }
+        });
+    });
+
+   
+    $('#RoleTypeId').change(function () {
+        roleId = $('#RoleTypeId').val();
+        $('#partialsModeulPermissionlist')
+            .load('/Admin/GetUserRolesPermission?RoleId=' + roleId);
+    });
+
+
+
+</script>
