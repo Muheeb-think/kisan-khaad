@@ -29,8 +29,25 @@ namespace Jalaun.Controllers
             model.DashboardDT = result.Tables[0];
             //model.FertilizerDemandVillageWise = BAL.Common.DataTableExtensions.ToList<FertilizerDemandVM>(result.Tables[1]);
             model.FertilizerDemandFertilizerWise = BAL.Common.DataTableExtensions.ToList<FertilizerDemandVM>(result.Tables[2]);
-   
+
             return View(model);
+        }
+
+        public IActionResult StockEntry(FertilizerStockVM model)
+        {
+            if (!ModelState.IsValid)
+            {
+                model.FertilizerList = null;
+                return View(model);
+            }
+
+            var res = _data.SaveFertilizerStock(model, User.GetUserId());
+
+            TempData["Success"] = model.StockID == 0
+                ? "Stock added successfully"
+                : "Stock updated successfully";
+
+            return RedirectToAction("Entry");
         }
     }
 }

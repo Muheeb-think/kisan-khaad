@@ -51,6 +51,8 @@ namespace DAL.MasterData
         public int SaveUserRolesAndPermissionModule(List<UserModulesDetails> permission);
         public DataTable GetVillageByTehsil(int? tehsilid);
         public DataSet GetSocietyDashboardData(long societyid);
+        public int SaveFertilizerStock(FertilizerStockVM model, int userId);
+
     }
     public class MasterData : IMastersData
     {
@@ -524,6 +526,32 @@ namespace DAL.MasterData
             {
                 throw new Exception("Execption from bal:" + ex.Message);
             }
+        }
+        public int SaveFertilizerStock(FertilizerStockVM model, int userId)
+        {
+            try
+            {
+
+                SqlParameter[] parameters =
+                    {
+           new SqlParameter("@StockID", model.StockID),
+            new SqlParameter("@FertilizerID", model.FertilizerID),
+            new SqlParameter("@OpeningStock", (object)model.OpeningStock ?? DBNull.Value),
+            new SqlParameter("@PurchasedQty", (object)model.PurchasedQty ?? DBNull.Value),
+            new SqlParameter("@UsedQty", (object)model.UsedQty ?? DBNull.Value),
+            new SqlParameter("@QtyUnit", model.QtyUnit),
+            new SqlParameter("@SocietyId", model.SocietyId),
+            new SqlParameter("@Remarks", model.Remarks),
+            new SqlParameter("@UserId", userId)
+        };
+
+                var result = _dataAccess.ExecuteNonQuery("sp_SaveUpdateGetFertilizerStock", commandType: CommandType.StoredProcedure, parameters);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
         }
 
 
