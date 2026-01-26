@@ -50,6 +50,7 @@ namespace DAL.MasterData
         public DataTable GetUserRolesAndPerMissionModule(int? RoleId);
         public int SaveUserRolesAndPermissionModule(List<UserModulesDetails> permission);
         public DataTable GetVillageByTehsil(int? tehsilid);
+        public DataSet GetSocietyDashboardData(long societyid);
     }
     public class MasterData : IMastersData
     {
@@ -353,7 +354,9 @@ namespace DAL.MasterData
                     new SqlParameter("@TehsilId", model.TehsilId),
                        new SqlParameter("@BlockId", model.BlockId),
                      new SqlParameter("@VillageId", model.VillageId),
-                    new SqlParameter("@CreatedBy", 1)
+                      new SqlParameter("@Mobile", model.Mobile),
+                       new SqlParameter("@Email", model.Email),
+                    new SqlParameter("@CreatedBy",model.CreatedBy)
                 };
                 var result = _dataAccess.ExecuteNonQuery("sp_InsertUpdateSociety", commandType: CommandType.StoredProcedure, parameters);
                 return result;
@@ -504,6 +507,26 @@ namespace DAL.MasterData
             }
             return result;
         }
+
+        public DataSet GetSocietyDashboardData(long societyid)
+        {
+            try
+            {
+
+                SqlParameter[] parameters =
+                {
+                     new SqlParameter("@MobileNo",societyid),
+                };
+                var result = _dataAccess.ExecuteDataSet("sp_getSocietyFertilizerDetails", parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption from bal:" + ex.Message);
+            }
+        }
+
+
         #endregion
     }
 }

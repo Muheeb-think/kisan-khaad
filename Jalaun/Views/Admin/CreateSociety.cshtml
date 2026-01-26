@@ -86,7 +86,16 @@
                     @Html.TextBoxFor(m => m.SocietyNameHi,
                              new { @class = "form-control" })
                 </div>
-
+            <div class="col-md-4">
+                <label>संस्था का Mobile </label>
+                @Html.TextBoxFor(m => m.Mobile,
+                                new { @class = "form-control", @type="Number" })
+            </div>
+            <div class="col-md-4">
+                <label>संस्था का Email </label>
+                @Html.TextBoxFor(m => m.Email,
+                                new { @class = "form-control", @type = "email",@maxLength="10" })
+            </div>
                 <div class="col-md-4 mt-4">
                     <button type="submit" class="btn btn-primary">
                         Save

@@ -22,6 +22,9 @@ namespace Jalaun.Models
         public string? Tehsil { get; set; }
         public string? Block { get; set; }
         public string? Village { get; set; }
+        public long? Mobile { get; set; }
+        public string? Email { get; set; }
+        public int? CreatedBy { get; set; }
         public List<TehsilViewModel>? ddltehsil { get; set; }
         public List<BlockModel>? ddlblock { get; set; }
         public List<VillageModel>? ddlvillage { get; set; }

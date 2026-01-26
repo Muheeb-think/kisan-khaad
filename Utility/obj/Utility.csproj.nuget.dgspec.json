@@ -1,25 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj": {}
+    "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj": {}
   },
   "projects": {
-    "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj": {
+    "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj",
+        "projectUniqueName": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj",
         "projectName": "Utility",
-        "projectPath": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj",
-        "packagesPath": "C:\\Users\\THINK COMPUTERS DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\obj\\",
+        "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj",
+        "packagesPath": "C:\\Users\\Hp-Aero\\.nuget\\packages\\",
+        "outputPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\THINK COMPUTERS DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Hp-Aero\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,28 +39,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.Authentication.Abstractions": {
-              "target": "Package",
-              "version": "[2.3.9, )"
-            },
-            "Microsoft.AspNetCore.Authentication.Cookies": {
-              "target": "Package",
-              "version": "[2.3.9, )"
-            },
-            "Microsoft.AspNetCore.Http": {
-              "target": "Package",
-              "version": "[2.3.9, )"
-            },
-            "System.Drawing.Common": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "System.Text.Encoding": {
-              "target": "Package",
-              "version": "[4.3.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -78,12 +50,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

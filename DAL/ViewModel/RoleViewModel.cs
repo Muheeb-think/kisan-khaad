@@ -34,7 +34,7 @@ namespace Jalaun.Models
         public int? UserNumber { get; set; }
         public bool IsActive { get; set; } = true;
         public List<RoleViewModel>? roles { get; set; }// for dropdown
-        public List<UserViewModel> userList { get; set; } // for listing 
+        public List<UserViewModel>? userList { get; set; } // for listing 
 
     }
     public class UserRolePermission 

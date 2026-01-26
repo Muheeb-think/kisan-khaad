@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,7 +76,7 @@ namespace DAL.ViewModel
         public string? FertilizerRate { get; set; }
     }
 
-    public class FertilizerCropMappingViewModel()
+    public class FertilizerCropMappingViewModel
     {
         public int MappingId { get; set; }
         [Required(ErrorMessage = "उर्वरक चुनें")]
@@ -104,6 +105,13 @@ namespace DAL.ViewModel
         public string? FertilizerNameEnglish { get; set; }
         public string? Dose_per_hectare_kg { get; set; }
     }
-
+    public class FertilizerDemandVM
+    {
+        public DataTable DashboardDT { get; set; }
+        public string ItemName { get; set; }
+        public int DemandKg { get; set; }
+       public List<FertilizerDemandVM>? FertilizerDemandVillageWise { get; set; }
+        public List<FertilizerDemandVM>? FertilizerDemandFertilizerWise { get; set; }
+    }
 
 }

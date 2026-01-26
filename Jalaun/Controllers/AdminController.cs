@@ -1,4 +1,5 @@
 ﻿
+using BAL.Common;
 using BAL.Services;
 using DAL.MasterData;
 using DAL.ViewModel;
@@ -298,6 +299,7 @@ namespace Jalaun.Controllers
             {
                 try
                 {
+                    model.CreatedBy = Convert.ToInt32(SessionHelper.UserId);
                     var res = _data.SelectTehsil();
                     var saveresult = _data.SaveSociety(model);
                     model.ddltehsil = BAL.Common.DataTableExtensions.ToList<TehsilViewModel>(res.Tables[0]);
@@ -384,7 +386,10 @@ namespace Jalaun.Controllers
             {
                 var res = _data.CreateUser(model);
                 if (res > 0)
+                {
                     TempData["msg"] = "success";
+                    return RedirectToAction("CreateUser");
+                }
                 else
                 {
                     TempData["msg"] = "Error in saving Record";

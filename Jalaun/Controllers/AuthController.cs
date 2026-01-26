@@ -1,9 +1,13 @@
-﻿using DAL.ModelDTO;
+﻿using BAL.Common;
+using DAL.ModelDTO;
 using DAL.Repo;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using System.Net;
+using System.Security.Claims;
 using Utilities;
 using Utilities.EnumClasses;
 
@@ -27,7 +31,7 @@ namespace Jalaun.Controllers
         }
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public IActionResult Login(LoginDTO logindto)
+        public async Task<IActionResult> Login(LoginDTO logindto)
         {
             try
             {
@@ -55,7 +59,20 @@ namespace Jalaun.Controllers
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
-                    return RedirectToAction("Index", "Home");
+                   // Logout();
+                    await SignInAndSetSession(dt.Rows[0]); // generating Cookies for Authentication and Authorization
+
+
+                    if (dt?.Rows[0]["RoleNameHi"]?.ToString()?.Trim() == Constant.संस्था.Trim())
+                    {
+                        return RedirectToAction("Index", "Society");
+                    }
+                    if (dt?.Rows[0]["RoleNameHi"]?.ToString()?.Trim() == Constant.किसान.Trim())
+                    {
+                        return RedirectToAction("Registration", "Farmer");
+                    }
+
+                    //   return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("CaptchaCode", "Invalid username or password");
                 loginModel.CaptchaImg = GetCaptchaImage();
@@ -106,5 +123,41 @@ namespace Jalaun.Controllers
             return ImageUrl;//new FileStreamResult(s, "image/png");
         }
         #endregion
+        public async Task SignInAndSetSession(DataRow dr)
+        {
+            var claims = new List<Claim>
+            {
+            new Claim(ClaimTypes.Name, dr["UserName"]?.ToString() ?? ""),
+            new Claim(ClaimTypes.NameIdentifier, dr["user_number"]?.ToString() ?? ""),
+            new Claim(ClaimTypes.Role, dr["RoleNameHi"]?.ToString() ?? ""),
+            new Claim(ClaimTypes.MobilePhone, dr["MobileNo"]?.ToString() ?? "")
+            };
+
+            var identity = new ClaimsIdentity(
+                claims,
+                CookieAuthenticationDefaults.AuthenticationScheme
+            );
+
+            var principal = new ClaimsPrincipal(identity);
+
+            await HttpContext.SignInAsync(
+               CookieAuthenticationDefaults.AuthenticationScheme,
+               principal,
+               new AuthenticationProperties
+               {
+                   IsPersistent = false, // session-based
+                   ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(20)
+               }
+           );
+            
+
+        }
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme
+            );
+            return RedirectToAction("Login", "Auth");
+        }
     }
 }

@@ -244,7 +244,13 @@
 </head>
 
 <body>
-
+    @if (TempData["Message"] != null)
+    {
+        <script>
+            var Message = @Html.Raw(Json.Serialize(TempData["Message"]))
+                alert(Message);
+        </script>
+    }
     <div class="container">
         <div class="form-wrapper">
 

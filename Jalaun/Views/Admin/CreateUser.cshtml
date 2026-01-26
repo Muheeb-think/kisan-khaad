@@ -96,12 +96,12 @@
         <thead>
             <tr>
                 <th>क्रमांक</th>
-                <th>Role</th>
+            <th>भूमिका</th>
                 <th>ईमेल(Email)</th>
                 <th>मोबाइल(Mobile)</th>
-               
-                <th>स्टेटस</th>
-                <th>एक्शन</th>
+
+            <th>स्थिति</th>
+            <th>क्रियाएँ</th>
             </tr>
         </thead>
         <tbody>
@@ -116,7 +116,7 @@
                     <td>@item.Email</td>
                     <td>@item.mobile</td>
                     <td>
-                        @(item.IsActive ? "Active" : "Inactive")
+                    @(item.IsActive ? "सक्रिय" : "निष्क्रिय")
                     </td>
                     <td>
                         <a href="#" onclick="edit(@item.UserNumber,'@item.RoleTypeId','@item.Email','@item.mobile')"

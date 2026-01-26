@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\lib\jquery-validation\**" />
+    <Content Remove="wwwroot\lib\jquery-validation\**" />
+    <EmbeddedResource Remove="wwwroot\lib\jquery-validation\**" />
+    <None Remove="wwwroot\lib\jquery-validation\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\Jalaun_Web\css\AjaxLoader.html" />
     <None Include="wwwroot\Jalaun_Web\css\bootstrap.min.css" />
     <None Include="wwwroot\Jalaun_Web\css\dataTables.bootstrap.min.css" />

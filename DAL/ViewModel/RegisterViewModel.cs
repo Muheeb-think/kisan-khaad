@@ -62,6 +62,7 @@ namespace DAL.ViewModel
         public List<BlockModel>? BlockList { get; set; }
         public List<Village>? VillageList { get; set; }
         public List<LandViewModel> LandList { get; set; }
+
     }
     public class TehsilModel
     {
