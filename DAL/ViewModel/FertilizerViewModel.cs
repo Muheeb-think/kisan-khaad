@@ -28,3 +28,44 @@ public class FertilizerStockVM
     // Dropdowns
     public List<SelectListItem> FertilizerList { get; set; }
 }
+
+public class DistributeVM
+{
+
+    public int DemandDetailsId { get; set; }
+
+
+    public int FertilizerId { get; set; }
+
+
+    public int SocietyId { get; set; }
+
+    // ================= DISPLAY (Readonly) =================
+
+    public string FarmerName { get; set; }
+    public string FertilizerName { get; set; }
+
+    [Display(Name = "Total Demand")]
+    public decimal FertilizerNeed { get; set; }
+
+    [Display(Name = "Already Received")]
+    public decimal ReceiveQty { get; set; }
+
+    [Display(Name = "Pending Quantity")]
+    public decimal PendingQty
+        => FertilizerNeed - ReceiveQty;
+
+    [Display(Name = "Available Stock")]
+    public decimal AvailableStock { get; set; }
+
+    // ================= INPUT =================
+
+    [Required]
+    [Range(0.01, 999999)]
+    [Display(Name = "Distribute Quantity")]
+    public decimal DistributeQty { get; set; }
+
+    [StringLength(255)]
+    public string Remarks { get; set; }
+}
+

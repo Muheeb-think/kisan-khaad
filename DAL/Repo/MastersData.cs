@@ -52,6 +52,7 @@ namespace DAL.MasterData
         public DataTable GetVillageByTehsil(int? tehsilid);
         public DataSet GetSocietyDashboardData(long societyid);
         public int SaveFertilizerStock(FertilizerStockVM model, int userId);
+        public void DistributeFertilizer(DistributeVM model, int userId);
 
     }
     public class MasterData : IMastersData
@@ -552,6 +553,20 @@ namespace DAL.MasterData
                 throw ex;
             }
             return result;
+        }
+        public void DistributeFertilizer(DistributeVM model, int userId)
+        {
+            SqlParameter[] parameters =
+                   {
+            new SqlParameter("@DemandDetailsId", model.DemandDetailsId),
+            new SqlParameter("@FertilizerId", model.FertilizerId),
+            new SqlParameter("@DistributeQty", model.DistributeQty),
+            new SqlParameter("@SocietyId", model.SocietyId),
+            new SqlParameter("@UserId", userId),
+            new SqlParameter("@Remarks", model.Remarks),
+        };
+            var result = _dataAccess.ExecuteNonQuery("SP_DistributeFertilizerToFarmer", commandType: CommandType.StoredProcedure, parameters);
+
         }
 
 

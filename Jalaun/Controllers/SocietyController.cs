@@ -2,6 +2,7 @@
 using BAL.Services;
 using DAL.MasterData;
 using DAL.ViewModel;
+using Jalaun.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -32,7 +33,14 @@ namespace Jalaun.Controllers
 
             return View(model);
         }
+        [HttpGet]
+        public IActionResult StockEntry( )
+        {
+            FertilizerStockVM mode = new();
 
+            return View(model);
+        }
+        [HttpPost]
         public IActionResult StockEntry(FertilizerStockVM model)
         {
             if (!ModelState.IsValid)
@@ -49,5 +57,19 @@ namespace Jalaun.Controllers
 
             return RedirectToAction("Entry");
         }
+
+        [HttpPost]
+        public IActionResult Distribute(DistributeVM model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            _repo.DistributeFertilizer(model, User.GetUserId());
+
+            TempData["Success"] = "Fertilizer distributed successfully";
+            return RedirectToAction("DemandList");
+
+        }
+
     }
 }
