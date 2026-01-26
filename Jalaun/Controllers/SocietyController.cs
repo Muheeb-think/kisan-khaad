@@ -58,6 +58,11 @@ namespace Jalaun.Controllers
             return RedirectToAction("Entry");
         }
 
+        [HttpGet]
+        public IactionResult Distribute()
+        {
+            return View();
+        }
         [HttpPost]
         public IActionResult Distribute(DistributeVM model)
         {
