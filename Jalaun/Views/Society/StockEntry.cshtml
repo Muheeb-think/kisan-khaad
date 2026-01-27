@@ -1,55 +1,77 @@
 ﻿@model FertilizerStockVM
 @{
     ViewBag.Title = "Fertilizer Stock Entry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h4 class="mb-3">@((Model.StockID == 0) ? "Add Fertilizer Stock" : "Update Fertilizer Stock")</h4>
+<h4 class="mb-3"> Add Fertilizer Stock</h4>
 
 @if (TempData["Success"] != null)
 {
     <div class="alert alert-success">@TempData["Success"]</div>
 }
 
-@using (Html.BeginForm())
-{
-    @Html.HiddenFor(m => m.StockID)
 
+@using (Html.BeginForm("StockEntry", "Society", FormMethod.Post))
+{
+    @Html.HiddenFor(m=>m.FertilizerID)
+    @Html.HiddenFor(m => m.StockID)
+    ;
     <div class="row">
         <div class="col-md-4">
-            <label>Fertilizer</label>
-            @Html.DropDownListFor(m => m.FertilizerID, Model.FertilizerList, "-- Select --",
-        new { @class = "form-control" })
-        </div>
+            <div class="form-group">
+                <label>उर्वरक</label>
+                <select id="ddlfertilizer">
+                    <option value="-1">--विकल्प चुनें--</option>
+                </select>
+                @*  <select asp-for="FertilizerID"
+                        asp-items="@(new SelectList(Model.ddlfertilizers, "FertilizerID", "FertilizerNameHindi"))"
+                        class="form-select">
+                    <option value="-1">--विकल्प चुनें--</option>
+                </select> *@
 
+            </div>
+        </div>
         <div class="col-md-4">
-            <label>Opening Stock</label>
+            <label>प्रारंभिक स्टॉक</label>
             @Html.TextBoxFor(m => m.OpeningStock, new { @class = "form-control", type = "number", step = "0.01" })
         </div>
 
         <div class="col-md-4">
-            <label>Purchased Quantity</label>
+            <label>खरीदी गई मात्रा</label>
             @Html.TextBoxFor(m => m.PurchasedQty, new { @class = "form-control", type = "number", step = "0.01" })
         </div>
     </div>
 
     <div class="row mt-3">
-        
+
         <div class="col-md-4">
-            <label>Unit</label>
+            <label>इकाई/मात्रक</label>
             @Html.TextBoxFor(m => m.QtyUnit, new { @class = "form-control", placeholder = "KG / BORI" })
         </div>
 
         <div class="col-md-4">
-            <label>Remarks</label>
+            <label>टिप्पणी</label>
             @Html.TextBoxFor(m => m.Remarks, new { @class = "form-control" })
         </div>
-    </div>
 
-    <div class="mt-4">
-        <button type="submit" class="btn btn-primary">
-            @(Model.StockID == 0 ? "Save Stock" : "Update Stock")
-        </button>
 
-        <a href="@Url.Action("Entry")" class="btn btn-secondary">Reset</a>
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
+
+            <a href="@Url.Action("Entry")" class="btn btn-secondary">Reset</a>
+        </div>
     </div>
 }
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+     $(document).ready(function () {
+    bindDropDown('ddlfertilizer', 'GetAllFertilizer', 0, -1);
+    $('#ddlfertilizer').change(function(){
+        $('#FertilizerID').val( $('#ddlfertilizer').val());
+    });
+     });
+</script>

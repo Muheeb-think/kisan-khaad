@@ -127,89 +127,120 @@
                             </small> -->
                             <span>Main Menu</span>
                         </li>
+                        @if (SessionHelper.UserRole == "Admin")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sidebarApplications" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApplications">
+                                    <i class="iconoir-view-grid menu-icon"></i>
+                                    <span>मास्टर</span>
+                                </a>
+                                <div class="collapse " id="sidebarApplications">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-action="VillageMaster" asp-controller="Admin">
+                                                <span>ग्राम मास्टर</span>
+                                            </a>
+                                        </li><!--end nav-item-->
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-action="CropMaster" asp-controller="Admin">
+                                                <span>फसल मास्टर</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-action="FertilizerMaster" asp-controller="Admin">
+                                                <span>उर्वरक मास्टर</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="@Url.Action("TehsilMaster", "Admin")" class="nav-link ">तहसील मास्टर</a>
+                                        </li><!--end nav-item-->
+                                        <li class="nav-item">
+                                            <a href="@Url.Action("CreateSociety", "Admin")" class="nav-link ">सोसायटी(संस्था) मास्टर</a>
+                                        </li><!--end nav-item-->
 
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#sidebarApplications" data-bs-toggle="collapse" role="button"
-                               aria-expanded="false" aria-controls="sidebarApplications">
-                                <i class="iconoir-view-grid menu-icon"></i>
-                                <span>मास्टर</span>
-                            </a>
-                            <div class="collapse " id="sidebarApplications">
-                                <ul class="nav flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-action="VillageMaster" asp-controller="Admin">
-                                            <span>ग्राम मास्टर</span>
-                                        </a>
-                                    </li><!--end nav-item-->
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-action="CropMaster" asp-controller="Admin">
-                                            <span>फसल मास्टर</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-action="FertilizerMaster" asp-controller="Admin">
-                                            <span>उर्वरक मास्टर</span>
-                                        </a>
-                                    </li>
 
-                                    <li class="nav-item">
-                                        <a href="@Url.Action("TehsilMaster", "Admin")" class="nav-link ">तहसील मास्टर</a>
-                                    </li><!--end nav-item-->
-                                    <li class="nav-item">
-                                        <a href="@Url.Action("CreateSociety", "Admin")" class="nav-link ">सोसायटी(संस्था) मास्टर</a>
-                                    </li><!--end nav-item-->
-                                
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-action="FertilizerCropMapping" asp-controller="Admin">
+                                                <span>फसल-वार उर्वरक मैपिं</span>
+                                            </a>
+
+                                        </li><!--end nav-item-->
 
 
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-action="FertilizerCropMapping" asp-controller="Admin">
-                                            <span>फसल-वार उर्वरक मैपिं</span>
-                                        </a>
-                                       
-                                    </li><!--end nav-item-->
-                                   
 
-                                   
-                                </ul><!--end nav-->
-                            </div><!--end startbarApplications-->
-                        </li><!--end nav-item-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#sidebarApplicationsuser" data-bs-toggle="collapse" role="button"
-                               aria-expanded="false" aria-controls="sidebarApplicationsuser">
-                                <i class="iconoir-view-grid menu-icon"></i>
-                                <span>उपयोगकर्ता प्रबंधन(User Management)</span>
-                            </a>
-                            <div class="collapse" id="sidebarApplicationsuser">
-                                <ul class="nav flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-action="CreateRole" asp-controller="Admin">
-                                            <span>भूमिका प्रबंधन(Manage Roles)</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-action="CreateUser" asp-controller="Admin">
-                                            <span>उपयोगकर्ता प्रबंधन(Manage User)</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-action="UserRolesPermission" asp-controller="Admin">
-                                            <span>अनुमति प्रबंधन(Manage Permission)</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                                    </ul><!--end nav-->
+                                </div><!--end startbarApplications-->
+                            </li><!--end nav-item-->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sidebarApplicationsuser" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApplicationsuser">
+                                    <i class="iconoir-view-grid menu-icon"></i>
+                                    <span>उपयोगकर्ता प्रबंधन(User Management)</span>
+                                </a>
+                                <div class="collapse" id="sidebarApplicationsuser">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-action="CreateRole" asp-controller="Admin">
+                                                <span>भूमिका प्रबंधन(Manage Roles)</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-action="CreateUser" asp-controller="Admin">
+                                                <span>उपयोगकर्ता प्रबंधन(Manage User)</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-action="UserRolesPermission" asp-controller="Admin">
+                                                <span>अनुमति प्रबंधन(Manage Permission)</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        }
+                        @if (SessionHelper.UserRole == Constant.संस्था)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sidebarApplications" data-bs-toggle="collapse" role="button"
+                                   aria-expanded="false" aria-controls="sidebarApplications">
+                                    <i class="iconoir-view-grid menu-icon"></i>
+                                    <span>सोसायटी प्रबंधन</span>
+                                </a>
+                                <div class="collapse " id="sidebarApplications">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-action="Index" asp-controller="Society">
+                                                <span>डैशबोर्ड</span>
+                                            </a>
+                                        </li><!--end nav-item-->
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-action="StockEntry" asp-controller="Society">
+                                                <span>स्टॉक प्रविष्टि</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-action="Distribute" asp-controller="Society">
+                                                <span>उर्वरक वितरण</span>
+                                            </a>
+                                        </li>
+
+
+
+
+
+                                    </ul><!--end nav-->
+                                </div><!--end startbarApplications-->
+                            </li>
+                        
+                            <!--end nav-item-->
+                           
+                        }
 
                     </ul><!--end navbar-nav--->
-                    <div class="update-msg text-center">
-                        <div class="d-flex justify-content-center align-items-center thumb-lg update-icon-box  rounded-circle mx-auto">
-                            <i class="iconoir-peace-hand h3 align-self-center mb-0 text-primary"></i>
-                        </div>
-                        @*          <h5 class="mt-3">Mannat Themes</h5>
-                        <p class="mb-3 text-muted">Rizz is a high quality web applications.</p> *@
-                        <a href="javascript: void(0);" class="btn text-primary shadow-sm rounded-pill">Upgrade your plan</a>
-                    </div>
+                   
                 </div>
             </div><!--end startbar-collapse-->
         </div><!--end startbar-menu-->

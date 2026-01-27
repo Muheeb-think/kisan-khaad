@@ -3,6 +3,7 @@
     Layout = null;
 }
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -239,18 +240,11 @@
             font-size: 0.9rem;
         }
 
-
     </style>
 </head>
 
 <body>
-    @if (TempData["Message"] != null)
-    {
-        <script>
-            var Message = @Html.Raw(Json.Serialize(TempData["Message"]))
-                alert(Message);
-        </script>
-    }
+
     <div class="container">
         <div class="form-wrapper">
 
@@ -276,7 +270,7 @@
             </div>
             <div id="toast"> </div>
             <form asp-action="Registration" asp-controller="Farmer" method="post" asp-antiforgery="true" id="registrationForm">
-            @*     <input type="hidden" name="tahsilId" id="tahsilHidden" />
+                @*     <input type="hidden" name="tahsilId" id="tahsilHidden" />
                 <input type="hidden" name="tahsilAgriStack" id="tahsilAgriStackHidden" /> *@
                 <input type="hidden" id="IsOtpVerified" name="IsOtpVerified" value="false" />
                 <!-- ================= STEP 1 ================= -->
@@ -314,7 +308,7 @@
                             </div>
                             <div class="col-md-4">
                                 <label>लिंग<span style="color:red">*</span></label>
-                                <input asp-for="Gender" class="form-control" readonly/>
+                                <input asp-for="Gender" class="form-control" readonly />
                             </div>
                             <div class="col-md-4">
                                 <label>जन्म तिथि<span style="color:red">*</span></label>
@@ -483,7 +477,7 @@
                                 ⬅ Previous
                             </button>
 
-                            <button type="button" class="btn btn-success nextBtn">
+                            <button type="button" class="btn btn-success nextBtn btn-step2">
                                 Next ➜ भूमि विवरण
                             </button>
                         </div>
@@ -496,6 +490,18 @@
                     <div class="section-card">
                         <h6>भूमि विवरण</h6>
                         <div class="row g-3">
+                            <div class="col-md-4">
+                                <label>एग्री स्टैकआईडी<span style="color:red">*</span></label>
+                                <input id="agriStackId" readonly class="form-control" />
+                            </div>
+                            <div class="col-md-4">
+                                <label>किसान का नाम(एग्री स्टैक)<span style="color:red">*</span></label>
+                                <input asp-for="FarmerNameForLand" readonly class="form-control" required />
+                            </div>
+                            <div class="col-md-4">
+                                <label>मोबाइल नंबर<span style="color:red">*</span></label>
+                                <input asp-for="MobileNumberAgriStackForLand" class="form-control" required />
+                            </div>
                             <div class="col-md-4">
                                 <label class="form-label mb-1">राज्य<span style="color:red">*</span></label>
                                 <input asp-for="LandState" value="उत्तर प्रदेश" readonly class="form-control">
@@ -529,6 +535,10 @@
                                 <label>खसरा संख्या</label>
                                 <input asp-for="LandRecordNumber" class="form-control" onblur="SearchKhasraNo()" id="LandRecordNumber" />
                             </div>
+                              <div class="col-md-4">
+                                <label> किसान का नाम </label>
+                                <input asp-for="FarmerNameLandKhasra" class="form-control" />
+                            </div>
                             @*   <div class="col-md-4">
                                 <label>एग्रीस्टैक कुल रकबा</label>
                                 <input asp-for="TotalAreaAgristack" class="form-control" />
@@ -539,7 +549,7 @@
                             </div>
                             <div class="col-md-4">
                                 <label>किसान की हिस्सेदारी</label>
-                                <input asp-for="FarmerShare" class="form-control" readonly/>
+                                <input asp-for="FarmerShare" class="form-control" readonly />
                             </div>
 
                             <div class="col-md-4">
@@ -569,6 +579,16 @@
                                     </thead>
                                     <tbody>
                                     </tbody>
+                                    <tfoot class="table-secondary fw-bold text-center">
+                                        <tr>
+                                            <th colspan="2">कुल</th>
+                                            <th id="TotalKhasra">0</th>
+                                            <th id="TotalArea">0</th>
+                                            <th id="TotalShare">0</th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+
                                 </table>
                             </div>
                             <div id="LandHiddenFields"></div>
@@ -767,5 +787,14 @@
     <script src="~/toastr/toastr.js"></script>
     <script src="~/toastr/toastr.min.js"></script>
     <script src="@Url.Content("~/Page_Js/farmerregistration.js")"></script>
+
+    <!-- Set TempData as a global JS variable -->
+    @if (TempData["Message"] != null)
+    {
+        <script>
+            window.TempMessage = @Html.Raw(Json.Serialize(TempData["Message"]));
+        </script>
+    }
+
 </body>
 </html>

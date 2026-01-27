@@ -530,23 +530,24 @@ namespace DAL.MasterData
         }
         public int SaveFertilizerStock(FertilizerStockVM model, int userId)
         {
+            int result = 0;
             try
             {
-
+                model.SocietyId = userId;
                 SqlParameter[] parameters =
                     {
-           new SqlParameter("@StockID", model.StockID),
-            new SqlParameter("@FertilizerID", model.FertilizerID),
-            new SqlParameter("@OpeningStock", (object)model.OpeningStock ?? DBNull.Value),
-            new SqlParameter("@PurchasedQty", (object)model.PurchasedQty ?? DBNull.Value),
-            new SqlParameter("@UsedQty", (object)model.UsedQty ?? DBNull.Value),
-            new SqlParameter("@QtyUnit", model.QtyUnit),
-            new SqlParameter("@SocietyId", model.SocietyId),
-            new SqlParameter("@Remarks", model.Remarks),
-            new SqlParameter("@UserId", userId)
-        };
+                new SqlParameter("@StockID", model.StockID),
+                new SqlParameter("@FertilizerID", model.FertilizerID),
+                new SqlParameter("@OpeningStock", (object)model.OpeningStock ?? DBNull.Value),
+                new SqlParameter("@PurchasedQty", (object)model.PurchasedQty ?? DBNull.Value),
+                new SqlParameter("@UsedQty", (object)model.UsedQty ?? DBNull.Value),
+                new SqlParameter("@QtyUnit", model.QtyUnit),
+                new SqlParameter("@SocietyId", model.SocietyId),
+                new SqlParameter("@Remarks", model.Remarks),
+                new SqlParameter("@UserId", userId)
+            };
 
-                var result = _dataAccess.ExecuteNonQuery("sp_SaveUpdateGetFertilizerStock", commandType: CommandType.StoredProcedure, parameters);
+                result = _dataAccess.ExecuteNonQuery("sp_SaveUpdateGetFertilizerStock", commandType: CommandType.StoredProcedure, parameters);
             }
             catch (Exception ex)
             {

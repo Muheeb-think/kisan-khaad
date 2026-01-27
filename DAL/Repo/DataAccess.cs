@@ -20,6 +20,7 @@ namespace DAL.Repo
         public DataTable FarmerDetailsById(FarmerSearchRequest request);
         public DataTable FertilizerDetailsById(FertilizerDetails obj);
         public int FarmerRegistration(RegisterViewModel viewModel, DataTable dt);
+        public DataSet FertilizerDemand(TempraryDemand obj);
 
     }
     public class DataAccess : IDataAccess
@@ -172,6 +173,25 @@ namespace DAL.Repo
 
 
         #endregion
-
+        #region mukeem
+        public DataSet FertilizerDemand(TempraryDemand obj)
+        {
+            SqlParameter[] parms =
+            {
+    new SqlParameter("@Action", obj.Action ?? ""),
+    new SqlParameter("@Id", obj.Id),
+    new SqlParameter("@FarmerId", obj.FarmerId),
+    new SqlParameter("@SeasonId", obj.SeasonId),
+    new SqlParameter("@SamitiId", obj.SamitiId),
+    new SqlParameter("@CropId", obj.CropId),
+    new SqlParameter("@FertilizerId", obj.FertilizerId),
+    new SqlParameter("@NeedTimeId", obj.NeedTimeId),
+    new SqlParameter("@CropAreaHec", obj.CropAreaHec),
+    new SqlParameter("@FertilizerNeed", obj.FertilizerNeed),
+    new SqlParameter("@SpecialInstraction", obj.SpecialInstraction)
+};
+            return _dbHelper.ExecuteDataSet("Sp_FertilizerDemand", parms);
+        }
+        #endregion
     }
 }

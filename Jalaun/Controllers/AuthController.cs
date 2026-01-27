@@ -61,7 +61,7 @@ namespace Jalaun.Controllers
                 {
                    // Logout();
                     await SignInAndSetSession(dt.Rows[0]); // generating Cookies for Authentication and Authorization
-
+                    HttpContext.Session.SetString("FarmerId", dt.Rows[0]["FarmerId"].ToString());
 
                     if (dt?.Rows[0]["RoleNameHi"]?.ToString()?.Trim() == Constant.संस्था.Trim())
                     {
@@ -69,7 +69,7 @@ namespace Jalaun.Controllers
                     }
                     if (dt?.Rows[0]["RoleNameHi"]?.ToString()?.Trim() == Constant.किसान.Trim())
                     {
-                        return RedirectToAction("Registration", "Farmer");
+                        return RedirectToAction("Farmerdashboard", "Farmer");
                     }
 
                     //   return RedirectToAction("Index", "Home");

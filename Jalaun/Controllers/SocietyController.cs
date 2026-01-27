@@ -33,35 +33,41 @@ namespace Jalaun.Controllers
 
             return View(model);
         }
-        [HttpGet]
-        public IActionResult StockEntry( )
-        {
-            FertilizerStockVM mode = new();
 
+
+        [HttpGet]
+        public IActionResult StockEntry()
+        {
+            FertilizerStockVM model = new();
+            
+            
             return View(model);
         }
         [HttpPost]
         public IActionResult StockEntry(FertilizerStockVM model)
         {
+            
+
             if (!ModelState.IsValid)
             {
-                model.FertilizerList = null;
+               
                 return View(model);
             }
 
-            var res = _data.SaveFertilizerStock(model, User.GetUserId());
+            var res = _data.SaveFertilizerStock(model, Convert.ToInt32(SessionHelper.UserId));
 
             TempData["Success"] = model.StockID == 0
                 ? "Stock added successfully"
                 : "Stock updated successfully";
 
-            return RedirectToAction("Entry");
+            return RedirectToAction("StockEntry");
         }
 
         [HttpGet]
-        public IactionResult Distribute()
+        public IActionResult Distribute()
         {
-            return View();
+            DistributeVM model = new();
+            return View(model);
         }
         [HttpPost]
         public IActionResult Distribute(DistributeVM model)
@@ -69,7 +75,7 @@ namespace Jalaun.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            _repo.DistributeFertilizer(model, User.GetUserId());
+            _data.DistributeFertilizer(model, Convert.ToInt32(SessionHelper.UserId));
 
             TempData["Success"] = "Fertilizer distributed successfully";
             return RedirectToAction("DemandList");

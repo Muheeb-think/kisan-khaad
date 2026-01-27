@@ -37,7 +37,7 @@ namespace DAL.SqlHeplers
                 SqlCommand cmd = new SqlCommand(CommandName, conn);
                 try
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure; cmd.CommandTimeout = 300;
                     if (param != null)
                     {
                         for (int i = 0; i < param.Length; i++)
@@ -77,7 +77,7 @@ namespace DAL.SqlHeplers
                 SqlCommand cmd = new SqlCommand(CommandName, conn);
                 try
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure; cmd.CommandTimeout = 300;
                     if (param != null)
                     {
                         for (int i = 0; i < param.Length; i++)
@@ -114,7 +114,7 @@ namespace DAL.SqlHeplers
             {
                 using (SqlCommand command = new SqlCommand(commandText, connection))
                 {
-                    command.CommandType = commandType;
+                    command.CommandType = commandType; command.CommandTimeout = 300;
 
                     if (parameters != null)
                     {
@@ -135,7 +135,7 @@ namespace DAL.SqlHeplers
             using (SqlConnection conn = new SqlConnection(_ConStr))
             using (SqlCommand cmd = new SqlCommand(commandName, conn))
             {
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure; cmd.CommandTimeout = 300;
 
                 if (param != null)
                     cmd.Parameters.AddRange(param);

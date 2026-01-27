@@ -56,13 +56,16 @@ namespace DAL.ViewModel
         public string? TotalAreaAgristack { get; set; }
         public string? FarmerShare { get; set; }
         public string? AreaofPaddySown { get; set; }
+        public string? MobileNumberAgriStackForLand { get; set; }
+        public string? FarmerNameForLand { get; set; }
+        public string? FarmerNameLandKhasra { get; set; }
         public DateOnly? DOB { get; set; }
+
         public List<TehsilModel>? TehsilList { get; set; }
         public List<FarmerCategoryModel>? FarmerCategoryList { get; set; }
         public List<BlockModel>? BlockList { get; set; }
         public List<Village>? VillageList { get; set; }
         public List<LandViewModel> LandList { get; set; }
-
     }
     public class TehsilModel
     {
@@ -106,4 +109,41 @@ namespace DAL.ViewModel
         public decimal LandTotalArea { get; set; }
         public decimal FarmerShare { get; set; }
     }
+
+ //From: Mukeem(THINKCLIENTPF1T/192.168.2.12/THINKCLIENTSEQRITE-<84733e427e285401>)
+ // at Sat Jan 24 10:54:20 2026
+public class TempraryDemand
+    {
+        public string Action { get; set; }
+        public int Id { get; set; }
+        public string FarmerId { get; set; }
+        public int SamitiId { get; set; }
+        public int SeasonId { get; set; }
+        public int CropId { get; set; }
+        public int FertilizerId { get; set; }
+        public int NeedTimeId { get; set; }
+        public decimal CropAreaHec { get; set; }
+        public decimal FertilizerNeed { get; set; }
+        public string? SpecialInstraction { get; set; }
+    }
+    public class TempDemandVM
+    {
+        public int Id { get; set; }
+        public int FarmerId { get; set; }
+        public string? msg { get; set; }
+        public string? CropNameHindi { get; set; }
+        public string? FertilizerNameHindi { get; set; }
+        public decimal FertilizerNeed { get; set; }
+        public decimal CropAreaHec { get; set; }
+        public decimal Rate_Kg { get; set; }
+        public decimal Amount { get; set; }
+    }
+    public class ApiResponse<T>
+    {
+        public bool Status { get; set; }
+        public string? Message { get; set; }
+        public T? Data { get; set; }
+    }
+
+
 }

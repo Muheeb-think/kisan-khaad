@@ -1,9 +1,13 @@
 ﻿
+using Azure.Core;
+using BAL;
 using BAL.Services;
+using DAL.ModelDTO;
 using DAL.Repo;
 using DAL.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
 using System.Data;
 using Utilities;
 using static Azure.Core.HttpHeader;
@@ -15,11 +19,15 @@ namespace Jalaun.Controllers
     {
         private readonly IMasterDataBAL _bal;
         private readonly IRegistration _repo;
+        private readonly IFarmerDataBAL _farmerbal;
+        private readonly ICommonLogics _commonLogic;
 
-        public FarmerController(IMasterDataBAL bal, IRegistration repo)
+        public FarmerController(IMasterDataBAL bal, IRegistration repo, IFarmerDataBAL farmerbal,ICommonLogics commonLogics)
         {
             this._repo = repo;
             this._bal = bal;
+            this._farmerbal = farmerbal;
+            this._commonLogic= commonLogics;
         }
         public IActionResult Registration()
         {
@@ -45,6 +53,7 @@ namespace Jalaun.Controllers
             else if (result == -10)
             {
                 TempData["Message"] = "आपका आवेदन पहले ही जमा किया जा चुका है।";
+                return RedirectToAction("Login", "Auth");
             }
             else
             {
@@ -60,7 +69,10 @@ namespace Jalaun.Controllers
             {
                 request.Action = "AgriStackData";
                 var data = _repo.FarmerDetailsbyId(request);
-
+                if (data.Rows[0]["result"].ToString() == "-10")
+                {
+                    return Ok(new { status = true, data = data.Rows[0]["result"].ToString() });
+                }
                 var farmer = data.AsEnumerable().Select(dr => new
                 {
                     FarmerName = dr["FarmerName"]?.ToString(),//       
@@ -99,6 +111,7 @@ namespace Jalaun.Controllers
                     TotalArea = dr["TotalArea"]?.ToString(),//       
                     FarmerShareArea = dr["FarmerShareArea"]?.ToString(),//
                     KhatauniNo = dr["KhatauniNo"]?.ToString(),
+                    FarmerNameLand = dr["FarmerName"].ToString()
 
                 }).FirstOrDefault();
                 return Ok(new { status = true, data = farmer });
@@ -142,10 +155,156 @@ namespace Jalaun.Controllers
             return Json(otp == sessionOtp);
         }
 
+
+        #region update farmer profile 
+        [HttpGet]
+        public IActionResult FarmerProfileUpdate()
+        {
+            try
+            {
+                UserProfileViewModel model = new UserProfileViewModel();
+                model.TehsilList = _bal.SelectTehsilList();
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult FarmerProfileUpdate(UserProfileViewModel obj)
+        {
+            try
+            {              
+                int result = _farmerbal.UpdateCorrespondenceFarmerData(obj);
+                if (result > 0)
+                {
+                    TempData["Message"] = "आपकी प्रोफ़ाइल सफलतापूर्वक अपडेट हो गई है।";
+                }
+                else
+                {
+                    TempData["Message"] = "प्रोफ़ाइल अपडेट नहीं हो पाई। कृपया पुनः प्रयास करें।";
+                }
+                UserProfileViewModel model = new UserProfileViewModel();
+                model.TehsilList = _bal.SelectTehsilList();
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpPost]
+        public IActionResult GetCorrespondenceFarmerData()
+        {
+            try
+            {
+                List<FarmerProfile> profilelist = _farmerbal.SelectCorrespondenceFarmerData();
+                return Ok(new { status = true, data = profilelist });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { status = false, message = ex.Message });
+            }
+        }
+        #endregion
+
+        #region Farmer khad demands
+        public IActionResult ApproveDemand()
+        {
+            try
+            {
+                string? action = "Success";
+                List<FarmerFertilizerDemandDto> farmerFertilizer = new();
+                farmerFertilizer = _farmerbal.GetFarmerFertilizerDemand(action);
+                return View(farmerFertilizer);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in Farmerdashboard: " + ex.Message);
+                return View("Error", ex);
+            }
+            finally
+            {
+                Console.WriteLine("Farmerdashboard action completed.");
+            }
+        }
+
+        public IActionResult PendingFarmerFertilizerDemand()
+        {
+            try
+            {
+                string? action = "Pending";
+                List<FarmerFertilizerDemandDto> farmerFertilizer = new();
+                farmerFertilizer = _farmerbal.GetFarmerFertilizerDemand(action);
+                return View(farmerFertilizer);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in Farmerdashboard: " + ex.Message);
+                return View("Error", ex);
+            }
+            finally
+            {
+                Console.WriteLine("Farmerdashboard action completed.");
+            }
+        }
+        #endregion
+
+        #region dashboard
+        [HttpGet]
+        public IActionResult Farmerdashboard() 
+        {
+            try
+            {
+                FarmerDashboardDto dashboardDto = new();
+                dashboardDto = _farmerbal.GetFarmerDashboard();
+                return View(dashboardDto);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in Farmerdashboard: " + ex.Message);
+                return View("Error", ex);
+            }
+            finally
+            {
+                Console.WriteLine("Farmerdashboard action completed.");
+            }
+        }
+
+        #endregion
+
+        #region FarmerFertilizerDemand form 
+
+        [HttpGet]
+        public IActionResult FarmerFertilizerDemand()
+        {
+            dropdownBinderModel obj = new dropdownBinderModel();
+            obj.Action = "GetSeason";
+            DataTable dt = _commonLogic.DropDownBind(obj);
+            ViewBag.SeasonId = Convert.ToInt32(dt.Rows[0]["id"]);
+            ViewBag.SeasonName = dt.Rows[0]["value"].ToString();
+            ViewBag.FarmerId = HttpContext.Session.GetString("FarmerId");
+            return View();
+        }
+        #endregion
+
         #region Mukeem
         [HttpGet]
         public IActionResult FertilizerDemand()
         {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult FertilizerDemandNew()
+        {
+            dropdownBinderModel obj = new dropdownBinderModel();
+            obj.Action = "GetSeason";
+            DataTable dt = _commonLogic.DropDownBind(obj);
+            ViewBag.SeasonId = Convert.ToInt32(dt.Rows[0]["id"]);
+            ViewBag.SeasonName = dt.Rows[0]["value"].ToString();
             return View();
         }
 
@@ -154,8 +313,13 @@ namespace Jalaun.Controllers
         {
             try
             {
+                TempraryDemand temdemad = new TempraryDemand();
                 request.Action = "FarmerDetailById";
                 var data = _repo.FarmerDetailsbyId(request);
+
+                temdemad.FarmerId = request.FarmerId;
+                temdemad.Action = "Tempdetail";
+                var Tempdetail = _repo.FertilizerDemand(temdemad);
 
                 var farmer = data.AsEnumerable().Select(dr => new
                 {
@@ -164,7 +328,7 @@ namespace Jalaun.Controllers
                     CropArea = dr["CropArea"]?.ToString()
                 }).FirstOrDefault();
 
-                return Ok(new { status = true, data = farmer });
+                return Ok(new { status = true, data = farmer, Tempdetail });
             }
             catch (Exception ex)
             {
@@ -197,16 +361,13 @@ namespace Jalaun.Controllers
                 return BadRequest(new { status = false, message = ex.Message });
             }
         }
-        #endregion
 
-        #region update farmer profile 
 
-        //public IActionResult FarmerProfileUpdate()
-        //{
-        //    UserProfileViewModel model = new UserProfileViewModel();
-        //    model.TehsilList = _bal.SelectTehsilList();
-        //    return View(model);
-        //}
+        public IActionResult AddTempraryDemand([FromBody] TempraryDemand request)
+        {
+            var response = _repo.FertilizerDemand(request);
+            return Ok(response);
+        }
         #endregion
     }
 }

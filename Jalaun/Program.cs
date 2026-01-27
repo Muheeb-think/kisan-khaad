@@ -20,6 +20,11 @@ builder.Services.AddScoped<IMastersData, MasterData>();
 builder.Services.AddScoped<IRegistration, Registration>();
 builder.Services.AddScoped<IMasterDataBAL, MasterDataBAL>();
 builder.Services.AddScoped<ICommonLogics, CommonLogics>();
+builder.Services.AddScoped<IFarmerDataDAL, FarmerDataDAL>();
+builder.Services.AddScoped<IFarmerDataBAL, FarmerDataBal>();
+
+
+
 builder.Services.AddAuthentication(option =>
 {
     option.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;

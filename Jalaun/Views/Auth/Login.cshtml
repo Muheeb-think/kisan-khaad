@@ -123,8 +123,8 @@
 
         <!-- Header -->
         <div class="login-header">
-            <h4>Login Portal</h4>
-            <small>Government of Utter Pradesh</small>
+            <h4>लॉगिन पोर्टल</h4>
+            <small>उत्तर प्रदेश सरकार</small>
         </div>
 
         <!-- Body -->
@@ -134,17 +134,17 @@
 
                 <!-- Mobile -->
                 <div class="mb-3">
-                    <label asp-for="Mobile">Registered Mobile No.</label>
+                    <label asp-for="Mobile">पंजीकृत मोबाइल नंबर.</label>
                     <input asp-for="Mobile" class="form-control"
-                           placeholder="Enter Mobile Number" required />
+                           placeholder="मोबाइल नंबर दर्ज करें" required />
                     <span asp-validation-for="Mobile" class="text-danger"></span>
                 </div>
 
                 <!-- Password -->
                 <div class="mb-3 password-wrapper">
-                    <label asp-for="Password">Password</label>
+                    <label asp-for="Password">पासवर्ड</label>
                     <input asp-for="Password" type="password" id="password"
-                           class="form-control" placeholder="Enter Password" required />
+                           class="form-control" placeholder="पास वर्ड दर्ज करें" required />
                     <i class="fa-solid fa-eye toggle-password"
                        id="toggleIcon" onclick="togglePassword()"></i>
                     <span asp-validation-for="Password" class="text-danger"></span>
@@ -179,8 +179,8 @@
             </form>
 
             <div class="footer-text">
-                © Jalaun Administration 
-                <a href="/Farmer/Registration">Please Register Here</a>
+                © जालौन प्रशासन
+                <a href="/Farmer/Registration">कृपया यहां रजिस्टर करें</a>
             </div>
         </div>
     </div>

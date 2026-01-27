@@ -1,0 +1,143 @@
+﻿@model DAL.ViewModel.UserProfileViewModel
+@{
+    ViewData["Title"] = "FarmerProfileUpdate";
+    Layout = "~/Views/Shared/_FarmerLayout.cshtml";
+}
+
+@if (TempData["Message"] != null)
+{
+    <script>
+        var Message = @Html.Raw(Json.Serialize(TempData["Message"]))
+            alert(Message);
+    </script>
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="row align-items-center">
+            <div class="col">
+                <h3 class="card-title">पता बदलने की जानकारी</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body pt-0">
+        <form asp-action="FarmerProfileUpdate" method="post" asp-antiforgery="true">
+
+            <input type="hidden" asp-for="FarmerId" />
+            <div class="section-card">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label mb-1">राज्य<span style="color:red">*</span></label>
+                        <input asp-for="State" value="उत्तर प्रदेश" readonly class="form-control">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label mb-1">ज़िला<span style="color:red">*</span></label>
+                        <select asp-for="Correspondence_DistrictId" class="form-select">
+                            <option value="">-- चयन करें --</option>
+                            <option value="1" selected>जालौन</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>तहसील<span style="color:red">*</span></label>
+                        <select asp-for="Correspondence_TehsilId"
+                                asp-items="@(new SelectList(Model.TehsilList, "Id", "TehsilName"))"
+                                class="form-select" required id="TahsilDropdown">
+                            <option value="">-- चयन करें --</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>गांव<span style="color:red">*</span></label>
+                        <select asp-for="Correspondence_VillageId" class="form-select" required id="VillageTypeDropdown">
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>पिनकोड<span style="color:red">*</span></label>
+                        <input asp-for="Correspondence_Pincode" class="form-control" maxlength="6" />
+                    </div>
+                    <div class="col-md-4">
+                        <label>मोबाइल नंबर<span style="color:red">*</span></label>
+                        <input asp-for="Correspondence_MobileNo" class="form-control" maxlength="10" />
+                    </div>
+                    <div class="col-md-12">
+                        <label>पूरा पता</label>
+                        <input asp-for="Correspondence_FullAddresss" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="text-end mt-3">
+                <button type="submit" class="btn btn-success">अपडेट करें</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<script>
+      $(document).ready(function () {
+
+        $("#TahsilDropdown").change(function () {
+
+            var tahsilId = $(this).val();
+            var villageDropdown = $("#VillageTypeDropdown");
+
+            villageDropdown.empty();
+            villageDropdown.append('<option value="">-- चयन करें --</option>');
+
+            if (tahsilId) {
+                $.getJSON('/Farmer/GetVillageByTehsil', { tahsilId: tahsilId }, function (data) {
+                    console.log(data);
+
+                    $.each(data, function (index, item) {
+                        villageDropdown.append($('<option/>', {
+                            value: item.villageId,
+                            text: item.villageName
+                        }));
+                    });
+
+                    if (selectedVillageId) {
+                        villageDropdown.val(selectedVillageId);
+                    }
+                });
+            }
+        });
+
+     // Load Farmer data
+        $.ajax({
+            type: 'POST',
+            url: '/Farmer/GetCorrespondenceFarmerData',
+            contentType: 'application/json',
+            success: function (response) {
+                console.log(response.data);
+                debugger;
+               if (response.status && response.data && response.data.length > 0) {
+
+                    var data = response.data[0];
+
+                  //  $('#State').val(data.state ?? '');
+                   // $('#Correspondence_DistrictId').val(data.correspondence_DistrictId ?? '');
+                    $('#Correspondence_TehsilId').val(data.correspondence_TehsilId ?? '');
+                     // $('#Correspondence_VillageId').val(data.correspondence_VillageId ?? '');
+                    $('#Correspondence_Pincode').val(data.correspondence_Pincode ?? '');
+                    $('#Correspondence_MobileNo').val(data.correspondence_MobileNo ?? '');
+                    $('#Correspondence_FullAddresss').val(data.correspondence_FullAddresss ?? '');
+                    $('#FarmerId').val(data.farmerId ?? '');
+                    var tehsilId = data.correspondence_TehsilId;
+
+                    if (tehsilId) {
+                       $('#TahsilDropdown').val(tehsilId).trigger('change');
+                     }
+                     $('#Correspondence_VillageId').val(data.correspondence_VillageId ?? '');
+                    selectedVillageId = data.correspondence_VillageId;
+                }
+            }
+        });
+
+    });
+
+</script>

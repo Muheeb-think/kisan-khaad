@@ -1,20 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Jalaun.csproj": {}
+    "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Jalaun.csproj": {}
   },
   "projects": {
-    "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\BAL.csproj": {
+    "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\BAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\BAL.csproj",
+        "projectUniqueName": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\BAL.csproj",
         "projectName": "BAL",
-        "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\BAL.csproj",
-        "packagesPath": "C:\\Users\\Hp-Aero\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\obj\\",
+        "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\BAL.csproj",
+        "packagesPath": "C:\\Users\\THINKCOMPUTERS(DELL)\\.nuget\\packages\\",
+        "outputPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Hp-Aero\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\THINKCOMPUTERS(DELL)\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\DAL.csproj": {
-                "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\DAL.csproj"
+              "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj"
               }
             }
           }
@@ -38,7 +43,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -54,21 +65,31 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\DAL.csproj": {
+    "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\DAL.csproj",
+        "projectUniqueName": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\Hp-Aero\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\obj\\",
+        "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\THINKCOMPUTERS(DELL)\\.nuget\\packages\\",
+        "outputPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Hp-Aero\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\THINKCOMPUTERS(DELL)\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,11 +109,31 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.1.3, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -104,21 +145,31 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Jalaun.csproj": {
+    "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Jalaun.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Jalaun.csproj",
+        "projectUniqueName": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Jalaun.csproj",
         "projectName": "Jalaun",
-        "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Jalaun.csproj",
-        "packagesPath": "C:\\Users\\Hp-Aero\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\obj\\",
+        "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Jalaun.csproj",
+        "packagesPath": "C:\\Users\\THINKCOMPUTERS(DELL)\\.nuget\\packages\\",
+        "outputPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Hp-Aero\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\THINKCOMPUTERS(DELL)\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -132,14 +183,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\BAL.csproj": {
-                "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\BAL.csproj"
+              "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\BAL.csproj": {
+                "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\BAL.csproj"
               },
-              "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\DAL.csproj": {
-                "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\DAL.csproj"
+              "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj"
               },
-              "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj": {
-                "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj"
+              "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj": {
+                "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj"
               }
             }
           }
@@ -148,11 +199,31 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
+              "target": "Package",
+              "version": "[8.0.23, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.23, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.23, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -164,21 +235,34 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj": {
+    "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj",
+        "projectUniqueName": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj",
         "projectName": "Utility",
-        "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj",
-        "packagesPath": "C:\\Users\\Hp-Aero\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\obj\\",
+        "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj",
+        "packagesPath": "C:\\Users\\THINKCOMPUTERS(DELL)\\.nuget\\packages\\",
+        "outputPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Hp-Aero\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\THINKCOMPUTERS(DELL)\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -198,11 +282,39 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Abstractions": {
+              "target": "Package",
+              "version": "[2.3.9, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.3.9, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.3.9, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.Text.Encoding": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -214,7 +326,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

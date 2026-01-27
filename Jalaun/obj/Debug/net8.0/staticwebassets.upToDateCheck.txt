@@ -110,6 +110,7 @@ wwwroot\images\users\avatar-6.jpg
 wwwroot\images\users\avatar-7.jpg
 wwwroot\images\users\avatar-8.jpg
 wwwroot\images\users\avatar-9.jpg
+wwwroot\images\users\farmer-color-icon.png
 wwwroot\Jalaun_Web\css\AjaxLoader.html
 wwwroot\Jalaun_Web\css\bootstrap.min.css
 wwwroot\Jalaun_Web\css\dataTables.bootstrap.min.css

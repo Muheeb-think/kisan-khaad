@@ -3,44 +3,64 @@
   "WorkspaceRootPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\views\\society\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\views\\society\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\controllers\\societycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\controllers\\societycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\views\\admin\\createsociety.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\views\\admin\\createsociety.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\views\\society\\stockentry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\views\\society\\stockentry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\controllers\\farmercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\controllers\\farmercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\views\\society\\distribute.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\views\\society\\distribute.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\dal\\repo\\mastersdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|solutionrelative:dal\\repo\\mastersdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\dal\\viewmodel\\mastersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|solutionrelative:dal\\viewmodel\\mastersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\dal\\viewmodel\\societyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|solutionrelative:dal\\viewmodel\\societyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\middlewares.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\middlewares.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\views\\admin\\createsociety.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\views\\admin\\createsociety.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\dal\\viewmodel\\mastersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|solutionrelative:dal\\viewmodel\\mastersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\controllers\\farmercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\controllers\\farmercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\jalaun\\views\\society\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\views\\society\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\dal\\sqlheplers\\dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|solutionrelative:dal\\sqlheplers\\dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|d:\\muheeb.proect\\git\\kisaan-khaad\\dal\\viewmodel\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,71 +82,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Jalaun\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Jalaun\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAM8AAAAAAAAAAAAAAN0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-24T23:22:47.408Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MastersViewModel.cs",
-              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\ViewModel\\MastersViewModel.cs",
-              "RelativeDocumentMoniker": "DAL\\ViewModel\\MastersViewModel.cs",
-              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\ViewModel\\MastersViewModel.cs",
-              "RelativeToolTip": "DAL\\ViewModel\\MastersViewModel.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAhwGsAAAAjAAAAAAAAAA==",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Jalaun\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Jalaun\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAwwEQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T23:13:45.281Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Middlewares.cs",
-              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Middlewares.cs",
-              "RelativeDocumentMoniker": "Jalaun\\Middlewares.cs",
-              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Middlewares.cs",
-              "RelativeToolTip": "Jalaun\\Middlewares.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBMAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T05:14:45.745Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SocietyViewModel.cs",
-              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\ViewModel\\SocietyViewModel.cs",
-              "RelativeDocumentMoniker": "DAL\\ViewModel\\SocietyViewModel.cs",
-              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\ViewModel\\SocietyViewModel.cs",
-              "RelativeToolTip": "DAL\\ViewModel\\SocietyViewModel.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAA7wB0AAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T12:48:29.105Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MastersData.cs",
-              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\Repo\\MastersData.cs",
-              "RelativeDocumentMoniker": "DAL\\Repo\\MastersData.cs",
-              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\Repo\\MastersData.cs",
-              "RelativeToolTip": "DAL\\Repo\\MastersData.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAIwGgAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T12:26:02.279Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-27T11:18:17.899Z"
             },
             {
               "$type": "Document",
@@ -136,51 +104,174 @@
               "RelativeDocumentMoniker": "Jalaun\\Controllers\\SocietyController.cs",
               "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Controllers\\SocietyController.cs",
               "RelativeToolTip": "Jalaun\\Controllers\\SocietyController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAgwCQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAQwEYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-23T07:57:42.329Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Society\\Index.cshtml",
-              "RelativeDocumentMoniker": "Jalaun\\Views\\Society\\Index.cshtml",
-              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Society\\Index.cshtml",
-              "RelativeToolTip": "Jalaun\\Views\\Society\\Index.cshtml",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAqwIsAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-24T06:27:43.617Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FarmerController.cs",
-              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Controllers\\FarmerController.cs",
-              "RelativeDocumentMoniker": "Jalaun\\Controllers\\FarmerController.cs",
-              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Controllers\\FarmerController.cs",
-              "RelativeToolTip": "Jalaun\\Controllers\\FarmerController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwCMAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T08:16:54.222Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "CreateSociety.cshtml",
               "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Admin\\CreateSociety.cshtml",
               "RelativeDocumentMoniker": "Jalaun\\Views\\Admin\\CreateSociety.cshtml",
               "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Admin\\CreateSociety.cshtml",
               "RelativeToolTip": "Jalaun\\Views\\Admin\\CreateSociety.cshtml",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGMAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFYAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T12:54:26.97Z"
+              "WhenOpened": "2026-01-23T12:54:26.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Middlewares.cs",
+              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Middlewares.cs",
+              "RelativeDocumentMoniker": "Jalaun\\Middlewares.cs",
+              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Middlewares.cs",
+              "RelativeToolTip": "Jalaun\\Middlewares.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowCMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T05:14:45.745Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Jalaun\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Jalaun\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAOsAAAAAAAAAAAAmwPsAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-24T23:22:47.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\appsettings.json",
+              "RelativeDocumentMoniker": "Jalaun\\appsettings.json",
+              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\appsettings.json",
+              "RelativeToolTip": "Jalaun\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-27T10:08:28.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FarmerController.cs",
+              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Controllers\\FarmerController.cs",
+              "RelativeDocumentMoniker": "Jalaun\\Controllers\\FarmerController.cs",
+              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Controllers\\FarmerController.cs",
+              "RelativeToolTip": "Jalaun\\Controllers\\FarmerController.cs",
+              "ViewState": "AgIAAF0BAAAAAAAAAAAAwHQBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T08:16:54.222Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StockEntry.cshtml",
+              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Society\\StockEntry.cshtml",
+              "RelativeDocumentMoniker": "Jalaun\\Views\\Society\\StockEntry.cshtml",
+              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Society\\StockEntry.cshtml",
+              "RelativeToolTip": "Jalaun\\Views\\Society\\StockEntry.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-27T20:13:23.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MastersData.cs",
+              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\Repo\\MastersData.cs",
+              "RelativeDocumentMoniker": "DAL\\Repo\\MastersData.cs",
+              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\Repo\\MastersData.cs",
+              "RelativeToolTip": "DAL\\Repo\\MastersData.cs",
+              "ViewState": "AgIAACUCAAAAAAAAAAAAACwCAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T12:26:02.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Distribute.cshtml",
+              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Society\\Distribute.cshtml",
+              "RelativeDocumentMoniker": "Jalaun\\Views\\Society\\Distribute.cshtml",
+              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Society\\Distribute.cshtml",
+              "RelativeToolTip": "Jalaun\\Views\\Society\\Distribute.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-27T20:25:05.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Jalaun\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Jalaun\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAIwDUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T10:07:23.405Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "MastersViewModel.cs",
+              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\ViewModel\\MastersViewModel.cs",
+              "RelativeDocumentMoniker": "DAL\\ViewModel\\MastersViewModel.cs",
+              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\ViewModel\\MastersViewModel.cs",
+              "RelativeToolTip": "DAL\\ViewModel\\MastersViewModel.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAApwEkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T23:13:45.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Society\\Index.cshtml",
+              "RelativeDocumentMoniker": "Jalaun\\Views\\Society\\Index.cshtml",
+              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Society\\Index.cshtml",
+              "RelativeToolTip": "Jalaun\\Views\\Society\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-27T20:23:40.182Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Jalaun\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Jalaun\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAAwI8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T07:34:09.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DBHelper.cs",
+              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\SqlHeplers\\DBHelper.cs",
+              "RelativeDocumentMoniker": "DAL\\SqlHeplers\\DBHelper.cs",
+              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\SqlHeplers\\DBHelper.cs",
+              "RelativeToolTip": "DAL\\SqlHeplers\\DBHelper.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAawEoAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T20:16:20.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "CreateUser.cshtml",
               "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Views\\Admin\\CreateUser.cshtml",
               "RelativeDocumentMoniker": "Jalaun\\Views\\Admin\\CreateUser.cshtml",
@@ -192,19 +283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Jalaun\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Jalaun\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAACYBAAAAAAAAAAASwCgBAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T07:34:09.126Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\ViewModel\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "DAL\\ViewModel\\RegisterViewModel.cs",
@@ -216,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "RoleViewModel.cs",
               "DocumentMoniker": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\ViewModel\\RoleViewModel.cs",
               "RelativeDocumentMoniker": "DAL\\ViewModel\\RoleViewModel.cs",

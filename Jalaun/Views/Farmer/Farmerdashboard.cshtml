@@ -1,0 +1,258 @@
+﻿@using System.Web
+@model DAL.ModelDTO.FarmerDashboardDto
+
+@{
+    ViewData["Title"] = "Farmerdashboard";
+    Layout = "~/Views/Shared/_FarmerLayout.cshtml";
+}
+
+<style>
+    .dashboard-card {
+        color: #fff;
+        padding: 25px;
+        border-radius: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+    }
+
+        .dashboard-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .dashboard-card i {
+            font-size: 40px;
+            opacity: 0.8;
+        }
+
+    .bg-gradient-green {
+        background: linear-gradient(135deg, #2ecc71, #27ae60);
+    }
+
+    .bg-gradient-blue {
+        background: linear-gradient(135deg, #3498db, #2980b9);
+    }
+
+    .bg-gradient-orange {
+        background: linear-gradient(135deg, #f39c12, #e67e22);
+    }
+
+    .bg-gradient-purple {
+        background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    }
+
+    .bg-gradient-red {
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+    }
+
+    .bg-gradient-teal {
+        background: linear-gradient(135deg, #1abc9c, #16a085);
+    }
+
+    .bg-gradient-pink {
+        background: linear-gradient(135deg, #ff6f91, #ff9671);
+    }
+
+    .bg-gradient-yellow {
+        background: linear-gradient(135deg, #fddb3a, #f7b733);
+    }
+
+    .bg-gradient-darkblue {
+        background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    }
+
+</style>
+
+
+
+
+<div class="container-fluid mt-4">
+    <div class="container-fluid mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-bold text-success">🌾 किसान डैशबोर्ड</h3>
+            <span class="text-muted">उर्वरक मांग की जानकारी</span>
+        </div>
+
+
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="dashboard-card bg-gradient-green">
+                    <div>
+                        <h6>कुल फ़सल क्षेत्र</h6>
+                        <h2>@Model.TotalCropAreaHec हेक्टेयर</h2>
+                    </div>
+                    <i class="fas fa-map"></i>
+                </div>
+            </div>
+
+            
+
+            <div class="col-md-3">
+                <div class="dashboard-card bg-gradient-blue">
+                    <div>
+                        <h6>उर्वरक आवश्यकता</h6>
+                        <h2>@Model.TotalFertilizerNeed किग्रा</h2>
+                    </div>
+                    <i class="fas fa-flask"></i>
+                </div>
+            </div>
+
+           
+
+            <div class="col-md-3 mt-4">
+                <div class="dashboard-card bg-gradient-red">
+                    <div>
+                        <h6>
+                            किसान द्वारा देय शेष राशि
+                        </h6>
+                        <h2>₹@Model.TotalAmountDue</h2>
+                    </div>
+                    <i class="fas fa-rupee-sign"></i>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="dashboard-card bg-gradient-orange">
+                    <div>
+                        @*    <h6>कुल राशि</h6> *@
+                        <h6> किसान द्वारा भूगतान राशि</h6>
+                        <h2>₹@Model.TotalAmount</h2>
+                    </div>
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+            </div>
+
+            <div class="col-md-3 mt-4">
+                <div class="dashboard-card bg-gradient-pink">
+                    <div>
+                        <h6>उर्वरक माँग</h6>
+                        <h2>@Model.FertilizerNeed किग्रा</h2>
+                    </div>
+                    <i class="fas fa-boxes"></i>
+                </div>
+            </div>
+
+            
+            <div class="col-md-3 mt-4">
+                <div class="dashboard-card bg-gradient-darkblue">
+                    <div>
+                        @* <h6>सफल मांग</h6> *@
+                        <h6> उर्वरक प्राप्त हुआ</h6>
+                        <h2>@Model.SuccessDemand किग्रा</h2>
+                    </div>
+                    <i class="fas fa-check-circle"></i>
+                </div>
+            </div>
+     
+            <div class="col-md-3 mt-4">
+                <div class="dashboard-card bg-gradient-teal">
+                    <div>
+                        <h6>प्राप्ति के बाद शेष उर्वरक</h6>
+                        <h2>@Model.TotalDueDemand किग्रा</h2>
+                    </div>
+                    <i class="fas fa-hourglass-half"></i>
+                </div>
+            </div>
+
+          
+
+            @* <div class="col-md-3 mt-4">
+                <div class="dashboard-card bg-gradient-teal">
+                    <div>
+                        <h6>मिट्टी की गुणवत्ता</h6>
+                        <h2>@Model.SoilQuality</h2>
+                    </div>
+                    <i class="fas fa-leaf"></i>
+                </div>
+            </div> *@
+
+
+            <div class="col-md-3">
+                <div class="dashboard-card bg-gradient-purple">
+                    <div>
+                        <h6>कुल फ़सलें</h6>
+                        <h2>@Model.TotalCrops</h2>
+                    </div>
+                    <i class="fas fa-seedling"></i>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row mt-5">
+
+            <div class="col-md-8">
+                <div class="card shadow-lg">
+                    <div class="card-header bg-success text-white fw-bold">
+                        📊 मासिक उर्वरक मांग
+                    </div>
+                    <div class="card-body">
+                        <canvas id="fertilizerChart" height="120"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-lg h-100">
+                    <div class="card-header bg-dark text-white fw-bold">
+                        🌱 कृषि सुझाव
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">✔ जैविक उर्वरक का उपयोग करें</li>
+                            <li class="list-group-item">✔ मिट्टी में नमी सही है</li>
+                            <li class="list-group-item">✔ नाइट्रोजन स्तर मध्यम है</li>
+                            <li class="list-group-item">✔ 3 दिन बाद सिंचाई करें</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const labels = [
+        @foreach (var item in Model.fertilizerCharts)
+        {
+                @: "@Html.Raw(HttpUtility.JavaScriptStringEncode(item.OrderMonthHindi))",             
+        }
+    ];
+
+    const dataValues = [
+        @foreach (var item in Model.fertilizerCharts)
+        {
+                @: @item.FertilizerDemand,
+        }
+    ];
+
+    const ctx = document.getElementById('fertilizerChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'उर्वरक मात्रा (किग्रा)',
+                data: dataValues,
+                backgroundColor: '#2ecc71'
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+</script>
+

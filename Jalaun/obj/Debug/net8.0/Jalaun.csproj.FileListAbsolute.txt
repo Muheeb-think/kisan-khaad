@@ -292,8 +292,8 @@ D:\Muheeb.Proect\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\Jalaun.g
 D:\Muheeb.Proect\Muheeb.Proect\Git\kisaan-khaad\Jalaun\obj\Debug\net8.0\ref\Jalaun.dll
 D:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\appsettings.Development.json
 D:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\appsettings.json
-D:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\Jalaun.staticwebassets.endpoints.json
 D:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\Jalaun.staticwebassets.runtime.json
+D:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\Jalaun.staticwebassets.endpoints.json
 D:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\Jalaun.exe
 D:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\Jalaun.deps.json
 D:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\bin\Debug\net8.0\Jalaun.runtimeconfig.json
