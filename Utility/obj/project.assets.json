@@ -1747,25 +1747,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\THINKCOMPUTERS(DELL)\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Hp-Aero\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj",
+      "projectUniqueName": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj",
       "projectName": "Utility",
-      "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj",
-      "packagesPath": "C:\\Users\\THINKCOMPUTERS(DELL)\\.nuget\\packages\\",
-      "outputPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\obj\\",
+      "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj",
+      "packagesPath": "C:\\Users\\Hp-Aero\\.nuget\\packages\\",
+      "outputPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\THINKCOMPUTERS(DELL)\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hp-Aero\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

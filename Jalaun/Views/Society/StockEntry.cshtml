@@ -1,4 +1,4 @@
-﻿@model FertilizerAddStockVM
+﻿@model FertilizerStockVM
 @{
     ViewBag.Title = "Fertilizer Stock Entry";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -16,7 +16,7 @@
     @Html.HiddenFor(m=>m.SocietyId)
     @Html.HiddenFor(m => m.FertilizerID)
     @Html.HiddenFor(m => m.StockID)
-    @Html.HiddenFor(m => m.OpeningStock)
+    @Html.HiddenFor(m => m.OpeningStock,new {@class="OpeningStock",@id="OpeningStock"})
     @Html.HiddenFor(m => m.QtyUnit)
     @Html.HiddenFor(m=>m.CreatedBy)
 
@@ -190,6 +190,7 @@
                         fertilizerId: fertilizerId
                     },
                     success: function (response) {
+                        alert('available:'+ JSON.stringify(response));
                         $("#OpeningStock").val(response.stock);
                     },
                     error: function () {
@@ -259,62 +260,85 @@
         PurchasedQty: $("#PurchasedQty").val(),
         Remarks: $("#Remarks").val(),
         CreatedDate: $("#txtentrydate").val()
-    };
+        };
 
-        $.ajax({
-            url: '@Url.Action("AddfertilizerStock", "Society")',
-            type: 'POST',
-            data: model,
-            success: function (response) {
-                $("#purchaseContainer").append(response);
-            },
-            error: function () {
-                alert("Error while adding data");
-            }
-        });
+         row = `
+    <tr>
+     <td>
+            ${model.CreatedDate}
+            <input type="hidden" class="CreatedDate" value="${model.CreatedDate}" />
+        </td>
+        <td>
+            ${model.CompanyName}
+            <input type="hidden" class="CompanyId" value="${model.CompanyId}" />
+        </td>
+        <td>
+            ${model.SocietyName}
+            <input type="hidden" class="SocietyId" value="${model.SocietyId}" />
+        </td>
+        <td>
+            ${model.FertilizerName}
+            <input type="hidden" class="FertilizerID" value="${model.FertilizerID}" />
+        </td>
+        <td>
+            ${model.PacketTypeName}
+            <input type="hidden" class="PacketType" value="${model.PacketType}" />
+        </td>
+        <td>
+            ${model.PacketQty}
+            <input type="hidden" class="PacketQty" value="${model.PacketQty}" />
+        </td>
+        <td>
+            ${model.PurchasedQty}
+            <input type="hidden" class="PurchasedQty" value="${model.PurchasedQty}" />
+        </td>
+        <td>
+            ${model.Remarks}
+            <input type="hidden" class="Remarks" value="${model.Remarks}" />
+        </td>
+
+        <td>
+            <button type="button" class="btn btn-danger btn-sm btnRemove">X</button>
+        </td>
+    </tr>`;
+
+    $("#purchaseContainer").append(row);
+
+
     });
-    $(document).on("click", ".btn-remove", function () {
+    $(document).on("click", ".btnRemove", function () {
     $(this).closest("tr").remove();
 });
 
-function collectStockList() {
-    var list = [];
 
-    $("#purchaseContainer tr").each(function () {
-        var row = $(this);
-
-        list.push({
-            CompanyId: row.find(".CompanyId").val(),
-            SocietyId: row.find(".SocietyId").val(),
-            FertilizerID: row.find(".FertilizerID").val(),
-            PacketType: row.find(".PacketType").val(),
-            PacketQty: row.find(".PacketQty").val(),
-            PurchasedQty: row.find(".PurchasedQty").val(),
-            Remarks: row.find(".Remarks").val()
-        });
-    });
-
-    return list;
-}
 $("#btnSave").click(function () {
 
-    var stockList = collectStockList();
+    var purchaseList = [];
 
-    if (stockList.length === 0) {
-        alert("No data to save");
-        return;
-    }
-    console.log(JSON.stringify(stockList));
+    $("#purchaseContainer tr").each(function () {
+
+        var row = {
+            CompanyId: $(this).find(".CompanyId").val(),
+            SocietyId: $(this).find(".SocietyId").val(),
+            FertilizerID: $(this).find(".FertilizerID").val(),
+            PacketType: $(this).find(".PacketType").val(),
+            PacketQty: $(this).find(".PacketQty").val(),
+            PurchasedQty: $(this).find(".PurchasedQty").val(),
+            Remarks: $(this).find(".Remarks").val(),
+             CreatedDate: $(this).find(".CreatedDate").val(),
+             OpeningStock:$("#OpeningStock").val()
+        };
+
+        purchaseList.push(row);
+    });
+
     $.ajax({
-        url: '@Url.Action("StockEntry", "Society")',
+        url: '/Society/Save',
         type: 'POST',
-       contentType: 'application/json; charset=utf-8',
-        data: JSON.stringify(stockList),
+        data: JSON.stringify(purchaseList),
+        contentType: 'application/json',
         success: function (res) {
-            alert("Saved successfully");
-        },
-        error: function () {
-            alert("Error while saving");
+            alert("Saved Successfully");
         }
     });
 });

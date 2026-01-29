@@ -72,3 +72,16 @@ D:\Muheeb.Proect\Git\kisaan-khaad\Utility\obj\Debug\net8.0\Utility.dll
 D:\Muheeb.Proect\Git\kisaan-khaad\Utility\obj\Debug\net8.0\refint\Utility.dll
 D:\Muheeb.Proect\Git\kisaan-khaad\Utility\obj\Debug\net8.0\Utility.pdb
 D:\Muheeb.Proect\Git\kisaan-khaad\Utility\obj\Debug\net8.0\ref\Utility.dll
+E:\Project\ThinkComputers.Project\kisaan-khaad\Utility\bin\Debug\net8.0\Utility.deps.json
+E:\Project\ThinkComputers.Project\kisaan-khaad\Utility\bin\Debug\net8.0\Utility.dll
+E:\Project\ThinkComputers.Project\kisaan-khaad\Utility\bin\Debug\net8.0\Utility.pdb
+E:\Project\ThinkComputers.Project\kisaan-khaad\Utility\obj\Debug\net8.0\Utility.csproj.AssemblyReference.cache
+E:\Project\ThinkComputers.Project\kisaan-khaad\Utility\obj\Debug\net8.0\Utility.GeneratedMSBuildEditorConfig.editorconfig
+E:\Project\ThinkComputers.Project\kisaan-khaad\Utility\obj\Debug\net8.0\Utility.AssemblyInfoInputs.cache
+E:\Project\ThinkComputers.Project\kisaan-khaad\Utility\obj\Debug\net8.0\Utility.AssemblyInfo.cs
+E:\Project\ThinkComputers.Project\kisaan-khaad\Utility\obj\Debug\net8.0\Utility.csproj.CoreCompileInputs.cache
+E:\Project\ThinkComputers.Project\kisaan-khaad\Utility\obj\Debug\net8.0\Utility.sourcelink.json
+E:\Project\ThinkComputers.Project\kisaan-khaad\Utility\obj\Debug\net8.0\Utility.dll
+E:\Project\ThinkComputers.Project\kisaan-khaad\Utility\obj\Debug\net8.0\refint\Utility.dll
+E:\Project\ThinkComputers.Project\kisaan-khaad\Utility\obj\Debug\net8.0\Utility.pdb
+E:\Project\ThinkComputers.Project\kisaan-khaad\Utility\obj\Debug\net8.0\ref\Utility.dll

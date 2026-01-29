@@ -73,3 +73,16 @@ D:\Muheeb.Proect\Git\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.dll
 D:\Muheeb.Proect\Git\kisaan-khaad\DAL\obj\Debug\net8.0\refint\DAL.dll
 D:\Muheeb.Proect\Git\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.pdb
 D:\Muheeb.Proect\Git\kisaan-khaad\DAL\obj\Debug\net8.0\ref\DAL.dll
+E:\Project\ThinkComputers.Project\kisaan-khaad\DAL\bin\Debug\net8.0\DAL.deps.json
+E:\Project\ThinkComputers.Project\kisaan-khaad\DAL\bin\Debug\net8.0\DAL.dll
+E:\Project\ThinkComputers.Project\kisaan-khaad\DAL\bin\Debug\net8.0\DAL.pdb
+E:\Project\ThinkComputers.Project\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+E:\Project\ThinkComputers.Project\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\Project\ThinkComputers.Project\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+E:\Project\ThinkComputers.Project\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+E:\Project\ThinkComputers.Project\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+E:\Project\ThinkComputers.Project\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.sourcelink.json
+E:\Project\ThinkComputers.Project\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.dll
+E:\Project\ThinkComputers.Project\kisaan-khaad\DAL\obj\Debug\net8.0\refint\DAL.dll
+E:\Project\ThinkComputers.Project\kisaan-khaad\DAL\obj\Debug\net8.0\DAL.pdb
+E:\Project\ThinkComputers.Project\kisaan-khaad\DAL\obj\Debug\net8.0\ref\DAL.dll

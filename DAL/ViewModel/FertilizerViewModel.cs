@@ -28,6 +28,9 @@ public class FertilizerStockVM
     public string? Remarks { get; set; }
     public DateTime? CreatedDate { get; set; }
     public int? CreatedBy { get; set; }
+    public int PacketType { get; set; }
+    public int PacketQty { get; set; }
+
     // Dropdowns
     public List<FertilizerModel>? ddlfertilizers { get; set; }
 }
@@ -89,24 +92,5 @@ public class FarmerDemandReportViewModel
     public DateTime DemandDate { get; set; }
     public DateTime? RecieveDate { get; set; }
 }
-public class FertilizerAddStockVM: FertilizerStockVM
-{
-   
-    public string CompanyName { get; set; }
 
-    
-    public string SocietyName { get; set; }
-
-    
-    public string FertilizerName { get; set; }
-
-    public int PacketType { get; set; }
-    public string PacketTypeName { get; set; }
-
-    public int PacketQty { get; set; }
-    public decimal PurchasedQty { get; set; }
-    public string Remarks { get; set; }
-    public List<FertilizerAddStockVM> list { get; set; }
-
-}
 

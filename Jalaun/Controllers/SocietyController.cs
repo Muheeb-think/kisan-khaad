@@ -38,25 +38,25 @@ namespace Jalaun.Controllers
         [HttpGet]
         public IActionResult StockEntry()
         {
-            FertilizerAddStockVM model = new();
+            FertilizerStockVM model = new();
 
             model.CreatedBy = Convert.ToInt32(SessionHelper.UserId);
 
             return View(model);
         }
+        
         [HttpPost]
-        public IActionResult StockEntry(List<FertilizerAddStockVM> model)
+        public IActionResult Save([FromBody] List<FertilizerStockVM> model)
         {
-            model[0].CreatedBy = Convert.ToInt32(SessionHelper.UserId);
+            bool status = false;
+            foreach (var item in model)
+            {
+                var res = _data.SaveFertilizerStock(item, Convert.ToInt32(SessionHelper.UserId));
+                status = res > 0 ? true : false;
 
-            //var res = _data.SaveFertilizerStock(item, Convert.ToInt32(SessionHelper.UserId));
+            }
 
-            TempData["Success"] = model[0].StockID == 0
-                ? "Stock added successfully"
-                : "Stock updated successfully";
-
-
-            return Json(new { success = true });
+            return Json(new { success = status });
         }
 
         [HttpGet]
@@ -113,14 +113,8 @@ namespace Jalaun.Controllers
             var model = BAL.Common.DataTableExtensions.ToList<FarmerDemandReportViewModel>(resultdt);
             return PartialView("/Views/Shared/_fertilizerDistributionListBySociety.cshtml", resultdt);
         }
-        [HttpPost]
-        public ActionResult AddfertilizerStock(FertilizerAddStockVM model)
-        {
-            model.list = new List<FertilizerAddStockVM>();
 
-            model.list.Add(model);
 
-            return PartialView("/Views/Shared/_partialAddFertilizerSock.cshtml", model.list);
-        }
+
     }
 }
