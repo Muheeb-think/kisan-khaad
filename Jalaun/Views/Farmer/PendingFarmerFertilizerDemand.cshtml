@@ -51,7 +51,7 @@
                                 <td>@item.NeedTime</td>
                                 <td>@item.TotalCropAreaHec</td>
 
-                                <td>₹ @item.TotalAmount.ToString("N0")</td>
+                                <td>₹ @item.TotalAmount</td>
                                 <td>@item.TotalFertilizerNeed</td>
 
                                 @* <td>@item.RecieveQty</td>
@@ -106,7 +106,7 @@
             paging: true,
             searching: true,
             ordering: true,
-            order: [[9, 'desc']],
+            order: [[10, 'desc']],
             dom: 'Bfrtip', // Show buttons
             buttons: [
                 {

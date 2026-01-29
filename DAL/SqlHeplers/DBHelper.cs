@@ -16,7 +16,8 @@ namespace DAL.SqlHeplers
         public DataSet ExecuteDataSet(string CommandName, SqlParameter[] parameters);
         public int ExecuteNonQuery(string commandText, CommandType commandType = CommandType.Text, params SqlParameter[] parameters);
         public int ExecuteInsert(string CommandName, SqlParameter[] parameters);
-       
+        public string ExecuteScaler(string commandName, SqlParameter[] param);
+
     }
     public class DBHelper : IDBHelpers
     {
@@ -109,7 +110,7 @@ namespace DAL.SqlHeplers
 
         public int ExecuteNonQuery(string commandText, CommandType commandType = CommandType.Text, params SqlParameter[] parameters)
         {
-            
+
             using (SqlConnection connection = new SqlConnection(_ConStr))
             {
                 using (SqlCommand command = new SqlCommand(commandText, connection))
@@ -144,13 +145,35 @@ namespace DAL.SqlHeplers
                 return cmd.ExecuteNonQuery();
             }
         }
+        public string ExecuteScaler(string commandName, SqlParameter[] param)
+        {
+            string value = "0";
+            using (SqlConnection con = new SqlConnection(_ConStr))
+            {
 
-       
+                using (SqlCommand cmd = new SqlCommand(commandName, con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    if (param != null)
+                        cmd.Parameters.AddRange(param);
 
-
-
-
-
+                    con.Open();
+                    var result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        value = result.ToString();
+                    }
+                }
+            }
+            return value;
+        }
 
     }
+
 }
+
+
+
+
+
+

@@ -39,16 +39,22 @@ function validatePhoneorPinCode(element) {
 function showError(input, message) {
     input.addClass('is-invalid');
     input.closest('.col-md-4').find('.invalid-feedback').text(message).show();
+    checkButtonState();
+}
+
+function checkButtonState() {
+    if ($('.is-invalid').length > 0) {
+        $('.nextBtn').prop('disabled', true);
+    } else {
+        $('.nextBtn').prop('disabled', false);
+    }
 }
 
 function clearError(input) {
     input.removeClass('is-invalid');
     input.closest('.col-md-4').find('.invalid-feedback').hide();
+    checkButtonState();
 }
-
-$(document).on('blur', '.blur-validate-password', function () {
-    validatePasswordFields();
-});
 
 function validatePasswordFields() {
     let isValid = true;
@@ -80,6 +86,9 @@ function validatePasswordFields() {
     return isValid;
 }
 
+$(document).on('blur', '.blur-validate-password', function () {
+    validatePasswordFields();
+});
 
 $(document).on('click', '.toggle-password', function () {
 
@@ -95,19 +104,14 @@ $(document).on('click', '.toggle-password', function () {
     }
 });
 
-
 // end validation 
 
 function formatToDDMMYYYY(dateString) {
-    const date = new Date(dateString);
-
-    // Get day, month, and year
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    const year = date.getFullYear();
-
-    if (day < 10) day = '0' + day;
-    if (month < 10) month = '0' + month;
+    debugger;
+    const parts = dateString.split(' ')[0].split('-');
+    const day = parts[0];
+    const month = parts[1];
+    const year = parts[2];
 
     return `${day}-${month}-${year}`;
 }
@@ -125,11 +129,11 @@ function SearchKhasraNo() {
 
                 $('#LandTotalArea').val(response.data.totalArea ?? '');
                 $('#FarmerShare').val(response.data.farmerShareArea ?? '');      
+                $('#FarmerNameLandKhasra').val(response.data.farmerNameLand ?? '');      
             }
         }
     });
 }
-
 function SearchFarmerById() {
     var FarmerId = $('#FarmerId').val();
     $.ajax({
@@ -139,14 +143,21 @@ function SearchFarmerById() {
         data: JSON.stringify({ FarmerId }),
         success: function (response) {
             console.log(response.data);
-            if (response.status && response.data) {
+            if (response.status && response.data == "-10") {
+                alert("आपका आवेदन पहले ही जमा किया जा चुका है।");
+                window.location.href = '/Auth/Login';
+                return;
+            }
+            else if (response.status && response.data) {
 
                 $('#FarmerName').val(response.data.farmerName ?? '');
+                $('#FarmerNameForLand').val(response.data.farmerName ?? '');
                 $('#Village').val(response.data.villageNameHi ?? '');
                 // $('#DOB').val(response.data.dob ?? '');
                 const dobValue = response.data.dob ?? '';
 
                 if (dobValue) {
+                    debugger;
                     const formattedDate = formatToDDMMYYYY(dobValue);
                     $('#DOB').val(formattedDate);
                 } else {
@@ -155,14 +166,17 @@ function SearchFarmerById() {
                 $('#AadharCardNo').val(response.data.aadharNo ?? '');
                 $('#Gender').val(response.data.gender ?? ''); // only if exists
                 $('#MobileNumberAgriStack').val(response.data.mobileNo ?? '');
+                $('#MobileNumberAgriStackForLand').val(response.data.mobileNo ?? '');
                 $('#Gender').val(response.data.gender ?? '');
                 $('#FatherHusbandName').val(response.data.fatherOrHusbandName ?? '');
                 $('#Area').val(response.data.cropArea ?? ''); // only if exists
                 $('#pincodeAgriStack').val(response.data.pincode ?? '');
                 $('#tahsilAgriStack').val(response.data.tehsilId);
                 $('#tahsilAgriStack').prop('disabled', true);
+                $('#agriStackId').val($('#FarmerId').val());
                 // $('#AreaType').val(response.data.blockId);
                 // $('#village').val(response.data.villageId);
+
             }
         }
     });
@@ -171,6 +185,41 @@ function SearchFarmerById() {
 
 //start grid bind code 
 let landIndex = 0;
+
+function updateTotals() {
+    let totalAreaSum = 0;
+    let totalShareSum = 0;
+
+    $("#LandGrid tbody tr").each(function () {
+        let area = parseFloat($(this).find("td:eq(3)").text()) || 0; // TotalArea column
+        let share = parseFloat($(this).find("td:eq(4)").text()) || 0; // Share column
+        totalAreaSum += area;
+        totalShareSum += share;
+    });
+
+    $("#TotalAreaDisplay").text(totalAreaSum.toFixed(2));
+    $("#TotalShareDisplay").text(totalShareSum.toFixed(2));
+}
+
+function updateTotals() {
+    let totalKhasra = 0;
+    let totalArea = 0;
+    let totalShare = 0;
+
+    $("#LandGrid tbody tr").each(function () {
+        let khasra = parseFloat($(this).find("td:eq(2)").text()) || 0;
+        let area = parseFloat($(this).find("td:eq(3)").text()) || 0;
+        let share = parseFloat($(this).find("td:eq(4)").text()) || 0;
+
+        totalKhasra += khasra;
+        totalArea += area;
+        totalShare += share;
+    });
+
+    $("#TotalKhasra").text(totalKhasra);
+    $("#TotalArea").text(totalArea);
+    $("#TotalShare").text(totalShare);
+}
 
 $("#AddLandBtn").on("click", function () {
     let tahsilText = $("#LandTahsilDropdown option:selected").text();
@@ -208,9 +257,21 @@ $("#AddLandBtn").on("click", function () {
     $("#LandHiddenFields").append(hiddenInputs);
 
     landIndex++;
-    $("#LandRecordNumber, #LandTotalArea, #FarmerShare,#LandVillageTypeDropdown,#Landtahsil").val("");
+    $("#LandRecordNumber, #LandTotalArea, #FarmerShare").val("");
 
+    // Update totals
+    updateTotals();
 });
+
+// Remove row
+$(document).on("click", ".removeLand", function () {
+    let row = $(this).closest("tr");
+    let index = row.data("index");
+    $("#land_" + index).remove();
+    row.remove();
+    updateTotals();
+});
+
 
 $(document).on("click", ".removeLand", function () {
     let row = $(this).closest("tr");
@@ -241,23 +302,12 @@ $(document).ready(function () {
 
     // NEXT BUTTON
     $(".nextBtn").on("click", function () {
-
+       
         if (!validateStep(currentStep)) {
             alert("कृपया सभी आवश्यक जानकारी भरें");
             return;
         }
 
-        //if (currentStep == 2) {
-        //    if (!validatePasswordFields()) {
-        //        alert("कृपया सही पासवर्ड दर्ज करें");
-        //        return;
-        //    }
-        //    if (!validatePhoneorPinCode()) {
-        //        alert("कृपया सभी जानकारी सही दर्ज करें");
-        //        return;
-        //    }
-        //}
-       
         if (currentStep < totalSteps) {
             currentStep++;
             showStep(currentStep);
@@ -324,7 +374,6 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-
     $("#tahsilId").change(function () {
         
         var tahsilId = $(this).val();
@@ -472,6 +521,16 @@ $("#TahsilDropdown").change(function () {
 
 function showPreview() {
 
+    const checkbox = document.getElementById('DeclarationAccepted');
+    const preview = document.getElementById('preview');
+
+    if (checkbox.checked) {
+        //preview.style.display = 'block';
+    } else {
+        // Alert user if checkbox is not checked
+        alert('Please accept the declaration before previewing.');
+        preview.style.display = 'none';
+    }
       // Step-1
     document.getElementById("pvFarmerId").innerText = document.getElementById("FarmerId").value;
     document.getElementById("pvFarmerName").innerText = document.querySelector("[name='FarmerName']").value;
@@ -709,4 +768,50 @@ $('#otpModal').on('hidden.bs.modal', function () {
     }
 });
 
+
+//reset the form after msg 
+document.addEventListener("DOMContentLoaded", function () {
+    // Check if there is a TempData message
+    if (window.TempMessage) {
+        alert(window.TempMessage);
+
+        // Reset all inputs
+        document.querySelectorAll("#registrationForm input").forEach(function (input) {
+            if (input.type === "checkbox" || input.type === "radio") {
+                input.checked = false;
+            } else {
+                input.value = "";
+            }
+        });
+
+        // Reset all selects
+        document.querySelectorAll("#registrationForm select").forEach(function (select) {
+            select.selectedIndex = 0;
+        });
+
+        // Clear dynamic table
+        var landGrid = document.getElementById("LandGrid");
+        if (landGrid) {
+            var tbody = landGrid.querySelector("tbody");
+            if (tbody) tbody.innerHTML = "";
+        }
+
+        // Reset wizard steps to Step 1
+        document.querySelectorAll(".wizard-step").forEach(function (step) {
+            step.classList.remove("active");
+        });
+        var firstStep = document.querySelector(".wizard-step[data-step='1']");
+        if (firstStep) firstStep.classList.add("active");
+
+        // Reset hidden fields
+        document.querySelectorAll("#registrationForm input[type=hidden]").forEach(function (input) {
+            input.value = "";
+        });
+
+        // Remove the message so alert doesn't show on refresh
+        window.TempMessage = null;
+    }
+});
+
+//end reset form 
 

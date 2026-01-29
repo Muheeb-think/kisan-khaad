@@ -2,6 +2,7 @@
 using DAL.ViewModel;
 using Jalaun.Models;
 using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Protocols;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -53,6 +54,9 @@ namespace DAL.MasterData
         public DataSet GetSocietyDashboardData(long societyid);
         public int SaveFertilizerStock(FertilizerStockVM model, int userId);
         public void DistributeFertilizer(DistributeVM model, int userId);
+        public string GetAvailableStockBySociety(int societyId, int Fertilizerid);
+        DataTable GetfertilzerdemandByFarmer(int societyId, int Fertilizerid, int Farmerid);
+        DataTable GetDistributionListByFarmerAndFertilizer(int Farmerid, int Fertilizerid, int SocietyId, int StatusId = 0);
 
     }
     public class MasterData : IMastersData
@@ -563,13 +567,50 @@ namespace DAL.MasterData
             new SqlParameter("@FertilizerId", model.FertilizerId),
             new SqlParameter("@DistributeQty", model.DistributeQty),
             new SqlParameter("@SocietyId", model.SocietyId),
-            new SqlParameter("@UserId", userId),
+            new SqlParameter("@CreatedBy", model.SocietyId),
             new SqlParameter("@Remarks", model.Remarks),
         };
             var result = _dataAccess.ExecuteNonQuery("SP_DistributeFertilizerToFarmer", commandType: CommandType.StoredProcedure, parameters);
 
         }
+        public string GetAvailableStockBySociety(int societyId, int Fertilizerid)
+        {
+            string result = "0";
+            SqlParameter[] parameters =
+                    {
+            new SqlParameter("@SocietyId", societyId),
+            new SqlParameter("@FertilizerId",Fertilizerid)
 
+            };
+            result = _dataAccess.ExecuteScaler("sp_GetAvlStockByFertilizer", parameters);
+            return result;
+        }
+        public DataTable GetfertilzerdemandByFarmer(int societyId, int Fertilizerid, int Farmerid)
+        {
+            DataTable result;
+            SqlParameter[] parameters =
+                    {
+            new SqlParameter("@SocietyId", societyId),
+            new SqlParameter("@FertilizerId",Fertilizerid),
+               new SqlParameter("@FarmerId",Farmerid)
+
+            };
+            result = _dataAccess.ExecuteDataTable("sp_GetAvlStockByFertilizer", parameters);
+            return result;
+        }
+        public DataTable GetDistributionListByFarmerAndFertilizer(int Farmerid, int Fertilizerid, int SocietyId, int StatusId = 0)
+        {
+            DataTable result;
+            SqlParameter[] parameters =
+                    {
+                new SqlParameter("@FertilizerId",Fertilizerid>0?Fertilizerid:DBNull.Value),
+             new SqlParameter("@FarmerId",Farmerid>0?Farmerid:DBNull.Value),
+             new SqlParameter("@SocietyId",SocietyId),
+              new SqlParameter("@StatusId",StatusId>0?StatusId:DBNull.Value),
+            };
+            result = _dataAccess.ExecuteDataTable("Sp_GetFarmerFertilizerDemandStatusBySociety", parameters);
+            return result;
+        }
 
         #endregion
     }

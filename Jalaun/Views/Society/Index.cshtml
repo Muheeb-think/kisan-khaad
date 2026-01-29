@@ -9,7 +9,139 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     @*   <link rel="stylesheet" href="dashboard.css"> *@
     <link href="~/css/samitidashboard.css" rel="stylesheet" />
+    <style>
+      
 
+        /* FULL COLOR CARD */
+        .card {
+            border-radius: 16px;
+            padding: 18px;
+           
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 16px 35px rgba(0,0,0,0.25);
+            }
+
+        /* Header */
+        .card-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+            .card-head i {
+                font-size: 26px;
+                opacity: 0.85;
+            }
+
+        /* Body */
+        .card-body h2 {
+            font-size: 34px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .card-body p {
+            margin-top: 6px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Gradient Colors */
+        .bg-gradient-orange {
+            background: linear-gradient(135deg, #ff9800, #ff5722);
+        }
+
+        .bg-gradient-blue {
+            background: linear-gradient(135deg, #2196f3, #1e88e5);
+        }
+
+        .bg-gradient-yellow {
+            background: linear-gradient(135deg, #fbc02d, #f57f17);
+        }
+
+        .bg-gradient-green {
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+        }
+
+        .text-light {
+            color: #f1f1f1;
+        }
+
+    </style>
+    <style>
+        .table-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        /* Header */
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+            .table-header h3 {
+                margin: 0;
+                font-size: 18px;
+                font-weight: 600;
+                color: #0b5c7a;
+            }
+
+        .table-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+            .table-actions input {
+                padding: 8px 12px;
+                border-radius: 6px;
+                border: 1px solid #ddd;
+            }
+
+        .btn-primary {
+            background: #0b5c7a;
+            color: #fff;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+        }
+
+        thead {
+            background: #f7f9fc;
+        }
+
+        th {
+            font-size: 14px;
+            color: #555;
+        }
+
+        td {
+            font-size: 14px;
+            vertical-align: middle;
+        }
+
+        tbody tr:hover {
+            background: #f9fbff;
+        }
+
+    </style>
 </head>
 @{
            var societydashboard = Model.DashboardDT;
@@ -31,54 +163,54 @@
         <div class="row">
 
             <div class="col">
-                <div class="card top-blue">
+                <div class="card bg-gradient-orange">
                     <div class="card-head">
-                        <span>आज की मांग</span>
+                        <span>कुल मांग</span>
                         <i class="fa-solid fa-clipboard-list"></i>
                     </div>
                     <div class="card-body">
-                        <h2>@societydashboard.Rows[0]["TotalfertilizerNeed"].ToString()</h2>
-                        <p class="text-green">↑ 15% कल से</p>
+                        <h2>@societydashboard.Rows[0]["TotalfertilizerNeed"].ToString() (K.G)</h2>
+                     @*    <p class="text-light">↑ 15% कल से</p> *@
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="card top-green">
+                <div class="card bg-gradient-blue">
                     <div class="card-head">
                         <span>पूर्ण वितरण</span>
                         <i class="fa-solid fa-circle-check"></i>
                     </div>
-                    <div class="card-body">
-                        <h2>@societydashboard.Rows[0]["TotalDistributed"].ToString()</h2>
-                        <p class="text-green">↑ 8% कल से</p>
+                    <div class="card-body bg-gradient-blue">
+                        <h2>@societydashboard.Rows[0]["TotalDistributed"].ToString() (K.G)</h2>
+                       @*  <p class="text-green">↑ 8% कल से</p> *@
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <div class="card top-red">
+                <div class="card bg-gradient-yellow">
                     <div class="card-head">
                         <span>लंबित वितरण</span>
                         <i class="fa-solid fa-clock"></i>
                     </div>
-                    <div class="card-body">
-                        <h2>@societydashboard.Rows[0]["TotalfertilizerPending"].ToString()</h2>
-                        <p class="text-red">↑ 12% कल से</p>
+                    <div class="card-body bg-gradient-yellow">
+                        <h2>@societydashboard.Rows[0]["TotalfertilizerPending"].ToString() (K.G)</h2>
+                        @* <p class="text-red">↑ 12% कल से</p> *@
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="card top-orange">
+                <div class="card bg-gradient-green">
                     <div class="card-head">
                         <span>स्टॉक उपलब्ध</span>
                         <i class="fa-solid fa-boxes-stacked"></i>
                     </div>
-                    <div class="card-body">
-                        <h2>@societydashboard.Rows[0]["CurrentStock"].ToString()</h2>
-                        <p class="text-green">— स्थिर</p>
+                    <div class="card-body bg-gradient-green">
+                        <h2>@societydashboard.Rows[0]["CurrentStock"].ToString() (K.G)</h2>
+                      @*   <p class="text-green">— स्थिर</p> *@
                     </div>
                 </div>
             </div>
@@ -115,6 +247,19 @@
 
                 <div class="card-body">
                     <div id="fertilizerTypeChart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow-sm">
+            <div class="card-header bg-secondary text-white">
+                <strong>वितरण इतिहास</strong>
+            </div>
+
+            <div class="card-body p-2">
+                <div id="partialsDistributionList" class="table-responsive">
+                    <div class="text-center text-muted p-3">
+                      
+                    </div>
                 </div>
             </div>
         </div>
@@ -171,9 +316,8 @@
 
 
     <script>
-           var FertilizerNames = @Html.Raw( Newtonsoft.Json.JsonConvert.SerializeObject(
-                                                                                                    Model.FertilizerDemandFertilizerWise.Select(x => x.ItemName)
-                                                                                                ));
+           var FertilizerNames = @Html.Raw( Newtonsoft.Json.JsonConvert.
+               SerializeObject(Model.FertilizerDemandFertilizerWise.Select(x => x.ItemName)));
 
         var demandKg = @Html.Raw( Newtonsoft.Json.JsonConvert.SerializeObject(
                                                 Model.FertilizerDemandFertilizerWise.Select(x => x.DemandKg)
@@ -196,6 +340,9 @@
             document.querySelector("#fertilizerTypeChart"),
             optionsPie
         ).render();
+
+          $('#partialsDistributionList').load("/Society/GetDistributionListBySociety");
+
     </script>
 
 </body>

@@ -1,52 +1,200 @@
 ﻿@model DistributeVM
 
-<h4>Distribute Fertilizer</h4>
+<h4>उर्वरक वितरित करें</h4>
 
-<div class="row">
-    <div class="col-md-4"><b>Farmer:</b> @Model.FarmerName</div>
-    <div class="col-md-4"><b>Fertilizer:</b> @Model.FertilizerName</div>
-    <div class="col-md-4"><b>Available Stock:</b> @Model.AvailableStock</div>
+<div class="row mb-3">
+    <div class="col-md-4">
+        <div class="card shadow-sm border-success">
+            <div class="card-body text-center">
+                <h6 class="text-muted">किसान</h6>
+                <h5 class="mb-0" id="lblfarmer">—</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm border-primary">
+            <div class="card-body text-center">
+                <h6 class="text-muted">उर्वरक</h6>
+                <h5 class="mb-0" id="lblfertilizer">—</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm border-warning">
+            <div class="card-body text-center">
+                <h6 class="text-muted">उपलब्ध स्टॉक</h6>
+                <h5 class="mb-0 text-success" id="lblstock">0</h5>
+            </div>
+        </div>
+    </div>
 </div>
 
-<hr />
-
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-light">
+        <strong>उर्वरक वितरण विवरण</strong>
+    </div>
+    <div class="card-body">
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(m => m.DemandDetailsId)
     @Html.HiddenFor(m => m.FertilizerId)
     @Html.HiddenFor(m => m.SocietyId)
+    @Html.HiddenFor(m => m.ReceiveQty)
+     @Html.HiddenFor(m => m.FertilizerNeed)
+   
 
     <div class="row">
         <div class="col-md-4">
-            <label>Total Demand</label>
-            <input class="form-control" value="@Model.FertilizerNeed" readonly />
+            <div class="form-group">
+                <label>उर्वरक</label>
+                <select class="form-control" id="ddlfertilizer">
+                    <option value="-1">--विकल्प चुनें--</option>
+                </select>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>किसान</label>
+                <select class="form-control" id="ddlfarmer">
+                    <option value="-1">--विकल्प चुनें--</option>
+                </select>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <label>कुल मांग</label>
+            <input class="form-control" value="@Model.FertilizerNeed" readonly id="txtfertilizerneed"/>
         </div>
 
         <div class="col-md-4">
-            <label>Already Received</label>
-            <input class="form-control" value="@Model.ReceiveQty" readonly />
+            <label>पहले से प्राप्त</label>
+            <input class="form-control" value="@Model.ReceiveQty" readonly id="txtReceiveQty" />
+        </div>
+         <div class="col-md-4">
+            <label>लंबित मात्रा</label>
+            <input class="form-control" value="@Model.PendingQty" readonly id="txtPendingQty" />
         </div>
 
         <div class="col-md-4">
-            <label>Distribute Qty</label>
+            <label>मात्रा वितरित करें</label>
             @Html.TextBoxFor(m => m.DistributeQty,
-        new { @class = "form-control", type = "number", step = "0.01" })
+            new { @class = "form-control", type = "number", step = "0.01" })
+    </div>
+</div>
+
+<div class="mt-3">
+    <label>टिप्पणी</label>
+   @Html.TextAreaFor(
+    m => m.Remarks,
+    new { 
+        @class = "form-control",
+        maxlength = "250"   
+    }
+
+)
+
+<small id="charCount">250 characters remaining</small>
+</div>
+
+<button class="btn btn-success mt-3">वितरित करें</button>
+}
+
+ </div>
+</div>
+<div class="card shadow-sm">
+    <div class="card-header bg-secondary text-white">
+        <strong>वितरण इतिहास</strong>
+    </div>
+
+    <div class="card-body p-2">
+       <div id="partialsDistributionList" class="table-responsive">
+            <div class="text-center text-muted p-3">
+                कृपया किसान और उर्वरक चुनें
+            </div>
         </div>
     </div>
+</div>
 
-    <div class="mt-3">
-        <label>Remarks</label>
-        @Html.TextBoxFor(m => m.Remarks, new { @class = "form-control" })
-    </div>
-
-    <button class="btn btn-success mt-3">Distribute</button>
-}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+     let fertilizerId ;
      $(document).ready(function () {
-    // bindDropDown('ddlfertilizer', 'GetAllFertilizer', 0, -1);
-    // $('#ddlfertilizer').change(function(){
-    //    // $('#FertilizerID').val( $('#ddlfertilizer').val());
-    // });
+         bindDropDown('ddlfertilizer', 'GetAllFertilizer', 0, -1);
+         var maxLen = 250;
+         $("#Remarks").on("input", function () {
+        var remaining = maxLen - $(this).val().length;
+        $("#charCount").text(remaining + " /250 characters");
+    });
+        $("#ddlfertilizer").change(function () {
+
+            var fertilizerId = $(this).val();
+             $("#lblfertilizer").text($("#ddlfertilizer option:selected").text())
+
+            if (fertilizerId !== "") {
+                $.ajax({
+                    url: '/Society/GetAvailableStock',
+                    type: 'GET',
+                    data: {
+                        fertilizerId: fertilizerId
+                    },
+                    success: function (response) {
+                        $("#lblstock").text(response.stock);
+                    },
+                    error: function () {
+                        $("#lblstock").text("Error fetching stock");
+                    }
+                });
+            } else {
+                $("#lblStock").text("");
+            }
+        });
      });
+     $('#ddlfertilizer').change(function(){
+          bindDropDown('ddlfarmer', 'GetfertilizerDemandfarmer', $('#ddlfertilizer').val(), -1);
+           fertilizerId = $(this).val();
+     });
+      $('#ddlfarmer').change(function(){
+          $('#lblfarmer').text($('#ddlfarmer option:selected').text());
+           
+             $("#lblfertilizer").text($("#ddlfertilizer option:selected").text())
+
+            if (fertilizerId !== "") {
+                $.ajax({
+                    url: '/Society/GetfertilzerdemandByFarmer',
+                    type: 'GET',
+                    data: {
+                        fertilizerId: $('#ddlfertilizer').val(),
+                        farmerId:$('#ddlfarmer').val()
+                    },
+                    success: function (response) {
+                        console.log(response);
+                       // @Model.FertilizerNeed = response.demand;
+                         $("#txtfertilizerneed").val(response.fertilizerNeed);
+                         $("#txtReceiveQty").val(response.receiveQty);
+                        $('#FertilizerNeed').val(response.fertilizerNeed);
+                         $('#DemandDetailsId').val(response.demandDetailsId);
+                         $('#FertilizerId').val(fertilizerId);
+                         $('#ReceiveQty').val(response.receiveQty);
+                         $('#txtPendingQty').val((response.fertilizerNeed-response.receiveQty));
+                    },
+                    error: function () {
+                        //$("#lblstock").text("Error fetching stock");
+                    }
+                });
+            } else {
+                $("#lblStock").text("");
+            }
+            $('#partialsDistributionList').load("/Society/GetDistributionListByFarmerAndFertilizer?Farmerid="+ $('#ddlfarmer').val()+"&FertilizerId="+fertilizerId);
+      });
+      // $(function(){
+      //     $('#partialsDistributionList').load("/Society/GetDistributionListByFarmerAndFertilizer?Farmerid="+ $('#ddlfarmer').val()+"&FertilizerId="+fertilizerId);
+      // })
 </script>
+
+    <!-- Optional: Initialize DataTables plugin if you're using it -->
+   

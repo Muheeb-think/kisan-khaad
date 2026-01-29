@@ -28,12 +28,12 @@
                         <th>समिति</th>
                         <th>आवश्यक समय</th>
                         <th>फसल क्षेत्र (हेक्टेयर)</th>
-
                         <th>कुल राशि</th>
                         <th>खाद की मांग</th>
                         <th>प्राप्त मात्रा</th>
                         <th>शेष मात्रा</th>
                         <th>मांग की तारीख</th>
+                        <th>प्राप्ति तिथि</th>
                         <th>स्थिति</th>
                     </tr>
                 </thead>
@@ -52,12 +52,13 @@
                                 <td>@item.NeedTime</td>
                                 <td>@item.TotalCropAreaHec</td>
 
-                                <td>₹ @item.TotalAmount.ToString("N0")</td>
+                                <td>₹ @item.TotalAmount</td>
                                 <td>@item.TotalFertilizerNeed</td>
 
                                 <td>@item.RecieveQty</td>
                                 <td>@item.SuccessDemand</td>
                                 <td>@item.DemandDate.ToString("dd-MM-yyyy")</td>
+                                <td>@item.ApprovedDate?.ToString("dd-MM-yyyy")</td>
                                 <td>
                                     <span class="badge @(item.Status == "Pending" ? "bg-warning text-dark" :
                                                                                                                                                                                                  item.Status == "Success" ? "bg-success text-white" : "bg-danger text-white")">
@@ -67,13 +68,13 @@
                             </span>
                         </td>
                     </tr>
-                                        }
-                        srNo++;
+                             srNo++;
+                        }                
                     }
                     else
                     {
                         <tr>
-                            <td colspan="12" class="text-center text-muted fw-bold py-4">
+                            <td colspan="13" class="text-center text-muted fw-bold py-4">
                                 कोई डेटा नहीं मिला
                             </td>
                         </tr>
@@ -107,7 +108,7 @@
             paging: true,
             searching: true,
             ordering: true,
-            order: [[11, 'desc']],
+            order: [[13, 'desc']],
             dom: 'Bfrtip', // Show buttons
             buttons: [
                 {

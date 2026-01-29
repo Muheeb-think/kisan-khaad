@@ -1,0 +1,45 @@
+﻿@model List<FertilizerAddStockVM>
+
+@for (int i = 0; i < Model.Count; i++)
+{
+    <tr>
+        <td>@Model[i].CreatedDate</td>
+
+        <td>
+            @Model[i].CompanyName
+            @Html.HiddenFor(m => Model[i].CompanyId, new {@class= "CompanyId"})
+          
+        </td>
+
+        <td>
+            @Model[i].SocietyName
+            <input type="hidden" class="SocietyId" value="@Model[i].SocietyId" />
+        </td>
+
+        <td>
+            @Model[i].FertilizerName
+            <input type="hidden" class="FertilizerID" value="@Model[i].FertilizerID" />
+        </td>
+
+        <td>
+            @Model[i].PacketTypeName
+            <input type="hidden" class="PacketType" value="@Model[i].PacketType" />
+        </td>
+
+        <td>
+            @Model[i].PacketQty
+            <input type="hidden" class="PacketQty" value="@Model[i].PacketQty" />
+        </td>
+
+        <td>
+            @Model[i].PurchasedQty
+            <input type="hidden" class="PurchasedQty" value="@Model[i].PurchasedQty" />
+        </td>
+
+        <td>
+            @Model[i].Remarks
+            <input type="hidden" class="Remarks" value="@Model[i].Remarks" />
+        </td>
+    </tr>
+
+}

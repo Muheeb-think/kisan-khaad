@@ -376,14 +376,14 @@
                                 <label>तहसील<span style="color:red">*</span></label>
                                 <select asp-for="tahsilId"
                                         asp-items="@(new SelectList(Model.TehsilList, "Id", "TehsilName"))"
-                                        class="form-select" id="tahsilId" required>
+                                        class="form-select blur-validate" id="tahsilId" required>
                                     <option value="">-- चयन करें --</option>
                                 </select>
                             </div>
 
                             <div class="col-md-4">
                                 <label class="form-label mb-1">गांव<span style="color:red">*</span></label>
-                                <select asp-for="village" class="form-select" id="VillageTypeDropdown" required></select>
+                                <select asp-for="village" class="form-select blur-validate" id="VillageTypeDropdown" required></select>
                             </div>
 
                             <div class="col-md-4">
@@ -535,7 +535,7 @@
                                 <label>खसरा संख्या</label>
                                 <input asp-for="LandRecordNumber" class="form-control" onblur="SearchKhasraNo()" id="LandRecordNumber" />
                             </div>
-                              <div class="col-md-4">
+                            <div class="col-md-4">
                                 <label> किसान का नाम </label>
                                 <input asp-for="FarmerNameLandKhasra" class="form-control" />
                             </div>
@@ -786,6 +786,7 @@
     <script src="~/toastr/toastr.min.js"></script>
     <script src="~/toastr/toastr.js"></script>
     <script src="~/toastr/toastr.min.js"></script>
+
     <script src="@Url.Content("~/Page_Js/farmerregistration.js")"></script>
 
     <!-- Set TempData as a global JS variable -->

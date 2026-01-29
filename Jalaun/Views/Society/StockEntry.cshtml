@@ -1,10 +1,10 @@
-﻿@model FertilizerStockVM
+﻿@model FertilizerAddStockVM
 @{
     ViewBag.Title = "Fertilizer Stock Entry";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h4 class="mb-3"> Add Fertilizer Stock</h4>
+<h4 class="mb-3">उर्वरक स्टॉक</h4>
 
 @if (TempData["Success"] != null)
 {
@@ -12,66 +12,312 @@
 }
 
 
-@using (Html.BeginForm("StockEntry", "Society", FormMethod.Post))
-{
-    @Html.HiddenFor(m=>m.FertilizerID)
+    @Html.HiddenFor(m => m.CompanyId)
+    @Html.HiddenFor(m=>m.SocietyId)
+    @Html.HiddenFor(m => m.FertilizerID)
     @Html.HiddenFor(m => m.StockID)
-    ;
+    @Html.HiddenFor(m => m.OpeningStock)
+    @Html.HiddenFor(m => m.QtyUnit)
+    @Html.HiddenFor(m=>m.CreatedBy)
+
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="form-group">
-                <label>उर्वरक</label>
-                <select id="ddlfertilizer">
+                <label>एंट्री डेट</label>
+              
+                <input type="date" id="txtentrydate" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>उर्वरक कंपनी</label>
+                <select id="ddlfertilizerCompany" class="form-control">
+                    <option value="-1">--विकल्प चुनें--</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>समिति</label>
+                <select id="ddlsamiti" class="form-control" >
+                    <option value="-1">--विकल्प चुनें--</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>उर्वरक प्रकार</label>
+                <select id="ddlfertilizer" class="form-control">
                     <option value="-1">--विकल्प चुनें--</option>
                 </select>
                 @*  <select asp-for="FertilizerID"
-                        asp-items="@(new SelectList(Model.ddlfertilizers, "FertilizerID", "FertilizerNameHindi"))"
+                        asp-items="@(new SelectList(ddlfertilizers, "FertilizerID", "FertilizerNameHindi"))"
                         class="form-select">
                     <option value="-1">--विकल्प चुनें--</option>
                 </select> *@
 
             </div>
         </div>
-        <div class="col-md-4">
-            <label>प्रारंभिक स्टॉक</label>
-            @Html.TextBoxFor(m => m.OpeningStock, new { @class = "form-control", type = "number", step = "0.01" })
-        </div>
+    </div>
+    <div class="row">
 
-        <div class="col-md-4">
-            <label>खरीदी गई मात्रा</label>
-            @Html.TextBoxFor(m => m.PurchasedQty, new { @class = "form-control", type = "number", step = "0.01" })
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>पैकेट प्रकार</label>
+                <select id="PacketType" class="form-control">
+                    <option value="-1">--विकल्प चुनें--</option>
+                </select>
+                @*  <select asp-for="FertilizerID"
+                        asp-items="@(new SelectList(ddlfertilizers, "FertilizerID", "FertilizerNameHindi"))"
+                        class="form-select">
+                    <option value="-1">--विकल्प चुनें--</option>
+                </select> *@
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>पैकेट की संख्या</label>
+                <input type="number" id="PacketQty" class="form-control" />
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>कुल किलोग्राम </label>
+                @Html.TextBoxFor(m => m.PurchasedQty, new { @class = "form-control", type = "number", step = "0.01", @readonly=true })
+            </div>
         </div>
     </div>
+    <div class="row">
 
-    <div class="row mt-3">
+          <div class="col-md-6">
+            <div class="form-group">
+                <label>टिप्पणी</label>
+        @Html.TextAreaFor(
+    m => m.Remarks,
+    new { 
+        @class = "form-control",
+        maxlength = "250"   
+    }
 
-        <div class="col-md-4">
-            <label>इकाई/मात्रक</label>
-            @Html.TextBoxFor(m => m.QtyUnit, new { @class = "form-control", placeholder = "KG / BORI" })
+)  
+
+<small id="charCount">250 characters remaining</small>
+</div>          
+</div>
+
+        <div class="col-md-3">
+            <div class="form-group">
+                <button type="button" id="btnAdd" class="btn btn-primary">
+                    Add More
+                </button>
+            </div>
         </div>
 
-        <div class="col-md-4">
-            <label>टिप्पणी</label>
-            @Html.TextBoxFor(m => m.Remarks, new { @class = "form-control" })
-        </div>
-
-
-        <div class="mt-4">
-            <button type="submit" class="btn btn-primary">
-                Submit
-            </button>
-
-            <a href="@Url.Action("Entry")" class="btn btn-secondary">Reset</a>
-        </div>
+       
     </div>
-}
+
+    
+
+     <div class="card shadow-sm">
+            <div class="card-header bg-secondary text-white">
+               @*  <strong>वितरण इतिहास</strong> *@
+            </div>
+
+            <div class="card-body p-2">
+                <div id="partialstock" class="table-responsive">
+         
+                <table class="table table-bordered table table-responsive mt-3" id="tblItems">
+                    <thead>
+                        <tr>
+                            <th>एंट्री डेट</th>
+                            <th>कंपनी</th>
+                            <th>समिति</th>
+                            <th>उर्वरक</th>
+                            <th>पैकेट</th>
+                            <th>संख्या</th>
+                            <th>कुल किलोग्राम</th>
+                            <th>Remark</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="purchaseContainer">
+
+                    </tbody>
+                </table>
+             <div class="col-md-3">
+            <div class="form-group">
+                <button type="button" id="btnSave" class="btn btn-primary">
+                  Save
+                </button>
+                </div>
+            </div>
+            
+        </div>
+            </div>
+        </div>
+
+
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+  
      $(document).ready(function () {
-    bindDropDown('ddlfertilizer', 'GetAllFertilizer', 0, -1);
-    $('#ddlfertilizer').change(function(){
-        $('#FertilizerID').val( $('#ddlfertilizer').val());
-    });
+          UserNumber= $('#CreatedBy').val();
+
+          var maxLen = 250;
+         $("#Remarks").on("input", function () {
+        var remaining = maxLen - $(this).val().length;
+        $("#charCount").text(remaining + " /250 characters");
+        });
+
+        bindDropDown('ddlfertilizer', 'GetAllFertilizer', 0, -1);
+        bindDropDown('ddlfertilizerCompany', 'GetfertilizerCompany', 0, -1);
+        bindDropDown('ddlsamiti', 'GetSamitiByUserNumber', UserNumber, 1);
+        bindpacketType();
+       
+        $("#ddlfertilizer").change(function () {
+             $('#FertilizerID').val( $('#ddlfertilizer').val());
+            var fertilizerId = $(this).val();
+
+
+            if (fertilizerId !== "") {
+                $.ajax({
+                    url: '/Society/GetAvailableStock',
+                    type: 'GET',
+                    data: {
+                        fertilizerId: fertilizerId
+                    },
+                    success: function (response) {
+                        $("#OpeningStock").val(response.stock);
+                    },
+                    error: function () {
+                        // $("#OpeningStock").text("Error fetching stock");
+                    }
+                });
+            } else {
+                $("#lblStock").text("");
+            }
+        });
+        $("#PacketType, #PacketQty").on("change keyup", function () {
+        calculateTotalKg();
+        });
      });
+     function bindpacketType(){
+         var packetTypes = [
+        { id: 10, text: "10 KG" },
+        { id: 50, text: "50 KG" },
+        { id: 100, text: "100 KG" },
+        { id: 200, text: "200 KG" },
+        { id: 500, text: "500 KG" }
+    ];
+
+    $.each(packetTypes, function (index, item) {
+        $('#PacketType').append(
+            $('<option>', {
+                value: item.id,
+                text: item.text
+            })
+        );
+    });
+     }
+     function calculateTotalKg() {
+        var packetKg = parseFloat($("#PacketType").val()) || 0;
+        var packetQty = parseInt($("#PacketQty").val()) || 0;
+
+        var totalKg = packetKg * packetQty;
+
+        $("#PurchasedQty").val(totalKg);
+    }
+
+    
 </script>
+<script>
+    $('#btnAdd').click(function(e){
+        e.preventDefault();
+        $('#CompanyId').val($('#ddlfertilizerCompany').val());
+        $('#SocietyId').val($('#ddlsamiti').val());
+       $('#FertilizerID').val($('#ddlfertilizer').val());
+        $('#partialstock').load("/Society/AddfertilizerStock")
+         
+
+       var model = {
+        CompanyId: $("#ddlfertilizerCompany").val(),
+        CompanyName: $("#ddlfertilizerCompany option:selected").text(),
+
+        SocietyId: $("#ddlsamiti").val(),
+        SocietyName: $("#ddlsamiti option:selected").text(),
+
+        FertilizerID: $("#ddlfertilizer").val(),
+        FertilizerName: $("#ddlfertilizer option:selected").text(),
+
+        PacketType: $("#PacketType").val(),
+        PacketTypeName: $("#PacketType option:selected").text(),
+
+        PacketQty: $("#PacketQty").val(),
+        PurchasedQty: $("#PurchasedQty").val(),
+        Remarks: $("#Remarks").val(),
+        CreatedDate: $("#txtentrydate").val()
+    };
+
+        $.ajax({
+            url: '@Url.Action("AddfertilizerStock", "Society")',
+            type: 'POST',
+            data: model,
+            success: function (response) {
+                $("#purchaseContainer").append(response);
+            },
+            error: function () {
+                alert("Error while adding data");
+            }
+        });
+    });
+    $(document).on("click", ".btn-remove", function () {
+    $(this).closest("tr").remove();
+});
+
+function collectStockList() {
+    var list = [];
+
+    $("#purchaseContainer tr").each(function () {
+        var row = $(this);
+
+        list.push({
+            CompanyId: row.find(".CompanyId").val(),
+            SocietyId: row.find(".SocietyId").val(),
+            FertilizerID: row.find(".FertilizerID").val(),
+            PacketType: row.find(".PacketType").val(),
+            PacketQty: row.find(".PacketQty").val(),
+            PurchasedQty: row.find(".PurchasedQty").val(),
+            Remarks: row.find(".Remarks").val()
+        });
+    });
+
+    return list;
+}
+$("#btnSave").click(function () {
+
+    var stockList = collectStockList();
+
+    if (stockList.length === 0) {
+        alert("No data to save");
+        return;
+    }
+    console.log(JSON.stringify(stockList));
+    $.ajax({
+        url: '@Url.Action("StockEntry", "Society")',
+        type: 'POST',
+       contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify(stockList),
+        success: function (res) {
+            alert("Saved successfully");
+        },
+        error: function () {
+            alert("Error while saving");
+        }
+    });
+});
+
+</script>
+

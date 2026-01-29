@@ -22,6 +22,8 @@ namespace DAL.ModelDTO
         public int TotalCrops { get; set; }
         public decimal SuccessDemand { get; set; }
         public decimal RecieveQty { get; set; }
+        public string? StatusNameHindi { get; set; }
         public DateTime DemandDate { get; set; }
+        public DateTime? ApprovedDate { get; set; }
     }
 }

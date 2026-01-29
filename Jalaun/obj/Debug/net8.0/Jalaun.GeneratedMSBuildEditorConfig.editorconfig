@@ -136,8 +136,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9GYXJtZXJMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_fertilizerDistributionListBySociety.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9mZXJ0aWxpemVyRGlzdHJpYnV0aW9uTGlzdEJ5U29jaWV0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_LayoutHome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_partialAddFertilizerSock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9wYXJ0aWFsQWRkRmVydGlsaXplclNvY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_partialModuleAndPermissionlist.cshtml]

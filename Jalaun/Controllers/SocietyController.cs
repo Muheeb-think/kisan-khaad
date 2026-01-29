@@ -38,29 +38,25 @@ namespace Jalaun.Controllers
         [HttpGet]
         public IActionResult StockEntry()
         {
-            FertilizerStockVM model = new();
-            
-            
+            FertilizerAddStockVM model = new();
+
+            model.CreatedBy = Convert.ToInt32(SessionHelper.UserId);
+
             return View(model);
         }
         [HttpPost]
-        public IActionResult StockEntry(FertilizerStockVM model)
+        public IActionResult StockEntry(List<FertilizerAddStockVM> model)
         {
-            
+            model[0].CreatedBy = Convert.ToInt32(SessionHelper.UserId);
 
-            if (!ModelState.IsValid)
-            {
-               
-                return View(model);
-            }
+            //var res = _data.SaveFertilizerStock(item, Convert.ToInt32(SessionHelper.UserId));
 
-            var res = _data.SaveFertilizerStock(model, Convert.ToInt32(SessionHelper.UserId));
-
-            TempData["Success"] = model.StockID == 0
+            TempData["Success"] = model[0].StockID == 0
                 ? "Stock added successfully"
                 : "Stock updated successfully";
 
-            return RedirectToAction("StockEntry");
+
+            return Json(new { success = true });
         }
 
         [HttpGet]
@@ -72,6 +68,7 @@ namespace Jalaun.Controllers
         [HttpPost]
         public IActionResult Distribute(DistributeVM model)
         {
+            model.SocietyId = Convert.ToInt32(SessionHelper.UserId);
             if (!ModelState.IsValid)
                 return View(model);
 
@@ -81,6 +78,49 @@ namespace Jalaun.Controllers
             return RedirectToAction("DemandList");
 
         }
+        public ActionResult GetAvailableStock(int fertilizerId)
+        {
+            string value = "0";
+            value = _data.GetAvailableStockBySociety(Convert.ToInt32(SessionHelper.UserId), fertilizerId);
+            return Json(new { stock = value });
+        }
 
+        public ActionResult GetfertilzerdemandByFarmer(int fertilizerId, int farmerId)
+        {
+            DistributeVM model = new();
+            var resultdt = _data.GetfertilzerdemandByFarmer(Convert.ToInt32(SessionHelper.UserId), fertilizerId, farmerId);
+            if (resultdt != null && resultdt.Rows.Count > 0)
+            {
+                model = new();
+                model.DemandDetailsId = Convert.ToInt32(resultdt.Rows[0]["DemandDetailsId"]);
+                model.FertilizerNeed = Convert.ToDecimal(resultdt.Rows[0]["FertilizerNeed"]);
+                model.ReceiveQty = Convert.ToDecimal(resultdt.Rows[0]["RecieveQty"]);
+            }
+            return Json(model);
+        }
+
+        public ActionResult GetDistributionListByFarmerAndFertilizer(int Farmerid, int FertilizerId)
+        {
+            var resultdt = _data.GetDistributionListByFarmerAndFertilizer(Farmerid, FertilizerId,
+                Convert.ToInt32(SessionHelper.UserId), 0);
+            var model = BAL.Common.DataTableExtensions.ToList<FarmerDemandReportViewModel>(resultdt);
+            return PartialView("/Views/Shared/_fertilizerDistributionListBySociety.cshtml", resultdt);
+        }
+        public ActionResult GetDistributionListBySociety()
+        {
+            var resultdt = _data.GetDistributionListByFarmerAndFertilizer(0, 0,
+                Convert.ToInt32(SessionHelper.UserId), 0);
+            var model = BAL.Common.DataTableExtensions.ToList<FarmerDemandReportViewModel>(resultdt);
+            return PartialView("/Views/Shared/_fertilizerDistributionListBySociety.cshtml", resultdt);
+        }
+        [HttpPost]
+        public ActionResult AddfertilizerStock(FertilizerAddStockVM model)
+        {
+            model.list = new List<FertilizerAddStockVM>();
+
+            model.list.Add(model);
+
+            return PartialView("/Views/Shared/_partialAddFertilizerSock.cshtml", model.list);
+        }
     }
 }
