@@ -2,7 +2,10 @@
 
 <h4>उर्वरक वितरित करें</h4>
 
-
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
 
 <div class="card shadow-sm mb-4" >
     <div class="card-header bg-light">
@@ -56,11 +59,6 @@
     </div>
     <div class="card-body">
 
-    @Html.HiddenFor(m => m.DemandDetailsId)
-    @Html.HiddenFor(m => m.FertilizerId)
-    @Html.HiddenFor(m => m.SocietyId)
-    @Html.HiddenFor(m => m.ReceiveQty)
-     @Html.HiddenFor(m => m.FertilizerNeed)
    
 
     <div class="row">
@@ -101,8 +99,22 @@
         <strong>उर्वरक वितरण विवरण </strong>
     </div>
 <div  class="card-body" >
-   
+   @using(Html.BeginForm("Distribute","Society",FormMethod.Post))
+   { @Html.HiddenFor(m => m.DemandDetailsId)
+    @Html.HiddenFor(m => m.FertilizerId)
+    @Html.HiddenFor(m => m.SocietyId)
+    @Html.HiddenFor(m => m.ReceiveQty)
+    @Html.HiddenFor(m => m.FertilizerNeed)
+    @Html.HiddenFor(x=>x.VendorId)
+
+
     <div class="row">
+         <div class="col-md-2" >
+            <div class="form-group">
+                <label>एंट्री डेट</label>
+               <input type="date" class="form-control" />
+            </div>
+        </div>
         <div class="col-md-2" >
             <div class="form-group">
                 <label>उर्वरक प्रकार</label>
@@ -140,6 +152,7 @@
          <div class="col-md-2">
             <div class="form-group">
                 <label>विक्रेता का नाम</label>
+                
                 <select id="ddlvendor" class="form-control" >
                     <option value="-1">--विकल्प चुनें--</option>
                 </select>
@@ -169,7 +182,7 @@
        <div class="col-md-6">
             <div class="form-group">
                <p>&nbsp;&nbsp</p>
-                <button class="btn btn-success mt-3" type="button" id="btnsave">वितरण करें</button>
+                <button class="btn btn-success mt-3" type="submit" id="btnsave">वितरण करें</button>
                 <button class="btn btn-danger mt-3" type="button" id="btnclose">बंद करे </button>
 
          
@@ -177,6 +190,7 @@
         </div>
      
 </div>
+    }
 </div>
 </div>
 
@@ -291,20 +305,36 @@
        // alert(demandDetailsId);
     }
     $(document).on('click', '.btnView', function () {
-          var id = $(this).data('id');
+    var id = $(this).data('id');
     var fertilizerId = $(this).data('fertilizer');
     var farmerName = $(this).data('farmer');
     let row = $(this).closest('tr');
-
     let fasalName = row.find('td:eq(5)').text().trim();
     let urwarakName = row.find('td:eq(6)').text().trim();
+     let NeedQty = row.find('td:eq(8)').text().trim();
+    let RcvQty = row.find('td:eq(9)').text().trim();
      // $('#lblfarmer').text(farmerName);
     // $('#lblfasal').text(fasalName);
     $('#lblfertilizer').val(urwarakName);
-
-   
-
+    $('#FertilizerId').val(fertilizerId);
+    $('#DemandDetailsId').val(id);
+    $('#FertilizerNeed').val(NeedQty);
+    $('#ReceiveQty').val(RcvQty);
     getdetails(id,fertilizerId,farmerName);
+});
+$('#ddlvendor').change(function(){
+    const value=$(this).val();
+    $('#VendorId').val(value);
+})
+$('#btnsave').click(function(e){
+    
+    const rcvqty= parseFloat($('#ReceiveQty').val());
+    const DistributeQty=parseFloat($('#DistributeQty').val());
+    const totaldistributedqty=parseFloat(rcvqty+DistributeQty)
+    if($('#FertilizerNeed').val()<totaldistributedqty){
+        alert('Insufficient stock available');
+        return false;
+    }
 });
 </script>
    

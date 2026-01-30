@@ -570,6 +570,8 @@ namespace DAL.MasterData
             new SqlParameter("@SocietyId", model.SocietyId),
             new SqlParameter("@CreatedBy", model.SocietyId),
             new SqlParameter("@Remarks", model.Remarks),
+            new SqlParameter("@VendorId", model.VendorId),
+            
         };
             var result = _dataAccess.ExecuteNonQuery("SP_DistributeFertilizerToFarmer", commandType: CommandType.StoredProcedure, parameters);
 

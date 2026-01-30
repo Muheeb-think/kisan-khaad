@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Jalaun.csproj": {}
+    "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Jalaun.csproj": {}
   },
   "projects": {
-    "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\BAL.csproj": {
+    "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\BAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\BAL.csproj",
+        "projectUniqueName": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\BAL.csproj",
         "projectName": "BAL",
-        "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\BAL.csproj",
-        "packagesPath": "C:\\Users\\THINKCOMPUTERS(DELL)\\.nuget\\packages\\",
-        "outputPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\obj\\",
+        "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\BAL.csproj",
+        "packagesPath": "C:\\Users\\Hp-Aero\\.nuget\\packages\\",
+        "outputPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\THINKCOMPUTERS(DELL)\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hp-Aero\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj"
+              "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\DAL.csproj": {
+                "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\DAL.csproj"
               }
             }
           }
@@ -74,21 +73,20 @@
         }
       }
     },
-    "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj": {
+    "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj",
+        "projectUniqueName": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\THINKCOMPUTERS(DELL)\\.nuget\\packages\\",
-        "outputPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\obj\\",
+        "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\Hp-Aero\\.nuget\\packages\\",
+        "outputPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\THINKCOMPUTERS(DELL)\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hp-Aero\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -154,21 +152,20 @@
         }
       }
     },
-    "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Jalaun.csproj": {
+    "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Jalaun.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Jalaun.csproj",
+        "projectUniqueName": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Jalaun.csproj",
         "projectName": "Jalaun",
-        "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\Jalaun.csproj",
-        "packagesPath": "C:\\Users\\THINKCOMPUTERS(DELL)\\.nuget\\packages\\",
-        "outputPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Jalaun\\obj\\",
+        "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Jalaun.csproj",
+        "packagesPath": "C:\\Users\\Hp-Aero\\.nuget\\packages\\",
+        "outputPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\THINKCOMPUTERS(DELL)\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hp-Aero\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -183,14 +180,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\BAL.csproj": {
-                "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\BAL\\BAL.csproj"
+              "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\BAL.csproj": {
+                "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\BAL.csproj"
               },
-              "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\DAL\\DAL.csproj"
+              "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\DAL.csproj": {
+                "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\DAL.csproj"
               },
-              "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj": {
-                "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj"
+              "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj": {
+                "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj"
               }
             }
           }
@@ -247,21 +244,20 @@
         }
       }
     },
-    "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj": {
+    "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj",
+        "projectUniqueName": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj",
         "projectName": "Utility",
-        "projectPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\Utility.csproj",
-        "packagesPath": "C:\\Users\\THINKCOMPUTERS(DELL)\\.nuget\\packages\\",
-        "outputPath": "D:\\Muheeb.Proect\\Git\\kisaan-khaad\\Utility\\obj\\",
+        "projectPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\Utility.csproj",
+        "packagesPath": "C:\\Users\\Hp-Aero\\.nuget\\packages\\",
+        "outputPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Utility\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\THINKCOMPUTERS(DELL)\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hp-Aero\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

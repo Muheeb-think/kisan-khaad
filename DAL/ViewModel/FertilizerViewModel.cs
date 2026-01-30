@@ -35,6 +35,7 @@ public class FertilizerStockVM
 
     // Dropdowns
     public List<FertilizerModel>? ddlfertilizers { get; set; }
+    public DataTable? dtfertilizer { get; set; }
 }
 
 public class DistributeVM
@@ -75,7 +76,9 @@ public class DistributeVM
 
     [StringLength(255)]
     public string? Remarks { get; set; }
+    public int? VendorId { get; set; }
     public DataTable? dtfertilizer { get; set; }
+    public List<Vendor>? ddlvendor { get; set; }
 }
 
 public class FarmerDemandReportViewModel
@@ -97,3 +100,8 @@ public class FarmerDemandReportViewModel
 }
 
 
+public class Vendor
+{
+    public int VendorId { get; set; }
+    public string VendorName { get; set; }
+}

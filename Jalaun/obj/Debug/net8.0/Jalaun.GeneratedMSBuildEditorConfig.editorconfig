@@ -17,169 +17,169 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Jalaun
 build_property.RootNamespace = Jalaun
-build_property.ProjectDir = D:\Muheeb.Proect\Git\kisaan-khaad\Jalaun\
+build_property.ProjectDir = E:\Project\ThinkComputers.Project\kisaan-khaad\Jalaun\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Muheeb.Proect\Git\kisaan-khaad\Jalaun
+build_property.MSBuildProjectDirectory = E:\Project\ThinkComputers.Project\kisaan-khaad\Jalaun
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/CreateRole.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Admin/CreateRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUm9sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/CreateSociety.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Admin/CreateSociety.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlU29jaWV0eS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/CreateUser.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Admin/CreateUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlVXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/CropMaster.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Admin/CropMaster.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JvcE1hc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/FertilizerCropMapping.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Admin/FertilizerCropMapping.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRmVydGlsaXplckNyb3BNYXBwaW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/FertilizerMaster.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Admin/FertilizerMaster.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRmVydGlsaXplck1hc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/Index.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/TehsilMaster.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Admin/TehsilMaster.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVGVoc2lsTWFzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/UserRolesPermission.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Admin/UserRolesPermission.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlclJvbGVzUGVybWlzc2lvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Admin/VillageMaster.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Admin/VillageMaster.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlsbGFnZU1hc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Auth/AccesDenied.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Auth/AccesDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxBY2Nlc0RlbmllZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Auth/Login.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Farmer/ApproveDemand.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Farmer/ApproveDemand.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWVyXEFwcHJvdmVEZW1hbmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Farmer/Farmerdashboard.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Farmer/Farmerdashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWVyXEZhcm1lcmRhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Farmer/FarmerFertilizerDemand.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Farmer/FarmerFertilizerDemand.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWVyXEZhcm1lckZlcnRpbGl6ZXJEZW1hbmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Farmer/FarmerProfileUpdate.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Farmer/FarmerProfileUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWVyXEZhcm1lclByb2ZpbGVVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Farmer/FertilizerDemand.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Farmer/FertilizerDemand.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWVyXEZlcnRpbGl6ZXJEZW1hbmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Farmer/FertilizerDemandNew.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Farmer/FertilizerDemandNew.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWVyXEZlcnRpbGl6ZXJEZW1hbmROZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Farmer/PendingFarmerFertilizerDemand.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Farmer/PendingFarmerFertilizerDemand.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWVyXFBlbmRpbmdGYXJtZXJGZXJ0aWxpemVyRGVtYW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Farmer/Registration.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Farmer/Registration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWVyXFJlZ2lzdHJhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Farmer/TempForm.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Farmer/TempForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWVyXFRlbXBGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Home/About_Us.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Home/About_Us.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dF9Vcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Home/Contact_Us.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Home/Contact_Us.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0X1VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Home/Index.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Home/Privacy.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/Error.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_FarmerLayout.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Shared/_FarmerLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9GYXJtZXJMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_fertilizerDistributionListBySociety.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Shared/_fertilizerDistributionListBySociety.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9mZXJ0aWxpemVyRGlzdHJpYnV0aW9uTGlzdEJ5U29jaWV0eS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_LayoutHome.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Shared/_LayoutHome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_partialModuleAndPermissionlist.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Shared/_partialModuleAndPermissionlist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9wYXJ0aWFsTW9kdWxlQW5kUGVybWlzc2lvbmxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_partialSocietyMasterList.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Shared/_partialSocietyMasterList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9wYXJ0aWFsU29jaWV0eU1hc3Rlckxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_partialTehsilMaster.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Shared/_partialTehsilMaster.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9wYXJ0aWFsVGVoc2lsTWFzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Society/Distribute.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Society/Distribute.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29jaWV0eVxEaXN0cmlidXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Society/Index.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Society/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29jaWV0eVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Society/StockEntry.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Society/StockEntry.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29jaWV0eVxTdG9ja0VudHJ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/_ViewImports.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/_ViewStart.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Muheeb.Proect/Git/kisaan-khaad/Jalaun/Views/Shared/_Layout.cshtml]
+[E:/Project/ThinkComputers.Project/kisaan-khaad/Jalaun/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-q69f4ktan8

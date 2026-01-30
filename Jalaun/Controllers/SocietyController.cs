@@ -41,7 +41,7 @@ namespace Jalaun.Controllers
             FertilizerStockVM model = new();
 
             model.CreatedBy = Convert.ToInt32(SessionHelper.UserId);
-
+            model.dtfertilizer = _data.GetfertilzerdemandByFarmer(Convert.ToInt32(SessionHelper.UserId), 0, 0, 2);
             return View(model);
         }
 
@@ -76,7 +76,7 @@ namespace Jalaun.Controllers
             _data.DistributeFertilizer(model, Convert.ToInt32(SessionHelper.UserId));
 
             TempData["Success"] = "Fertilizer distributed successfully";
-            return RedirectToAction("DemandList");
+            return RedirectToAction("Distribute");
 
         }
         public ActionResult GetAvailableStock(int fertilizerId)

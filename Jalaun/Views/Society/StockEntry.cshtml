@@ -11,6 +11,35 @@
     <div class="alert alert-success">@TempData["Success"]</div>
 }
 
+<div class="card shadow-sm mb-4" >
+    <div class="card-header bg-light">
+      @*   <strong>उर्वरक विवरण</strong> *@
+    </div>
+    <div class="card-body">
+<table class="table table-responsive" id="myDataTable">
+        <thead>
+            <tr>
+                @foreach (System.Data.DataColumn col in Model.dtfertilizer.Columns)
+                {
+                    <th><b>@col.ColumnName</b></th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (System.Data.DataRow row in Model.dtfertilizer.Rows)
+            {
+                <tr>
+                    @foreach (var item in row.ItemArray)
+                    {
+                        <td>@Html.Raw(item)</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+ </div>
+</div>
 
     @Html.HiddenFor(m => m.CompanyId)
     @Html.HiddenFor(m=>m.SocietyId)
@@ -81,7 +110,7 @@
         <div class="col-md-3">
             <div class="form-group">
                 <label>कुल किलोग्राम </label>
-                @Html.TextBoxFor(m => m.PurchasedQty, new { @class = "form-control", type = "number", step = "0.01", @readonly=true })
+                @Html.TextBoxFor(m => m.PurchasedQty, new { @class = "form-control", type = "number", step = "0.01" })
             </div>
         </div>
     </div>
@@ -338,6 +367,9 @@ $("#btnSave").click(function () {
         }
     });
 });
-
+ $("#PurchasedQty").on("change keyup", function () {
+            $('#PacketType').val(-1);
+            $('#PacketQty').val('');
+        });
 </script>
 
