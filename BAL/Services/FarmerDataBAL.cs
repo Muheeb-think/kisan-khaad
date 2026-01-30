@@ -75,11 +75,9 @@ namespace BAL.Services
                     .AsEnumerable()
                     .Select(r => new FertilizerChartVM
                     {
-                        OrderYear = r.Field<int>("OrderYear"),
-                        OrderMonthNo = r.Field<int>("OrderMonthNo"),
-                        OrderMonthHindi = r.Field<string>("OrderMonthHindi"),
-                        FertilizerDemand = r.Field<decimal>("FertilizerDemand"),
-                        TotalOrders = r.Field<int>("TotalOrders")
+                        FertilizerNameHindi = r.Field<string?>("FertilizerNameHindi"),
+                        TotalNeedFertilizer = r.Field<decimal>("TotalNeedFertilizer")
+
                     })
                     .ToList();
             }

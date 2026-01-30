@@ -24,11 +24,13 @@ namespace DAL.ModelDTO
 
     public class FertilizerChartVM
     {
-        public int OrderYear { get; set; }
-        public int OrderMonthNo { get; set; }
-        public string? OrderMonthHindi { get; set; }
-        public decimal FertilizerDemand { get; set; }
-        public int TotalOrders { get; set; }
+        //public int OrderYear { get; set; }
+        //public int OrderMonthNo { get; set; }
+        //public string? OrderMonthHindi { get; set; }
+        //public decimal FertilizerDemand { get; set; }
+        //public int TotalOrders { get; set; }
+        public string? FertilizerNameHindi { get; set; }
+        public decimal TotalNeedFertilizer { get; set; }
     }
 
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,7 @@ public class FertilizerStockVM
     public int? CreatedBy { get; set; }
     public int PacketType { get; set; }
     public int PacketQty { get; set; }
+    
 
     // Dropdowns
     public List<FertilizerModel>? ddlfertilizers { get; set; }
@@ -73,6 +75,7 @@ public class DistributeVM
 
     [StringLength(255)]
     public string? Remarks { get; set; }
+    public DataTable? dtfertilizer { get; set; }
 }
 
 public class FarmerDemandReportViewModel

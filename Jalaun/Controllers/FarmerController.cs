@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 using System.Data;
 using Utilities;
+using Utility;
 using static Azure.Core.HttpHeader;
 using static System.Net.WebRequestMethods;
 
@@ -368,6 +369,33 @@ namespace Jalaun.Controllers
             var response = _repo.FertilizerDemand(request);
             return Ok(response);
         }
+        #region calculate name percantage
+        [HttpPost]
+        public IActionResult GetFarmerNameMatch([FromBody] UserNameMatch obj)
+        {
+            double similarity = UserNameMatchBAL.NameSimilarity(obj.AgriStackName, obj.KhasraName);
+            Console.WriteLine($"Name match: {similarity:F2}%");
+
+            if (similarity >= 80)
+            {
+                Console.WriteLine("Proceed to next step.");
+                return Json(new
+                {
+                    status = true,
+                    data = similarity,
+                });
+            }
+            else
+            {
+                Console.WriteLine("Popup: Names do not match enough.");
+                return Json(new
+                {
+                    status = false,
+                    msg = similarity,
+                });
+            }
+        }
+        #endregion
         #endregion
     }
 }

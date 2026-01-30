@@ -55,7 +55,7 @@ namespace DAL.MasterData
         public int SaveFertilizerStock(FertilizerStockVM model, int userId);
         public void DistributeFertilizer(DistributeVM model, int userId);
         public string GetAvailableStockBySociety(int societyId, int Fertilizerid);
-        DataTable GetfertilzerdemandByFarmer(int societyId, int Fertilizerid, int Farmerid);
+        DataTable GetfertilzerdemandByFarmer(int societyId, int Fertilizerid, int Farmerid,int Action=0);
         DataTable GetDistributionListByFarmerAndFertilizer(int Farmerid, int Fertilizerid, int SocietyId, int StatusId = 0);
 
     }
@@ -548,7 +548,8 @@ namespace DAL.MasterData
                 new SqlParameter("@QtyUnit", model.QtyUnit),
                 new SqlParameter("@SocietyId", model.SocietyId),
                 new SqlParameter("@Remarks", model.Remarks),
-                new SqlParameter("@UserId", userId)
+                new SqlParameter("@UserId", userId),
+                 new SqlParameter("@CompanyId", model.CompanyId)
             };
 
                 result = _dataAccess.ExecuteNonQuery("sp_SaveUpdateGetFertilizerStock", commandType: CommandType.StoredProcedure, parameters);
@@ -585,14 +586,15 @@ namespace DAL.MasterData
             result = _dataAccess.ExecuteScaler("sp_GetAvlStockByFertilizer", parameters);
             return result;
         }
-        public DataTable GetfertilzerdemandByFarmer(int societyId, int Fertilizerid, int Farmerid)
+        public DataTable GetfertilzerdemandByFarmer(int societyId, int Fertilizerid, int Farmerid,int Action = 0)
         {
             DataTable result;
             SqlParameter[] parameters =
                     {
             new SqlParameter("@SocietyId", societyId),
-            new SqlParameter("@FertilizerId",Fertilizerid),
-               new SqlParameter("@FarmerId",Farmerid)
+            new SqlParameter("@FertilizerId",Fertilizerid>0?Fertilizerid:DBNull.Value),
+            new SqlParameter("@FarmerId",Farmerid),
+            new SqlParameter("@Action",Action)
 
             };
             result = _dataAccess.ExecuteDataTable("sp_GetAvlStockByFertilizer", parameters);

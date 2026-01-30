@@ -2,42 +2,60 @@
 
 <h4>उर्वरक वितरित करें</h4>
 
+
+
+<div class="card shadow-sm mb-4" >
+    <div class="card-header bg-light">
+      @*   <strong>उर्वरक विवरण</strong> *@
+    </div>
+    <div class="card-body">
+<table class="table table-responsive" id="myDataTable">
+        <thead>
+            <tr>
+                @foreach (System.Data.DataColumn col in Model.dtfertilizer.Columns)
+                {
+                    <th><b>@col.ColumnName</b></th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (System.Data.DataRow row in Model.dtfertilizer.Rows)
+            {
+                <tr>
+                    @foreach (var item in row.ItemArray)
+                    {
+                        <td>@Html.Raw(item)</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+ </div>
+</div>
+
 <div class="row mb-3">
-    <div class="col-md-4">
-        <div class="card shadow-sm border-success">
-            <div class="card-body text-center">
-                <h6 class="text-muted">किसान</h6>
-                <h5 class="mb-0" id="lblfarmer">—</h5>
-            </div>
-        </div>
-    </div>
+   
+   
 
-    <div class="col-md-4">
-        <div class="card shadow-sm border-primary">
-            <div class="card-body text-center">
-                <h6 class="text-muted">उर्वरक</h6>
-                <h5 class="mb-0" id="lblfertilizer">—</h5>
-            </div>
-        </div>
-    </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4" hidden>
         <div class="card shadow-sm border-warning">
             <div class="card-body text-center">
                 <h6 class="text-muted">उपलब्ध स्टॉक</h6>
                 <h5 class="mb-0 text-success" id="lblstock">0</h5>
+                 
             </div>
         </div>
     </div>
 </div>
 
-<div class="card shadow-sm mb-4">
+<div class="card shadow-sm mb-4" >
     <div class="card-header bg-light">
-        <strong>उर्वरक वितरण विवरण</strong>
+        <strong>उर्वरक विवरण</strong>
     </div>
     <div class="card-body">
-@using (Html.BeginForm())
-{
+
     @Html.HiddenFor(m => m.DemandDetailsId)
     @Html.HiddenFor(m => m.FertilizerId)
     @Html.HiddenFor(m => m.SocietyId)
@@ -46,93 +64,140 @@
    
 
     <div class="row">
-        <div class="col-md-4">
-            <div class="form-group">
-                <label>उर्वरक</label>
-                <select class="form-control" id="ddlfertilizer">
-                    <option value="-1">--विकल्प चुनें--</option>
-                </select>
-
-            </div>
-        </div>
+       
         <div class="col-md-4">
             <div class="form-group">
                 <label>किसान</label>
-                <select class="form-control" id="ddlfarmer">
-                    <option value="-1">--विकल्प चुनें--</option>
-                </select>
+                <input type="number" class="form-control" id="txtfarmer" />
 
             </div>
         </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <button class="btn btn-success mt-3" type="button" id="btnsearch">खोजे </button>
+
+            </div>
+        </div>
+       
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            <label>कुल मांग</label>
-            <input class="form-control" value="@Model.FertilizerNeed" readonly id="txtfertilizerneed"/>
+    <div>
+   
+  
+    <div>
+       <div id="partialsDistributionList" class="table-responsive">
+            
         </div>
-
-        <div class="col-md-4">
-            <label>पहले से प्राप्त</label>
-            <input class="form-control" value="@Model.ReceiveQty" readonly id="txtReceiveQty" />
-        </div>
-         <div class="col-md-4">
-            <label>लंबित मात्रा</label>
-            <input class="form-control" value="@Model.PendingQty" readonly id="txtPendingQty" />
-        </div>
-
-        <div class="col-md-4">
-            <label>मात्रा वितरित करें</label>
-            @Html.TextBoxFor(m => m.DistributeQty,
-            new { @class = "form-control", type = "number", step = "0.01" })
     </div>
 </div>
 
-<div class="mt-3">
-    <label>टिप्पणी</label>
-   @Html.TextAreaFor(
-    m => m.Remarks,
-    new { 
-        @class = "form-control",
-        maxlength = "250"   
-    }
 
-)
-
-<small id="charCount">250 characters remaining</small>
-</div>
-
-<button class="btn btn-success mt-3">वितरित करें</button>
-}
 
  </div>
 </div>
-<div class="card shadow-sm">
-    <div class="card-header bg-secondary text-white">
-        <strong>वितरण इतिहास</strong>
-    </div>
 
-    <div class="card-body p-2">
-       <div id="partialsDistributionList" class="table-responsive">
-            <div class="text-center text-muted p-3">
-                कृपया किसान और उर्वरक चुनें
+<div class="card shadow-sm mb-4" id="divdistribute" style="display:none">
+    <div class="card-header bg-light">
+        <strong>उर्वरक वितरण विवरण </strong>
+    </div>
+<div  class="card-body" >
+   
+    <div class="row">
+        <div class="col-md-2" >
+            <div class="form-group">
+                <label>उर्वरक प्रकार</label>
+                <select id="ddlfertilizer" class="form-control" hidden>
+                    <option value="-1">--विकल्प चुनें--</option>
+                </select>
+                <br />
+                 <input type="text" id="lblfertilizer" class="form-control"/>
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>पैकेट प्रकार</label>
+                <select id="PacketType" class="form-control">
+                    <option value="-1">--विकल्प चुनें--</option>
+                </select>
+            
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>पैकेट की संख्या</label>
+                <input type="number" id="PacketQty" class="form-control" />
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>कुल किलोग्राम </label>
+                @Html.TextBoxFor(m => m.DistributeQty, new { @class = "form-control", step = "0.01" })
+            </div>
+        </div>
+         <div class="col-md-2">
+            <div class="form-group">
+                <label>विक्रेता का नाम</label>
+                <select id="ddlvendor" class="form-control" >
+                    <option value="-1">--विकल्प चुनें--</option>
+                </select>
+               
+
             </div>
         </div>
     </div>
+
+    <div class="row">
+        
+        <div class="col-md-5">
+             <div class="form-group">
+            <label>टिप्पणी</label>
+                @Html.TextAreaFor(
+         m => m.Remarks,
+            new { 
+        @class = "form-control",
+        maxlength = "250"   
+         }
+
+)
+ <small id="charCount">250 characters remaining</small>
+            
+        </div>
+        </div>
+       <div class="col-md-6">
+            <div class="form-group">
+               <p>&nbsp;&nbsp</p>
+                <button class="btn btn-success mt-3" type="button" id="btnsave">वितरण करें</button>
+                <button class="btn btn-danger mt-3" type="button" id="btnclose">बंद करे </button>
+
+         
+            </div>
+        </div>
+     
 </div>
+</div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
      let fertilizerId ;
      $(document).ready(function () {
          bindDropDown('ddlfertilizer', 'GetAllFertilizer', 0, -1);
+         bindDropDown('ddlvendor', 'Getvendors', 0, -1);
+         
+         bindpacketType();
          var maxLen = 250;
          $("#Remarks").on("input", function () {
         var remaining = maxLen - $(this).val().length;
         $("#charCount").text(remaining + " /250 characters");
     });
         $("#ddlfertilizer").change(function () {
-
-            var fertilizerId = $(this).val();
+            bindDropDown('ddlfarmer', 'GetfertilizerDemandfarmer', $('#ddlfertilizer').val(), -1);
+           fertilizerId = $(this).val();
+           
              $("#lblfertilizer").text($("#ddlfertilizer option:selected").text())
 
             if (fertilizerId !== "") {
@@ -154,47 +219,92 @@
             }
         });
      });
-     $('#ddlfertilizer').change(function(){
-          bindDropDown('ddlfarmer', 'GetfertilizerDemandfarmer', $('#ddlfertilizer').val(), -1);
-           fertilizerId = $(this).val();
-     });
-      $('#ddlfarmer').change(function(){
-          $('#lblfarmer').text($('#ddlfarmer option:selected').text());
-           
-             $("#lblfertilizer").text($("#ddlfertilizer option:selected").text())
-
-            if (fertilizerId !== "") {
-                $.ajax({
-                    url: '/Society/GetfertilzerdemandByFarmer',
-                    type: 'GET',
-                    data: {
-                        fertilizerId: $('#ddlfertilizer').val(),
-                        farmerId:$('#ddlfarmer').val()
-                    },
-                    success: function (response) {
-                        console.log(response);
-                       // @Model.FertilizerNeed = response.demand;
-                         $("#txtfertilizerneed").val(response.fertilizerNeed);
-                         $("#txtReceiveQty").val(response.receiveQty);
-                        $('#FertilizerNeed').val(response.fertilizerNeed);
-                         $('#DemandDetailsId').val(response.demandDetailsId);
-                         $('#FertilizerId').val(fertilizerId);
-                         $('#ReceiveQty').val(response.receiveQty);
-                         $('#txtPendingQty').val((response.fertilizerNeed-response.receiveQty));
-                    },
-                    error: function () {
-                        //$("#lblstock").text("Error fetching stock");
-                    }
-                });
-            } else {
-                $("#lblStock").text("");
-            }
-            $('#partialsDistributionList').load("/Society/GetDistributionListByFarmerAndFertilizer?Farmerid="+ $('#ddlfarmer').val()+"&FertilizerId="+fertilizerId);
-      });
-      // $(function(){
-      //     $('#partialsDistributionList').load("/Society/GetDistributionListByFarmerAndFertilizer?Farmerid="+ $('#ddlfarmer').val()+"&FertilizerId="+fertilizerId);
-      // })
+    
+     
 </script>
+<script>
+     function bindpacketType(){
+         var packetTypes = [
+        { id: 10, text: "10 KG" },
+        { id: 50, text: "50 KG" },
+        { id: 100, text: "100 KG" },
+        { id: 200, text: "200 KG" },
+        { id: 500, text: "500 KG" }
+    ];
 
-    <!-- Optional: Initialize DataTables plugin if you're using it -->
+    $.each(packetTypes, function (index, item) {
+        $('#PacketType').append(
+            $('<option>', {
+                value: item.id,
+                text: item.text
+            })
+        );
+    });
+     }
+     function calculateTotalKg() {
+    // Get values as floats
+    var packetKg = parseFloat($("#PacketType").val()) || 0;
+    var packetQty = parseFloat($("#PacketQty").val()) || 0;
+
+    // Multiply
+    var totalKg = packetKg * packetQty;
+  
+    totalKg = Math.round(totalKg * 100) / 100;
+
+    // Set the value in the input
+    $("#DistributeQty").val(totalKg);
+}
+
+    $("#PacketType, #PacketQty").on("change keyup", function () {
+        calculateTotalKg();
+        });
+         $("#DistributeQty").on("change keyup", function () {
+            $('#PacketType').val(-1);
+            $('#PacketQty').val('');
+        });
+    
+    $('#btnsearch').click(function(){
+        const farmerid=$('#txtfarmer').val();
+      
+         $.ajax({
+            url: '/Society/GetfertilzerdemandDetailsByFarmer?farmerId='+farmerid,
+            type: 'GET',
+
+            success:function(response){
+                $('#partialsDistributionList').html(response);
+            },
+            error:function(error){
+                console.log(error);
+            }
+
+         })
+    })
+    $('#btnclose').click(function(){
+        $('#divdistribute').attr('style','display:none');
+    });
+      
+    function getdetails(demandDetailsId,FertilizerId,farmerName){
+         $("#ddlfertilizer").val(FertilizerId);
+        $("#ddlfertilizer").trigger('change');
+         $('#divdistribute').attr('style','display:block');
+            
+       // alert(demandDetailsId);
+    }
+    $(document).on('click', '.btnView', function () {
+          var id = $(this).data('id');
+    var fertilizerId = $(this).data('fertilizer');
+    var farmerName = $(this).data('farmer');
+    let row = $(this).closest('tr');
+
+    let fasalName = row.find('td:eq(5)').text().trim();
+    let urwarakName = row.find('td:eq(6)').text().trim();
+     // $('#lblfarmer').text(farmerName);
+    // $('#lblfasal').text(fasalName);
+    $('#lblfertilizer').val(urwarakName);
+
+   
+
+    getdetails(id,fertilizerId,farmerName);
+});
+</script>
    

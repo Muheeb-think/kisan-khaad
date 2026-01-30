@@ -44,7 +44,7 @@ namespace Jalaun.Controllers
 
             return View(model);
         }
-        
+
         [HttpPost]
         public IActionResult Save([FromBody] List<FertilizerStockVM> model)
         {
@@ -63,6 +63,7 @@ namespace Jalaun.Controllers
         public IActionResult Distribute()
         {
             DistributeVM model = new();
+            model.dtfertilizer = _data.GetfertilzerdemandByFarmer(Convert.ToInt32(SessionHelper.UserId), 0, 0, 2);
             return View(model);
         }
         [HttpPost]
@@ -113,7 +114,14 @@ namespace Jalaun.Controllers
             var model = BAL.Common.DataTableExtensions.ToList<FarmerDemandReportViewModel>(resultdt);
             return PartialView("/Views/Shared/_fertilizerDistributionListBySociety.cshtml", resultdt);
         }
+        [HttpGet]
+        public ActionResult GetfertilzerdemandDetailsByFarmer(int farmerId)
+        {
+            var resultdt = _data.GetfertilzerdemandByFarmer(Convert.ToInt32(SessionHelper.UserId), 0, farmerId, 1);
 
+            return PartialView("/Views/Shared/_fertilizerDistributionListBySociety.cshtml", resultdt);
+
+        }
 
 
     }

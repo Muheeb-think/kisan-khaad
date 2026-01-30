@@ -129,7 +129,8 @@ function SearchKhasraNo() {
 
                 $('#LandTotalArea').val(response.data.totalArea ?? '');
                 $('#FarmerShare').val(response.data.farmerShareArea ?? '');      
-                $('#FarmerNameLandKhasra').val(response.data.farmerNameLand ?? '');      
+                $('#FarmerNameLandKhasra').val(response.data.farmerNameLand ?? ''); 
+                VerifyFarmerName();
             }
         }
     });
@@ -628,7 +629,7 @@ function showPreview() {
 
     setTimeout(function () {
         toast.classList.remove("show");
-        }, 6000);
+        }, 8000);
     }
 
 document.addEventListener('input', function (e) {
@@ -813,5 +814,45 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-//end reset form 
+//end reset form
 
+
+
+//start Name Match 
+function VerifyFarmerName() {
+    let agriStackName = $('#FarmerName').val();
+    let khasraName = $('#FarmerNameLandKhasra').val();
+
+    if (!agriStackName || !khasraName) {
+        alert("कृपया दोनों नाम दर्ज करें");
+        return;
+    }
+
+    $.ajax({
+        url: '/Farmer/GetFarmerNameMatch',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            AgriStackName: agriStackName,
+            KhasraName: khasraName
+        }),
+        success: function (response) {
+            let similarity = response.data || response.msg; // similarity %
+            let message = "";
+
+            if (response.status === true) {
+                message = `एग्री स्टैक का नाम और खसरा का नाम आपस में ${similarity.toFixed(2)}% तक मेल खा रहे हैं।`;
+                $('#IsNameVerified').val('true');
+            } else {
+                message = `एग्री स्टैक का नाम और खसरा का नाम आपस में केवल ${similarity.toFixed(2)}% मेल खा रहे हैं।`;
+            }
+            showToast(message); 
+            $('#NameMatchMsg').text(message);
+        },
+        error: function () {
+            showToast("सर्वर त्रुटि। कृपया बाद में प्रयास करें।");
+        }
+    });
+}
+
+//end 

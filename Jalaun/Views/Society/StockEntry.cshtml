@@ -67,11 +67,7 @@
                 <select id="PacketType" class="form-control">
                     <option value="-1">--विकल्प चुनें--</option>
                 </select>
-                @*  <select asp-for="FertilizerID"
-                        asp-items="@(new SelectList(ddlfertilizers, "FertilizerID", "FertilizerNameHindi"))"
-                        class="form-select">
-                    <option value="-1">--विकल्प चुनें--</option>
-                </select> *@
+            
 
             </div>
         </div>
@@ -190,7 +186,7 @@
                         fertilizerId: fertilizerId
                     },
                     success: function (response) {
-                        alert('available:'+ JSON.stringify(response));
+                      //  alert('available:'+ JSON.stringify(response));
                         $("#OpeningStock").val(response.stock);
                     },
                     error: function () {
