@@ -103,7 +103,7 @@
         <div class="col-md-3">
             <div class="form-group">
                 <label>पैकेट की संख्या</label>
-                <input type="number" id="PacketQty" class="form-control" />
+                <input type="number" id="PacketQty" class="form-control" value="0" />
 
             </div>
         </div>
@@ -356,7 +356,7 @@ $("#btnSave").click(function () {
 
         purchaseList.push(row);
     });
-
+    if(purchaseList.length>0){
     $.ajax({
         url: '/Society/Save',
         type: 'POST',
@@ -366,10 +366,14 @@ $("#btnSave").click(function () {
             alert("Saved Successfully");
         }
     });
+    }else{
+        alert("please add some stock");
+        return;
+    }
 });
  $("#PurchasedQty").on("change keyup", function () {
             $('#PacketType').val(-1);
-            $('#PacketQty').val('');
+            $('#PacketQty').val(0);
         });
 </script>
 

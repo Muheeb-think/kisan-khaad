@@ -537,6 +537,8 @@ namespace DAL.MasterData
             int result = 0;
             try
             {
+                
+
                 model.SocietyId = userId;
                 SqlParameter[] parameters =
                     {

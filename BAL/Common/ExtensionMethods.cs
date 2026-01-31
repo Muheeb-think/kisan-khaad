@@ -104,4 +104,15 @@ namespace BAL.Common
 
 
     }
+
+    public static class UnitConverter
+    {
+        private const decimal KG_TO_MT = 1000m;
+
+        public static decimal ToMetricTon(decimal? kg)
+        {
+            return kg.HasValue ? Math.Round(kg.Value / KG_TO_MT, 6) : 0;
+        }
+    }
+
 }

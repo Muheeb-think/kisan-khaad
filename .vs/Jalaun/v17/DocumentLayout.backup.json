@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|e:\\project\\thinkcomputers.project\\kisaan-khaad\\jalaun\\controllers\\societycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\controllers\\societycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|e:\\project\\thinkcomputers.project\\kisaan-khaad\\dal\\repo\\mastersdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|solutionrelative:dal\\repo\\mastersdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|e:\\project\\thinkcomputers.project\\kisaan-khaad\\jalaun\\views\\society\\stockentry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\views\\society\\stockentry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|e:\\project\\thinkcomputers.project\\kisaan-khaad\\jalaun\\views\\society\\distribute.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\views\\society\\distribute.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|e:\\project\\thinkcomputers.project\\kisaan-khaad\\jalaun\\controllers\\societycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\controllers\\societycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{432D8F8B-689C-4394-BDDD-2CD3981C173A}|BAL\\BAL.csproj|e:\\project\\thinkcomputers.project\\kisaan-khaad\\bal\\common\\extensionmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{432D8F8B-689C-4394-BDDD-2CD3981C173A}|BAL\\BAL.csproj|solutionrelative:bal\\common\\extensionmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|e:\\project\\thinkcomputers.project\\kisaan-khaad\\dal\\viewmodel\\fertilizerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|solutionrelative:dal\\viewmodel\\fertilizerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|e:\\project\\thinkcomputers.project\\kisaan-khaad\\dal\\repo\\mastersdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{580B823C-9693-4AAE-97FE-0F3AA1A5B932}|DAL\\DAL.csproj|solutionrelative:dal\\repo\\mastersdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|e:\\project\\thinkcomputers.project\\kisaan-khaad\\jalaun\\views\\society\\distribute.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|solutionrelative:jalaun\\views\\society\\distribute.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5C92422-C29E-4EDE-865F-BB1497C0DD2A}|Jalaun\\Jalaun.csproj|e:\\project\\thinkcomputers.project\\kisaan-khaad\\jalaun\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -90,7 +94,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -99,45 +103,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "ExtensionMethods.cs",
+              "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\Common\\ExtensionMethods.cs",
+              "RelativeDocumentMoniker": "BAL\\Common\\ExtensionMethods.cs",
+              "ToolTip": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\Common\\ExtensionMethods.cs",
+              "RelativeToolTip": "BAL\\Common\\ExtensionMethods.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAG4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T02:04:47.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "FertilizerViewModel.cs",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\ViewModel\\FertilizerViewModel.cs",
               "RelativeDocumentMoniker": "DAL\\ViewModel\\FertilizerViewModel.cs",
               "ToolTip": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\ViewModel\\FertilizerViewModel.cs",
               "RelativeToolTip": "DAL\\ViewModel\\FertilizerViewModel.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAswCUAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAADwvyMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-29T15:17:50.768Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "MastersData.cs",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\Repo\\MastersData.cs",
               "RelativeDocumentMoniker": "DAL\\Repo\\MastersData.cs",
               "ToolTip": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\Repo\\MastersData.cs",
               "RelativeToolTip": "DAL\\Repo\\MastersData.cs",
-              "ViewState": "AgIAADQCAAAAAAAAAAAhwEECAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABYCAAAAAAAAAAAQwBsCAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-23T12:26:02.279Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "StockEntry.cshtml",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Views\\Society\\StockEntry.cshtml",
               "RelativeDocumentMoniker": "Jalaun\\Views\\Society\\StockEntry.cshtml",
               "ToolTip": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Views\\Society\\StockEntry.cshtml",
               "RelativeToolTip": "Jalaun\\Views\\Society\\StockEntry.cshtml",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAAALEAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAFsBAAAAAAAAAAAYwGkBAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-01-28T10:29:44.493Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Jalaun\\Views\\Shared\\_Layout.cshtml",
@@ -149,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\appsettings.json",
               "RelativeDocumentMoniker": "Jalaun\\appsettings.json",
@@ -157,38 +174,36 @@
               "RelativeToolTip": "Jalaun\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-27T10:08:28.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-27T10:08:28.013Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "SocietyController.cs",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Controllers\\SocietyController.cs",
               "RelativeDocumentMoniker": "Jalaun\\Controllers\\SocietyController.cs",
               "ToolTip": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Controllers\\SocietyController.cs",
               "RelativeToolTip": "Jalaun\\Controllers\\SocietyController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAC8AAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAmwDMAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-23T07:57:42.329Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Distribute.cshtml",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Views\\Society\\Distribute.cshtml",
               "RelativeDocumentMoniker": "Jalaun\\Views\\Society\\Distribute.cshtml",
               "ToolTip": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Views\\Society\\Distribute.cshtml",
               "RelativeToolTip": "Jalaun\\Views\\Society\\Distribute.cshtml",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAAAHAAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-27T20:25:05.466Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-27T20:25:05.466Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "_fertilizerDistributionListBySociety.cshtml",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Views\\Shared\\_fertilizerDistributionListBySociety.cshtml",
               "RelativeDocumentMoniker": "Jalaun\\Views\\Shared\\_fertilizerDistributionListBySociety.cshtml",
@@ -200,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "AuthController.cs",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Jalaun\\Controllers\\AuthController.cs",
@@ -212,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "FarmerDataBAL.cs",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\BAL\\Services\\FarmerDataBAL.cs",
               "RelativeDocumentMoniker": "BAL\\Services\\FarmerDataBAL.cs",
@@ -224,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Views\\Society\\Index.cshtml",
               "RelativeDocumentMoniker": "Jalaun\\Views\\Society\\Index.cshtml",
@@ -236,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "FarmerFertilizerDemandDto.cs",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\ModelDTO\\FarmerFertilizerDemandDto.cs",
               "RelativeDocumentMoniker": "DAL\\ModelDTO\\FarmerFertilizerDemandDto.cs",
@@ -248,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "FarmerController.cs",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Controllers\\FarmerController.cs",
               "RelativeDocumentMoniker": "Jalaun\\Controllers\\FarmerController.cs",
@@ -260,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "CreateSociety.cshtml",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Views\\Admin\\CreateSociety.cshtml",
               "RelativeDocumentMoniker": "Jalaun\\Views\\Admin\\CreateSociety.cshtml",
@@ -272,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "HomeController.cs",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Jalaun\\Controllers\\HomeController.cs",
@@ -284,7 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "MastersViewModel.cs",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\ViewModel\\MastersViewModel.cs",
               "RelativeDocumentMoniker": "DAL\\ViewModel\\MastersViewModel.cs",
@@ -296,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "AdminController.cs",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Jalaun\\Controllers\\AdminController.cs",
@@ -308,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "CreateUser.cshtml",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\Jalaun\\Views\\Admin\\CreateUser.cshtml",
               "RelativeDocumentMoniker": "Jalaun\\Views\\Admin\\CreateUser.cshtml",
@@ -320,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\ViewModel\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "DAL\\ViewModel\\RegisterViewModel.cs",
@@ -332,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "RoleViewModel.cs",
               "DocumentMoniker": "E:\\Project\\ThinkComputers.Project\\kisaan-khaad\\DAL\\ViewModel\\RoleViewModel.cs",
               "RelativeDocumentMoniker": "DAL\\ViewModel\\RoleViewModel.cs",

@@ -51,6 +51,11 @@ namespace Jalaun.Controllers
             bool status = false;
             foreach (var item in model)
             {
+                if (item.OpeningStock == null || item.OpeningStock == 0)
+                    item.OpeningStock = UnitConverter.ToMetricTon(item.OpeningStock);
+                item.PurchasedQty = UnitConverter.ToMetricTon(item.PurchasedQty);
+                item.UsedQty = UnitConverter.ToMetricTon(item.UsedQty);
+
                 var res = _data.SaveFertilizerStock(item, Convert.ToInt32(SessionHelper.UserId));
                 status = res > 0 ? true : false;
 
